@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    font-weight: lighter; 
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+header {
+    background-color: #123456; /* Adjust to the specific color */
+    padding: 10px 0;
+    color: white;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 220px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.blog-header {
+    position: relative;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+}
+
+.blog-title {
+    margin: 0;
+    padding: 0 80px;
+    background-color: rgba(186, 186, 250, 0.65);
+    border-radius: 0 80px 80px 0;
+    font-size: 2em;
+    color: white;
+}
+
+.blog-title, h2 {
+    font-size: 40px;
+}
+
+.blog-description {
+    max-width: 650px;
+    margin: 10px 0 0;
+    padding: 0 40px;
+    background-color: rgba(13, 13, 94, 0.6);
+    border-radius: 0 80px 80px 0;
+    font-size: 1.2em;
+    color: white;
+}
+
+.blog-navigation {
+    background-color: #123456; /* Adjust to the specific color */
+    color: white;
+    display: none;
+    justify-content: center;
+    padding: 30px;
+}
+
+.blog-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display:none;
+}
+
+.blog-navigation ul li {
+    margin: 0 55px;
+}
+
+.blog-navigation ul li a {
+    display:none;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.blog-navigation ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
