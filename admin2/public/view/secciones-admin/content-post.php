@@ -354,51 +354,87 @@ if( isset($_SESSION['id']) ){
         const tableBody = document.getElementById("tableBody");
 
         // METODO ELIMINAR
-        tableBody.addEventListener("click", (e) => {
+        tableBody.addEventListener("click",(e)=>{
             const button = e.target.closest("button");
 
-            if (button) {
-                const tr = button.closest("tr");
+            if(button && button.getAttribute("data-action") === "eliminar"){
+                const tr= button.closest("tr");
+                const id= tr.getAttribute("data-id");
+                const img1 = tr.querySelector(".image1").getAttribute('ruta1');
+                const img2 = tr.querySelector(".image2").getAttribute('ruta2');
 
-                const img1Element = tr.querySelector(".image1");
-                const img2Element = tr.querySelector(".image2");
-                //Agarramos la ruta de las imagenes de la fila que se va a eliminar, para eliminar las imagenes  
-                const img1 = img1Element.getAttribute('ruta1');
-                const img2 = img2Element.getAttribute('ruta2');
-                
-
-                const id = tr.getAttribute("data-id");
-                const action = button.getAttribute("data-action");
-
-                if (action == "eliminar") {
-                let condicion = confirm("Desea Continuar?");
-                alert(img1);
-                /*
-                if (condicion) {
-                    //tr.remove();
-                    fetch(`../../../app/trigger/posteo.php?action=DELETE&id=${id}&image1=${img1}&image2=${img2}`)
-                    .then((res) => res.json())
-                    .then((res) => {
-                        console.log(res);
-                    });
+                if (confirm("¿Está seguro que desea eliminar este registro?")) {
+                    attemptToDeleteRecord(id, img1, img2, tr);
                 }
-                */
-                if (condicion) {
-                    fetch(`../../../app/trigger/posteo.php?action=DELETE&id=${id}&image1=${img1}&image2=${img2}`, {
-                        method: 'DELETE' // Establece el método correcto
-                    })
-                    .then((res) => res.json())
-                    .then(data => {
-                        console.log(data); // Aquí se imprime la respuesta JSON del servidor
-                        // Puedes agregar más lógica aquí para manejar la respuesta
-                    })
-                    .catch(error => {
-                        console.error("Error en la solicitud:", error);
-                    });
-                }
+
+            }
+        })
+
+        //Delete Post de Blog
+        function attemptToDeleteRecord(id,img1,img2,tr){
+            const numericId = validateAndConvertId(id);
+            if (numericId === null) {
+                console.error('El ID no es un número válido:', id);
+                alert('El ID del post no es válido. No se puede eliminar el registro.');
+                return;
+            }
+
+            const data = prepareBlogDataForDeletion(numericId, img1, img2);
+            logFormattedData(data); // Log data for debugging purposes
+            sendDeleteRequest(data, tr);
+        }
+
+        //Validar y convertir ID de post a número
+        function validateAndConvertId(id) {
+            const numericId = Number(id);
+            return isNaN(numericId) ? null : numericId;
+        }
+
+        function prepareBlogDataForDeletion(id,img1,img2){
+            return {
+                id: id,
+                image1: img1,
+                image2: img2
+            };
+        }
+
+        // Registrar datos formateados en la consola
+        function logFormattedData(data) {
+            const dataWithTypes = addTypeInfo(data);
+            console.log('Deleting post with data:', JSON.stringify(dataWithTypes, null, 2));
+        }
+
+        // Crear una función para añadir tipos de datos
+        function addTypeInfo(obj) {
+            const typedObj = {};
+            for (const key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    typedObj[key] = {
+                        value: obj[key],
+                        type: typeof obj[key]
+                    };
                 }
             }
-        });
+            return typedObj;
+        }
+
+        // Enviar solicitud de eliminación
+        function sendDeleteRequest(data, tr) {
+            $.ajax({
+                url: '../../../app/trigger/posteo.php?action=DELETE',
+                type: 'POST',
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                success: function (response) {
+                    console.log('Success:', response);
+                    tr.remove();
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error:', error);
+                    alert('Hubo un error al eliminar el registro. Por favor, intente de nuevo.');
+                }
+            });
+        }
 
         //Funcion GET ALL
         const dataRender = () => {

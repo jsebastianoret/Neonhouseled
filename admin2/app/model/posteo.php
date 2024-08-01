@@ -65,4 +65,21 @@ class ModelPosteo{
 
         return $res->affected_rows > 0;
     }
+
+    public static function getPostById($id)
+    {
+        [$err, $res] = DB::query('SELECT * FROM posting_blog WHERE id = ?', [$id]);
+
+        if ($err) {
+            return null;
+        }
+
+        $result = $res->get_result();
+        if ($result->num_rows === 0) {
+            return null;
+        }
+
+        return $result->fetch_assoc();
+    }
+
 }
