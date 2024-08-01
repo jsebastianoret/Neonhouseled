@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Proxima-Nova-Regular';
+    color: #5F5F5F;
+
+}
+i{
+    color:  hsl(216deg, 85%, 34%);
+}
+body {
+    background-color: #F5F5F5;
+    ;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}

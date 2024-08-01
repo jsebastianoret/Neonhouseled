@@ -1,0 +1,181 @@
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/* Hero */
+.hero_container{
+    width: 100%;
+    height: 300px;
+    background-image: url('../imagenes/work_us/hero3.webp');
+    background-position: 0% 65%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(68, 91, 125, 1);
+    background-blend-mode: soft-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title-hero_container{
+    color: white;
+    display:block;
+    position:absolute;
+    width:100%;
+    text-align: center;
+    top:16%;
+    font-size: 40px;
+    line-height: 70px;
+    font-family: 'Proxima-Nova-SemiBold';
+    text-transform: uppercase;
+}
+
+/* Work us */
+.work_us{
+    width: 100%;
+    height: auto;
+    background-color: #eceff1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+    .work_us .work_us-title{
+        width: 100%;
+        text-align: center;
+        font-size: 36px;
+        color: #0e4b9c;
+        font-family: 'Proxima-Nova-SemiBold';
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+    .work_us .work_us-desc-container{
+        font-family: 'Proxima-Nova-Regular';
+        width: 55%;
+        text-align: justify;
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    .work_us .work_us-contact-container{
+        width: 55%;
+        height: auto;
+        display: flex;
+    }
+    .work_us .work_us-contact-container .work_us-form-container{
+        width: 100%;
+        height: auto;
+        /* background-color: blue; */
+        /* padding: 0 30px; */
+    }
+        .work_us .work_us-contact-container .work_us-form-container .work_us-form{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .work_us .work_us-contact-container .work_us-form-container .work_us-form .box-container{
+            width: 100%;
+            margin-bottom: 10px;
+        }
+            .work_us .work_us-contact-container .work_us-form-container .work_us-form .box-container.short{
+                width: 48%;
+            }
+            .work_us .work_us-contact-container .work_us-form-container .work_us-form p{
+                color: #505050;
+                font-family: 'Proxima-Nova-Regular';
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+            .work_us .work_us-contact-container .work_us-form-container .work_us-form label input,
+            .work_us .work_us-contact-container .work_us-form-container .work_us-form label select{
+                width: 100%;
+                padding: 10px;
+                font-size: 14px;
+                border: 1px solid #d4d4d4;
+            }
+            .work_us .work_us-contact-container .work_us-form-container .work_us-form label input#cv{
+                padding: 0;
+                border: none;
+            }
+            .work_us .work_us-contact-container .work_us-form-container .work_us-form label input:focus,
+            .work_us .work_us-contact-container .work_us-form-container .work_us-form label select:focus{
+                border-color: #129fea;
+                outline: none;
+            }
+            .work_us .work_us-contact-container .work_us-form-container .work_us-form #button-container{
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+            }
+            .work_us .work_us-contact-container .work_us-form-container .work_us-form #button-container button{
+                background-color: #9d9d9d;
+                border: 1px solid #9d9d9d;
+                color: #fff;
+                width: 150px;
+                height: 40px;
+                font-size: 18px;
+                font-family: 'Proxima-Nova-Regular';
+                cursor: pointer;
+            }
+
+@media screen and (max-width:768px){
+    .work_us .work_us-desc-container,
+    .work_us .work_us-contact-container{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:425px){
+    .work_us .work_us-desc-container,
+    .work_us .work_us-contact-container{
+        width: 90%;
+    }
+    .work_us .work_us-contact-container .work_us-form-container .work_us-form .box-container.short{
+        width: 100%;
+    }
+    .work_us .work_us-contact-container .work_us-form-container .work_us-form p{
+        font-size: 16px;
+    }
+    .work_us .work_us-contact-container .work_us-form-container .work_us-form label input, 
+    .work_us .work_us-contact-container .work_us-form-container .work_us-form label select{
+        font-size: 14px;
+    }
+}
+
+@media (max-width:969px){
+    .hero_container{
+        top:72px;
+    }
+    .title-hero_container {
+        line-height:50px !important;
+        top:15% !important;
+        text-align: center;
+        font-size:30px;
+    }
+}
+@media (max-width:680px)
+{
+    .title-hero_container
+    {
+        top:16% !important;
+        font-size:25px;
+        
+    }
+}
+@media (max-width:560px)
+{
+    .title-hero_container
+    {
+        top:20% !important;
+        font-size:20px;
+        line-height:35px !important;
+    }
+}
+@media (max-width:576px){
+    
+    .cambio_img{
+        background-image: url('../imagenes/work_us/heroM3.webp') !important;
+    }
+}
+

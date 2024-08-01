@@ -1,0 +1,358 @@
+*{
+    box-sizing:border-box;
+    font-family:'Proxima-Nova-Regular'
+}
+body{
+    background-color:#f5f5f5
+}
+figure{
+    margin:0;
+    padding:0
+}
+.categoria{
+    background-color:hsl(216deg,85%,34%);
+    padding:.1px
+}
+.titulo{
+    font-size:2rem;
+    width:95%;
+    margin:2rem auto;
+    margin-bottom:0;
+    text-align:center
+}
+.categoria__titulo{
+    font-family:'Proxima-Nova-SemiBold';
+    color:#f5f5f5;
+    margin-bottom:2rem;
+    padding:1rem 0;
+    border:1px solid #f5f5f5;
+    border-left:0;
+    border-right:0
+}
+
+
+.categoria__section{
+    margin-bottom:2rem;
+    padding:0 10px;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(150px,1fr));
+    grid-template-rows:174px;
+    grid-auto-rows:174px;
+    grid-gap:15px
+}
+.categoria__img{
+    width:100%;
+    height:100%
+}
+.proyectos{
+    margin-top:2rem;
+    grid-template-rows:250px;
+    grid-auto-rows:250px;
+}
+.categoria__imagen{
+    position:relative;
+    cursor:pointer;
+    overflow:hidden
+}
+.categoria__desc{
+    font-weight:600;
+    position:absolute;
+    bottom:15px;
+    width:100%;
+    text-align:center;
+    color:#f5f5f5
+}
+.ubicanos__map{
+    padding:1rem 0;
+    border-bottom:1px solid #5f5f5f;
+    width:100%;
+    height:280px;
+    margin-bottom:2rem
+}
+.ubicanos__titulo{
+    font-family:'Proxima-Nova-SemiBold';
+    color:hsl(216deg,85%,34%);
+    padding:1rem 0;
+    border:1px solid #5f5f5f;
+    border-left:0;
+    border-right:0;
+    margin-top:0
+}
+.overlay{
+    pointer-events:none;
+    opacity:0;
+    position:fixed;
+    width:100%;
+    height:100%;
+    padding:12rem .5rem;
+    background-color:rgba(14,13,13,.9);
+    top:0;
+    right:0;
+    display:flex;
+    align-items:center;
+    transition:opacity .5s
+}
+.ubicanos{
+    padding:.1px
+}
+.overlay__imagen{
+    position:relative;
+    width:100%;
+    height:100%
+}
+.overlay__img{
+    position:absolute;
+    top:0;
+    right:80px;
+    left:24px;
+    width:86%;
+    height:100%;
+    display:block;
+    margin:0 auto;
+    display:block;
+    flex:1
+}
+.imagen1{
+    opacity:0;
+    display:block;
+    transition:opacity .3s linear
+}
+.overlay__desc{
+    margin:1rem;
+    color:white;
+    text-align:center
+}
+.overlay__item{
+    color:white;
+    position:absolute
+}
+.x{
+    top:0;
+    font-size:20px;
+    text-decoration:none;
+    right:0
+}
+.right{
+    top:50%;
+    right:0
+}
+.left{
+    top:50%;
+    left:0
+}
+.nuestros__clientes{
+    color:#f5f5f5;
+    padding:3rem .5rem
+}
+.nuestros__titulo{
+    text-align:center;
+    font-family:'Proxima-Nova-SemiBold';
+    color:hsl(216deg,85%,34%);
+    font-size:32px;
+    padding:1rem 0;
+    border:1px solid #5f5f5f;
+    border-left:0;
+    border-right:0
+}
+.mapas{
+    width:70%;
+    padding:auto;
+    margin:2% auto
+}
+.mapa{
+    overflow:hidden
+}
+.mapa__img{
+    width:100%;
+    height:350px;
+    transition:.6s ease
+}
+.mapa:hover .mapa__img{
+    transform:scale(1.2)
+}
+.mapa__link{
+    display:block
+}
+.arti{
+    width:100%;
+}
+@media screen and (min-width:630px){
+    .nuestros__titulo{
+    text-align:center;
+    font-size:40px;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:3rem 0
+}
+.categoria__section{
+    grid-template-columns:repeat(3,minmax(150px,1fr))
+}
+.categoria__img{
+    width:100%;
+    height:100%;
+    transform:scale(1);
+    margin:0 auto;
+    display:block;
+    transition:transform .6s
+}
+.categoria__img:hover{
+    transform:scale(1.2)
+}
+
+}
+@media screen and (min-width:945px){
+    .mapa{
+    width:100%;
+    height:100%
+}
+.overlay{
+    pointer-events:none;
+    opacity:0;
+    position:fixed;
+    width:100%;
+    height:100%;
+    padding:4rem 2rem;
+    background-color:rgba(14,13,13,.9);
+    top:0;
+    right:0;
+    display:flex;
+    align-items:center;
+    transition:opacity .5s
+}
+.overlay__img{
+    position:absolute;
+    top:0;
+    right:80px;
+    left:80px;
+    width:80%;
+    height:100%;
+    display:block;
+    margin:0 auto;
+    display:block;
+    flex:1
+}
+.overlay__desc{
+    margin:1rem;
+    color:white;
+    text-align:center
+}
+.overlay__item{
+    color:white;
+    position:absolute
+}
+.x{
+    top:0;
+    font-size:20px;
+    text-decoration:none;
+    right:5px
+}
+.right{
+    top:50%;
+    right:0
+}
+.left{
+    top:50%;
+    left:0
+}
+.categoria__section{
+    grid-template-columns:repeat(4,minmax(150px,1fr));
+    width:80%;
+    margin:0 auto;
+    margin-bottom:4rem
+}
+.proyectos{
+    grid-template-columns:repeat(3,minmax(150px,1fr));
+    margin-top:4rem;
+}
+.titulo{
+    font-size:40px;
+    margin:.4rem auto;
+    padding:3rem 0;
+    width:80%;
+    margin-bottom:0
+}
+.categoria__titulo{
+    margin-bottom:4rem
+}
+.ubicanos__map{
+    display:block;
+    width:80%;
+    height:450px;
+    margin:0 auto;
+    padding:4rem 8rem;
+    border-bottom:1px solid#5f5f5f;
+    margin-bottom:2rem
+}
+
+}
+@media screen and (min-width:1200px){
+    .categoria__section{
+    grid-template-columns:repeat(4,minmax(150px,1fr))
+}
+
+.proyectos{
+    grid-template-columns:repeat(3,minmax(150px,1fr));
+    margin-top:4rem;
+}
+
+}
+.aparece{
+    pointer-events:initial;
+    opacity:1
+}
+.clientes__section{
+    height:90px;
+    margin-top:3rem
+}
+.marca__2{
+    margin:0 0 0 -100%;
+    animation-name:marcas;
+    animation-iteration-count:infinite;
+    animation-direction:alternate;
+    animation-play-state:running;
+    animation-duration:35s
+}
+@keyframes marcas{
+    0%{
+    left:100%
+}
+50%{
+    left:0
+}
+100%{
+    left:100%
+}
+
+}
+@media screen and (min-width:800px){
+    .clientes__section{
+    height:150px;
+    width:80%;
+    margin-right:auto;
+    margin-left:auto
+}
+
+}
+@media (max-width: 576px)
+{
+    .mapa__img
+    {
+        content: url("https://www.neonhouseled.com/public/imagenes/inicioM/asM.webp") !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: block !important;
+        margin:auto !important;
+    }
+    
+    .industrial
+    {
+        content: url("https://www.neonhouseled.com/public/imagenes/inicioM/industrialM.webp") !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: block !important;
+        margin:auto !important;
+    }
+   
+}
+}

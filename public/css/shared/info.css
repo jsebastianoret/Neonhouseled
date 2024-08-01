@@ -1,0 +1,129 @@
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.grid-general{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.portada{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 220px;
+    position: relative;
+    margin-bottom: 3rem;
+    margin-top: 70px;
+    background-position: center;
+}
+.portada__contenido{
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 0;
+}
+
+.border{
+    display: flex;
+    justify-content: center;
+    border-bottom: 3px solid #0142a9;
+    width: 300px;
+}
+.content__bloque{
+    text-align: center;
+}
+.content_title{
+    margin-top: 30px;
+    text-transform: uppercase;
+    color: #004aad;
+    font-weight: bold;
+    font-size: 29px;
+}
+.content_parr{
+    margin: 20px 60px;
+}
+.content_btn{
+    margin-top: 20px;
+    border-radius: 50px;
+    background-color: #004aad;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    height: 50px;
+    width: 250px;
+    display: none;
+    text-align: center;
+    align-content: center;
+}
+.collage{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 650px) {
+    .collage{
+        display: flex;
+    }
+    .collage_img:nth-child(4){
+        display: none;
+    }
+    .portada{
+        height: 400px;
+    }
+}
+@media (min-width: 960px) {
+    .portada{
+        margin-top: 0;
+    }
+}
+@media (min-width: 1024px) {
+    .border{
+        display: none;
+    }
+    .content_title{
+        display: none;
+    }
+    .content_btn{
+        display: block;
+    }
+    .grid-general{
+        flex-direction: row;
+        width: 980px;
+        margin: 0 auto;
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        align-items: baseline;
+    }
+    .content_parr{
+        margin: 0 120px 10px 0;
+    }
+    .portada{
+        height: 410px;
+    }
+
+}
+@media (min-width: 1140px) {
+    .grid-general{
+        width: 1200px;
+    }
+    .portada__contenido{
+        justify-content: left;
+        align-items: normal;
+        padding: 30px;
+    }
+}

@@ -1,0 +1,33 @@
+.categoria1__desc{
+    
+    color: black;
+    position: static;
+    text-shadow: none;
+}
+.categoria1__imagen{
+    overflow: initial;
+    margin-bottom: 3rem;
+}
+main{margin-bottom: 1rem;}
+
+@media screen and (min-width:960px){
+    .categoria1__imagen{
+        overflow: initial;
+        margin-bottom: 7rem;
+    }
+    main{
+        margin-bottom: 5rem;
+    }
+}
+
+.categoria1__img:hover {
+    transform: scale(1);
+}
+strong{
+    color: black;
+    font-weight: bolder;
+}
+p{
+    color: black;
+    font-weight: lighter;
+}

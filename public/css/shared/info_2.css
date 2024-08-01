@@ -1,0 +1,117 @@
+  
+
+    .slider-container {
+        position: relative;
+        width: 100%;
+        max-width: 1250px;
+        margin: auto;
+        height: auto;
+        overflow: hidden;
+        margin-top: 52px;
+    }
+
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease;
+        height: 100%;
+    }
+
+    .slide {
+        min-width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+        height: 100%;
+    }
+
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border-radius: 50%;
+        border: none;
+        height: 40px;
+        width: 40px;
+        padding: 10px;
+        cursor: pointer;
+        display: none; 
+    }
+
+    .arrow.left {
+        left: 0;
+    }
+
+    .arrow.right {
+        right: 0;
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        gap: 1rem;
+        justify-items: center;
+        align-items: center;
+    }
+    
+    .info__conte1{
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+    .info__conte-format{
+        text-align: center;
+        padding: 15px 40px;
+    }
+    .info__conte-tittle{
+        color: #004aad;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 40px;
+    }
+    .info__conte-parr{
+        margin-top: 15px;
+    }
+    .slider-container img{
+        width: 350px;
+        height: 200px;
+    }
+    @media (max-width: 480px) {
+        .arrow {
+            display: none !important; 
+        }
+    }
+    @media (max-width: 542px) {
+        .info__conte-format{
+            text-align: center;
+            padding: 15px 5px;
+        }
+    }
+    @media (min-width: 768px) {
+        .info{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: repeat(2,1fr);
+         }
+         .slider-container {
+            margin-top: 0;
+        }
+        .info__conte-format{
+            text-align: initial;
+            padding: 0 0 0 20px;
+        }
+    }
+    @media (min-width: 842px) {
+        .slider-container  img{
+            width: 350px;
+            height: 180px;
+        }
+    }
+    @media (min-width: 960px) {
+        .slider-container  img{
+            width: 450px;
+            height: 280px;
+        }
+        .info__conte-format{
+            padding: 15px 5px 0 60px;
+        }
+    }

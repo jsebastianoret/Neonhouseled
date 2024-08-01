@@ -1,0 +1,291 @@
+.activo{
+    display: block;
+}
+#modal1 {
+    transform: translate(0%, 5%) !important;
+}
+
+.inactivo{
+    display: none;
+}
+.modal{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    pointer-events: auto;
+    opacity: 1;
+    z-index: 100;
+    background: rgba(0,0,0,0.4);
+    transition: all 500ms ease;
+    font-family: 'Proxima-Nova-SemiBold';
+}
+.down{
+    pointer-events: none;
+    opacity: 0;
+}
+.cerrar{
+    position: absolute;
+    text-align: center;
+    background-color:  hsl(216deg, 85%, 34%);
+    width: fit-content;
+    color: white;
+    padding: .3rem .5rem;
+    border: 1px solid hsl(216deg, 85%, 34%);
+    transition: background-color .5s;
+    cursor: pointer;
+    right: 0;
+    margin: .5rem;
+}
+.contenedor{
+    width: 80%;
+    height: 600px;
+    margin: auto;
+    background: white;
+    opacity: 1;
+    position: relative;
+}
+.contenedor .titulo{
+    position: absolute;
+}
+.contenido{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.izquierda {
+    height: 100%;
+    width: 60%;
+}
+.derecha{
+    width: 40%;
+    padding: 20px;
+}
+.izquierda img {
+    width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.derecha h1 {
+    font-weight: bold;
+    color: #3a4fd0;
+    text-align: center;
+    margin-bottom: 35px;
+}
+.derecha form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.derecha .form-registro {
+    
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      gap: 10px;
+}
+.derecha .form-registro label{
+    padding: 3px 8px;
+    color: white;
+    background-color: #3a4fd0;
+    box-shadow: 0 0 4px 1px #888;
+    border: none;
+    border-radius: 0.4rem;
+}
+.derecha .form-registro input{
+    width: 100%;
+    height: 2rem;
+    font-size: 1rem;
+    padding-left: 1rem;
+    color: white;
+    background-color: #3a4fd0;
+    box-shadow: 0 0 4px 1px #888;
+    border-radius: 0.4rem;
+}
+.derecha .form-registro input::placeholder{
+    color: white;
+}
+.derecha .form-registro input:focus{
+    outline-width: 0px;
+}
+.derecha .form-button{
+    text-align: center;
+}
+.derecha .form-button button{
+    font-size: 1rem;
+    color: white;
+    background-color: #3a4fd0;
+    border-radius: 2.5rem;
+    font-weight: bold;
+    border: transparent;
+    cursor: pointer;
+    padding: 7px 14px;
+}
+.derecha .subtitle{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.derecha .subtitle p {
+    max-width: 80%;
+    text-align: center;
+    color: #3a4fd0;
+    font-weight: bold;
+}
+.texto{
+    font-size: 2rem;
+    color: darkgray;
+    margin-bottom: 1rem;
+}
+.derecha .codigo{
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+}
+.galeria{
+    width: 100%;
+}
+.galeria-imagenes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.galeria-imagenes img{
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+}
+@media (max-width:1024px){
+    .contenedor h1{
+        font-size: 2.25rem;
+    }
+    .izquierda p{
+        font-size: 1.5rem;
+    }
+    .derecha h1{
+        font-size: 25px;
+    }
+    .derecha .datos{
+        margin-bottom: 2rem;
+    }
+    .derecha .form-registro label {
+        font-size: 14px;
+    }
+    .derecha .form-registro input {
+        font-size: 13px;
+    }
+    .texto{
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    .derecha .codigo{
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+    }
+    .derecha .subtitle p {
+        font-size: 14px;
+    }
+    .derecha {
+        width: 50%;
+    }
+}
+@media (max-width:750px){
+    .contenedor{
+        height: 590px;
+        top: 55px;
+    }
+    .izquierda p{
+        font-size: 1.5rem;
+    }
+    .derecha h1{
+        font-size: 18px;
+        text-shadow: 0px 0px 3px #fff;
+    }
+    .derecha .form-registro label {
+        font-size: 14px;
+    }
+    .derecha .form-registro input {
+        font-size: 13px;
+        height: 1.5rem;
+        width: 92%;
+    }
+    .derecha .subtitle p {
+        font-size: 13px;
+    }
+    .derecha .datos{
+        display: flex;
+        width: 100%;
+        margin-top: 0;
+    }
+    .derecha .form-registro label {
+        font-size: 13px;
+    }
+    .derecha .form-registro input {
+        font-size: 12px;
+    }
+    .derecha .form-button button {
+        font-size: 14px;
+        width: 86%;
+    }
+    .derecha .form-registro {
+        gap: 7px;
+    }
+    .derecha form {
+        gap: 20px;
+        position:absolute;
+        bottom: 2%;
+        width: 95%;
+    }
+    .derecha input{
+        width: 45%;
+    }
+    .derecha {
+        margin-bottom: 60px;
+    }
+    .derecha #correo{
+        width: 92%;
+    }
+    .contenido{
+        display: grid;
+        height: 520px;
+        grid-template-columns: repeat(1,100%);
+        grid-template-rows: repeat(2,50%);
+    }
+    .izquierda, .derecha{
+        width: 100%;
+    }
+    .derecha .subtitle{
+    display: none;
+    }
+    
+}
+@media (max-width:565px){
+    .derecha {
+        margin-bottom: 130px;
+    }
+    .derecha .subtitle{
+    display: none;
+    }
+}
+@media (max-width:340px){
+    .derecha {
+        margin-bottom: 140px;
+    }
+    .derecha .subtitle{
+    display: none;
+    }
+}
+@media (max-height:720px){
+    .izquierda p{
+        font-size: 1rem;
+    }
+    .derecha .subtitle{
+    display: none;
+    }
+}

@@ -1,0 +1,152 @@
+/* Proyectos destacados */
+.pry-dest-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.pry-dest-container h2{
+    text-transform: uppercase;
+    font-size: 36px;
+    color: #0e4b9c;
+    font-family: 'Proxima-Nova-Light';
+    margin-bottom: 40px;
+}
+
+.pry-dest-container .pry-dest-video{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.pry-dest-container .pry-dest-video .video-container{
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.pry-dest-container .pry-dest-video .video-container a,
+.pry-dest-container .pry-dest-video .video-container a img{
+    width: 100%;
+    height: 100%;
+}
+
+.pry-dest-container .pry-dest-video .video-container a img{
+    transform: scale(1);
+    transition: .8s;
+}
+
+.pry-dest-container .pry-dest-video .video-container a img:hover{
+    transform: scale(1.3);
+}
+
+
+.pry-dest-container p{
+    font-family: 'Proxima-Nova-Light';
+    text-transform: uppercase;
+    color: grey;
+    font-size: 50px;
+}
+
+.pry-nuevos-container h2{
+    text-transform: uppercase;
+    font-size: 36px;
+    color: #0e4b9c;
+    font-family: 'Proxima-Nova-Light';
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.pry-nuevos-container .pry-nuevos-desc{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pry-nuevos-container .pry-nuevos-desc .pry{
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pry-nuevos-container .pry-nuevos-desc .pry .img-container{
+    width: 55%;
+    height: 500px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.pry-nuevos-container .pry-nuevos-desc .pry .img-container a,
+.pry-nuevos-container .pry-nuevos-desc .pry .img-container a img{
+    width: 100%;
+    height: 100%;
+}
+.pry-nuevos-container .pry-nuevos-desc .pry .img-container a img{
+    transform: scale(1);
+    transition: .8s;
+}
+.pry-nuevos-container .pry-nuevos-desc .pry .img-container a img:hover{
+    transform: scale(1.3);
+}
+.pry-nuevos-container .pry-nuevos-desc .pry .img-container{
+    width: 65%;
+    height: 500px;
+    margin-bottom: 20px;
+}
+
+.pry-nuevos-container .pry-nuevos-desc .pry .img-container a,
+.pry-nuevos-container .pry-nuevos-desc .pry .img-container a img{
+    width: 100%;
+    height: 100%;
+}
+
+.pry-nuevos-container .pry-nuevos-desc .pry p{
+    width: 60%;
+    text-align: center;
+    color: grey;
+    text-transform: uppercase;
+    border: 1px solid black;
+    padding: 10px 0;
+}
+
+@media screen and (max-width:768px){
+
+    .pry-dest-container .pry-dest-video .video-container{
+        width: 80%;
+    }
+
+    .pry-dest-container p{
+        text-align: center;
+    }
+
+    .pry-nuevos-container .pry-nuevos-desc{
+        flex-wrap: wrap;
+    }
+
+    .pry-nuevos-container .pry-nuevos-desc .pry{
+        width: 80%;
+        margin-bottom: 40px;
+    }
+
+    .pry-nuevos-container .pry-nuevos-desc .pry .img-container{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .pry-dest-container h2{
+        text-align: center;
+    }
+
+    .pry-dest-container p{
+        font-size: 40px;
+    }
+
+    .pry-nuevos-container .pry-nuevos-desc .pry p{
+        width: 60%;
+    }
+    
+}

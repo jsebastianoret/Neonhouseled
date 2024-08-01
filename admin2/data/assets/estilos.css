@@ -1,0 +1,47 @@
+body{
+	margin: 0;
+	background: #DBDBDB;
+	font-family: 'Lato', sans-serif;
+}
+
+header{
+	background: #2E719B;
+	padding: 20px;
+	text-align: center;
+}
+
+header h1{
+	color: white;
+	margin: 0;
+	font-family: 'Carter One', cursive;
+	font-size: 40px;
+	line-height: 40px;
+}
+
+a{
+	color: darkred;
+	text-decoration:none;
+}
+
+main{
+	width: 80%;
+	margin: 0 auto;
+	padding: 20px 50px;
+	box-sizing: border-box;
+	background: white;
+	box-shadow: 0 20px 40px rgba(177,177,177, 0.4);
+}
+
+main img{
+	max-width: 100%;
+}
+
+.error{
+	display: flex; 
+	gap: 20px;
+}
+
+.error p{
+	font-size: 22px;
+}
+

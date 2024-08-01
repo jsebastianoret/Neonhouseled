@@ -1,0 +1,137 @@
+body {
+    background-color: #f2f2f2; /* Color de fondo para toda la página */
+    font-family: Arial, sans-serif; /* Fuente general para la página */
+}
+
+/* Estilos para el Carrusel */
+#carouselExample {
+    max-width: 120%; /* Reduce el ancho del carrusel al 90% del contenedor padre */
+    margin: auto; /* Centra el carrusel horizontalmente */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra sutil para el carrusel */
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 400px;
+}
+
+.carousel-item {
+    height: 100%;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+}
+
+/* Botones de control para el carrusel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: transparent; /* Elimina el fondo de color */
+    border: none; /* Elimina cualquier borde que pueda estar visible */
+    width: 40px; /* Ancho fijo para los botones */
+    height: 40px; /* Altura fija para los botones */
+    opacity: 1 !important; /* Asegura la visibilidad */
+    background-size: contain; /* Asegura que la imagen de la flecha se ajuste dentro del espacio del botón */
+    background-repeat: no-repeat; /* No repite la imagen */
+    background-position: center; /* Centra la imagen en el botón */
+}
+
+.categoria1__titulo{
+        margin-top: 10px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+
+    .categoria1__titulo1{
+        margin-top: -30px;
+        color: #1b4092;
+        
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 1.4rem;
+    }
+    
+        .categoria1__titulo .restaurante {
+            
+            font-size: 1.8rem; /* Tamaño de fuente para la palabra "RESTAURANTE" */
+        }
+
+        .categoria1__titulo .decoracion {
+            font-weight: bold;
+            font-size: 1.3rem; /* Tamaño de fuente para la palabra "DECORACIÓN" */
+        }
+
+    @media screen and (max-width:968px) {
+  
+        .categoria1__titulo{
+        margin-top: 75px;
+        margin-bottom: 0px;
+        line-height: 25px; /* Establece el interlineado a 90px en dispositivos móviles */
+    }
+    /*.categoria1__titulo1{
+        
+        font-size: 1rem;
+    }*/
+    
+        .categoria1__titulo .restaurante {
+            
+            font-size: 1.6rem; /* Tamaño de fuente para la palabra "RESTAURANTE" */
+        }
+
+        .categoria1__titulo .decoracion {
+            margin-top:10px;
+            font-weight: bold;
+            font-size: 1rem; /* Tamaño de fuente para la palabra "DECORACIÓN" */
+        }
+  }
+  
+  
+  @media screen and (max-width:290px) {
+  
+        
+    
+        .categoria1__titulo .restaurante {
+            
+            font-size: 24px; /* Tamaño de fuente para la palabra "RESTAURANTE" */
+        }
+
+        .categoria1__titulo .decoracion {
+            margin-top:10px;
+            font-weight: bold;
+            font-size: 12px; /* Tamaño de fuente para la palabra "DECORACIÓN" */
+        }
+  }
+
+
+
+/* Responsive Design */
+/*@media (max-width: 992px) {*/
+/*    .carousel-item img {*/
+        /*max-height: 350px; Altura reducida para vistas de tabletas 
+/*    }*/
+/*}*/
+
+/*@media (max-width: 768px) {*/
+/*    .carousel-item img {*/
+        /*max-height: 300px; /* Altura aún más reducida para dispositivos móviles grandes */
+/*    }*/
+/*}*/
+
+/*@media (max-width: 576px) {*/
+/*    .carousel-item img {*/
+       /* max-height: 250px; /* Altura significativamente reducida para dispositivos móviles pequeños */
+/*    }*/
+
+/*    #carouselExample {*/
+       /* max-width: 100%; /* El carrusel ocupa el ancho completo en dispositivos muy pequeños */
+/*    }*/
+/*}*/
+
+/*@media (max-width: 400px) {*/
+/*    .carousel-item img {*/
+       /* max-height: 200px; /* Altura mínima para teléfonos muy pequeños */
+/*    }*/
+/*}*/

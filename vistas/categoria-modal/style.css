@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  background: #f2f2f2;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;  
+  padding-bottom: 0px;
+  background: white;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+
+.logos-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+
+.logos-slide img {
+  height: 360px;
+  width: 650px;
+}
+
+.subtitulo {
+  margin-bottom: 35px;
+}
+
+.container-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #1b4092;
+  height: 400px;
+  overflow: hidden;
+}
+
+.text1,
+.curvas,
+.text2 {
+  height: 100%;
+  border: none;
+}
+
+.text1 {
+  width: 50%;
+  background-color: #1b4092;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* Stack children vertically */
+  margin-top: -20px;
+  padding: 15px;
+}
+
+/*SECCION PARA LAS PLABRAS DE BIENVENIDA */
+.welcom__item__titulo {
+  color: white;
+  /* Texto en blanco para elementos de bienvenida */
+  margin: 10px 0;
+  /* Espaciado vertical entre elementos */
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  /* Ensure the text elements take the full width of their container */
+}
+
+/*SECCION PARA LAS PLABRAS DE BIENVENIDA */
+
+.welcom__item__text,
+.welcom__item__contacto,.welcom__item__titulo1 {
+  color: white;
+  /* Texto en blanco para elementos de bienvenida */
+  margin: 10px 0;
+  /* Espaciado vertical entre elementos */
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  /* Ensure the text elements take the full width of their container */
+}
+
+.container-main .text1 .welcom__item__text {
+  font-weight: normal; /* Hace que el texto sea más delgado */
+  padding: 0 20px; /* Añadir padding horizontal para mejor formato del texto */
+  font-size: 24px; /* Ajustar el tamaño de la fuente según sea necesario */
+}
+
+/*Logo de la empresa */
+.logo-nhl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  /* Ajusta esto según la anchura que desees */
+  height: auto;
+  /* Esto permite que el contenedor se ajuste al contenido */
+  padding: 5px;
+  /* Espacio alrededor del logo dentro del contenedor */
+}
+
+.logo-nhl .imagen_final {
+
+  width: 100%;
+  /* Ajusta el logo para llenar el contenedor */
+  height: 100%;
+  /* Ajusta el alto para mantener la proporción */
+  border-radius: 50%;
+  /* Esto hará que la imagen sea completamente redonda */
+  object-fit: cover;
+  /* Asegura que la imagen cubra el área circular completamente */
+}
+
+/* Ajustes del botón que contiene el logo */
+.boton_final {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 100%;
+  /* Utiliza todo el ancho posible */
+}
+
+.curvas {
+  width: 15%;
+  position: relative;
+  overflow: hidden;
+}
+
+.curved-green,
+.curved-white {
+  position: absolute;
+  transform-origin: center center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  width: 110%;
+  height: 170px;
+}
+
+.curved-green {
+  left: 60%;
+  background: #5db327;
+  width: 440px;
+  z-index: 1;
+}
+
+.curved-white {
+  left: calc(60% + 30px);
+  background: #fff;
+  width: 415px;
+  z-index: 2;
+}
+
+.text2 {
+  width: 35%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-title {
+  color: #005b96;
+  /* Color del texto */
+  font-size: 2rem;
+  /* Tamaño inicial para pantallas grandes */
+  margin-bottom: 0.5rem;
+  /* Espacio debajo del título */
+  text-align: center;
+  font-weight: 900;
+  border-bottom: 6px solid #005b96;
+  /* Línea decorativa debajo del título */
+  padding-bottom: 0.25rem;
+  display: inline-block;
+  line-height: 1.2;
+  box-sizing: border-box;
+  font-family: 'Proxima Nova', sans-serif;
+}
+
+
+@media screen and (max-width:768px) {
+  
+  .logos-slide img {
+    height: 390px;
+    width: 430px;
+  }
+
+  .welcom__item__titulo,
+  .welcom__item__titulo1,
+  .welcom__item__text,
+  .welcom__item__contacto {
+    font-size: 14px;
+    /* Reduce el tamaño del texto */
+    line-height: 1.4;
+    /* Aumenta el espacio entre líneas si es necesario */
+    padding: 0 10px;
+    /* Ajusta el relleno para evitar el desbordamiento */
+    margin-bottom: 10px;
+    /* Asegúrate de que haya suficiente espacio entre los bloques de texto */
+  }
+
+  .action-title {
+    font-size: 16px;
+    /* Reduce el tamaño del título para pantallas pequeñas */
+    line-height: 1.2;
+    /* Ajusta el espacio entre líneas */
+    margin-bottom: 0.5rem;
+    /* Espacio debajo del título */
+    padding-bottom: 5px;
+    /* Espacio entre el texto y la línea decorativa */
+    width: auto;
+    /* Permite que el ancho se ajuste al contenido */
+    overflow: hidden;
+    /* Previene el desbordamiento del contenido */
+    white-space: normal;
+    /* Permite que el texto pase a la siguiente línea */
+  }
+
+  .action-button {
+    font-size: 12px;
+    /* Reduce el tamaño del texto en los botones */
+    padding: 8px 15px;
+    /* Reduce el relleno para mantener la proporción */
+
+  }
+
+}
+
+@media (max-width: 540px) {
+  .container-main {
+    flex-direction: column;
+    height: auto;
+    margin-top: 15px;
+  }
+
+  .text1,
+  .curvas,
+  .text2 {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    padding: 15px 5px;
+  }
+
+  
+
+  .curvas {
+    height: 110px;
+  }
+
+  .curved-green,
+  .curved-white {
+    transform: translate(-50%, -50%) rotate(0deg);
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+  }
+
+  .curved-green {
+    top: 60%;
+    background: #5db327;
+    width: 110%;
+    z-index: 1;
+  }
+
+  .curved-white {
+    top: calc(60% + 30px);
+    background: #fff;
+    width: 108%;
+    z-index: 2;
+  }
+}
+
+
+
+.action-button {
+  background-color: #5db327;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 9px;
+  text-transform: uppercase;
+  margin: 10px 0;
+  font-weight: 900;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s, transform 0.3s;
+  cursor: pointer;
+  text-align: center;
+  width: 68%;
+  /* O el ancho que prefieras */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  font-size: 0.85rem;
+}
+
+
+
+.action-button:hover {
+  background-color: #37a456;
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+
