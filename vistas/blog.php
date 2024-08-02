@@ -112,37 +112,33 @@ $articulosActuales = array_slice($articulos, $indiceInicio, $articulosPorPagina)
             <ul>
                 <!-- Categorías -->
                 <li><strong>CATEGORÍAS:</strong></li>
-                <li><a href="./blog-restaurante.php">• RESTAURANTE.</a></li>
-                <li><a href="./blog-cevicheria.php">• CEVICHERIA.</a></li>
-                <li><a href="./blog-fast-food.php">• FAST FOOD.</a></li>
-                <li><a href="./blog-sangucheria.php">• SANGUCHERIA.</a></li>
-                <li><a href="./blog-polleria.php">• POLLERIA.</a></li>
-                <li><a href="./blog-discoteca.php">• DISCOTECA.</a></li>
-                <li><a href="./blog-pizzeria.php">• PIZZERIA.</a></li>
-                <li><a href="./blog-cafe-jugo.php">• CAFETERIA Y JUGUERIA.</a></li>
-                <li><a href="./blog-pan-pastel.php">• PANADERIA Y PASTELERIA.</a></li>
-                <li><a href="./blog-spa-barberia.php">• SALON SPA Y BARBERIA.</a></li>
-                <li><a href="./blog-bar.php">• BAR.</a></li>
-                <li><a href="./blog-hogar.php">• HOGAR.</a></li>
-                <li><a href="./blog-minimarket.php">• MINIMARKET.</a></li>
-                <li><a href="./blog-clinica-dental.php">• CLINICA DENTAL.</a></li>
-                <li><a href="./blog-departamento.php">• DEPARTAMENTO.</a></li>
-                <li><a href="./blog-dormitorio.php">• DORMITORIO PARA NIÑOS.</a></li>
-                <li><a href="./blog-estilo-industrial.php">• ESTILO INDUSTRIAL.</a></li>
-                <li><a href="./blog-fuente-soda.php">• FUENTE DE SODA.</a></li>
-                <li><a href="./blog-gimnasio.php">• GIMNASIO.</a></li>
-                <li><a href="./blog-hospedaje.php">• HOSPEDAJE.</a></li>
-                <li><a href="./blog-hostal.php">• HOSTAL.</a></li>
-                <li><a href="./blog-hotel.php">• HOTEL.</a></li>
-                <li><a href="./blog-karaoke.php">• KARAOKE.</a></li>
-                <li><a href="./blog-lenceria.php">• LENCERIA.</a></li>
-                <li><a href="./blog-local.php">• LOCAL COMERCIAL.</a></li>
-                <li><a href="./blog-lounge.php">• LOUNGE.</a></li>
-                <li><a href="./blog-oficina.php">• OFICINA.</a></li>
-                <li><a href="./blog-sala-cine.php">• SALA DE CINE.</a></li>
-                <li><a href="./blog-salud.php">• SALUD.</a></li>
-                <li><a href="./blog-sauna.php">• SAUNA.</a></li>
-                <li><a href="./blog-veterinaria.php">• VETERINARIA.</a></li>
+            <li><a href="./blog-restaurante.php">• RESTAURANTE.</a></li>
+            <li><a href="./blog-cevicheria.php">• CEVICHERIA.</a></li>
+            <li><a href="./blog-fast-food.php">• FAST FOOD.</a></li>
+            <li><a href="./blog-sangucheria.php">• SANGUCHERIA.</a></li>
+            <li><a href="./blog-polleria.php">• POLLERIA.</a></li>
+            <li><a href="./blog-discoteca.php">• DISCOTECA.</a></li>
+            <li><a href="./blog-pizzeria.php">• PIZZERIA.</a></li>
+            <li><a href="./blog-cafe-jugo.php">• CAFETERIA Y JUGUERIA.</a></li>
+            <li><a href="./blog-pan-pastel.php">• PANADERIA Y PASTELERIA.</a></li>
+            <li><a href="./blog-spa-barberia.php">• SALON SPA Y BARBERIA.</a></li>
+            <li><a href="./blog-bar.php">• BAR.</a></li>
+            <li><a href="./blog-hogar.php">• HOGAR.</a></li>
+            <li><a href="./blog-minimarket.php">• MINIMARKET.</a></li>
+            <li><a href="./blog-clinica-dental.php">• CLINICA DENTAL.</a></li>
+            <li><a href="./blog-departamento.php">• DEPARTAMENTO.</a></li>
+            <li><a href="./blog-dormitorio.php">• DORMITORIO PARA NIÑOS.</a></li>
+            <li><a href="./blog-estilo-industrial.php">• ESTILO INDUSTRIAL.</a></li>
+            <li><a href="./blog-fuente-soda.php">• FUENTE DE SODA.</a></li>
+            <li><a href="./blog-gimnasio.php">• GIMNASIO.</a></li>
+            <li><a href="./blog-hoteles.php">• HOTELES.</a></li>
+            <li><a href="./blog-recepciones.php">• RECEPCIONES.</a></li>
+            <li><a href="./blog-restobar.php">• RESTOBAR.</a></li>
+            <li><a href="./blog-belleza-barberia.php">• SALON BELLEZA Y BARBERIA.</a></li>
+            <li><a href="./blog-terraza.php">• TERRAZA.</a></li>
+            <li><a href="./blog-ropa.php">• ROPA.</a></li>
+            <li><a href="./blog-veterinaria.php">• VETERINARIA.</a></li>
+            <li><a href="./blog-heladeria.php">• HELADERIA.</a></li>
             </ul>
         </div>
     </div>
