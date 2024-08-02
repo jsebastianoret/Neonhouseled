@@ -1,12 +1,7 @@
 
 <?php
-$host = 'localhost'; // Cambiar según la configuración
-$db = 'ghxumdmy_neonhouseled1'; // Cambiar según la configuración
-$user = 'root'; // Cambiar según la configuración
-$pass = ''; // Cambiar según la configuración
-
+require_once '../admin2/config/db.php';
 try {
-    $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
     // Configurar PDO para que lance excepciones en caso de error
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

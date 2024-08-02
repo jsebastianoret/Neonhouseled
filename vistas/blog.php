@@ -1,22 +1,16 @@
 <?php
-$host = 'localhost'; // Cambiar según la configuración
-$db = 'ghxumdmy_neonhouseled1'; // Cambiar según la configuración
-$user = 'root'; // Cambiar según la configuración
-$pass = ''; // Cambiar según la configuración
+// Incluir el archivo de configuración de la base de datos
+require_once '../admin2/config/db.php';
 
 try {
-    $conn = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
-    // Configurar PDO para que lance excepciones en caso de error
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     $sql = "SELECT titulo, nombre_categoria, imagen_principal, id FROM posting_blog";
     $stmt = $conn->query($sql);
 
     $articulos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 } catch (PDOException $e) {
-    die("Conexión fallida: " . $e->getMessage());
+    die("Error al ejecutar la consulta: " . $e->getMessage());
 }
+
 
 $articulosPorPagina = 4; // Número de artículos por página
 $totalArticulos = count($articulos); // Total de artículos
