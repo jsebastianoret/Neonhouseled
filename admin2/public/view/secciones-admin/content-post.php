@@ -308,6 +308,16 @@ if( isset($_SESSION['id']) ){
         //UPDATE Function 2
         function catchDateUp(i,ca,ti,re,sub,cont,i1,i2,l,  tipe) {
             const body = new FormData();
+            //Usar fecha en UPDATE
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');  // Los meses van de 0 a 11
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+            ///////
             body.append("id", i.textContent);
             body.append('nombre_categoria', ca.value.trim());
             body.append('titulo', ti.value.trim());
@@ -315,7 +325,7 @@ if( isset($_SESSION['id']) ){
             body.append('subtitulo', sub.value.trim());
             body.append('contenido', cont.value);
             body.append('videoBlog', l.value.trim());
-
+            body.append('fecha', formattedDateTime);
             // chekea si ya hay un documento subido en el inputFile, sino coge su ruta que no ha cambiado y que lo pusimos en un atributo nuevo
             // Si hay una imagen nueva, la ruta antigua lo pasamos al body para asi eliminar la imagen antigua
             if (i1.files.length > 0) {

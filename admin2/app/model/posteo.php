@@ -65,4 +65,13 @@ class ModelPosteo{
 
         return $res->affected_rows > 0;
     }
+
+     //FRANK Obtener blog x categoria, solo tres registros
+     public static function getBlogCat($categoria, $id){
+        [$err, $res ] = Db::query('SELECT * FROM posting_blog WHERE nombre_categoria = ? AND id != ? LIMIT 3;', [$categoria, $id]);
+        if( $err ) {
+            return [];
+        }
+        return $res->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
 }

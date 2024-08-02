@@ -8,6 +8,11 @@ class ControllerPosteo{
         return ModelPosteo::getBlog();
     }
 
+    //Frank
+    public static function getBlogCategoria($categoria, $id){
+        return ModelPosteo::getBlogCat($categoria, $id);
+    }
+
     public static function add() {
         if (
             isset($_POST['nombre_categoria']) && isset($_POST['titulo']) && 
@@ -63,14 +68,21 @@ class ControllerPosteo{
             unlink($fileName); // Eliminar el archivo existente
         }
 
+        $categoria = $valores[0];
         $titulo = $valores[1];
-        
         $resumen = $valores[2];
         $subtitulo = $valores[3];
         $contenido = $valores[4];
         $imagen_principal = $img1;
         $imagen_secundaria = $img2;
         $videoBlog = $valores[7];
+        $fecha = $valores[8];
+
+        // Extraer el ID del video de la URL
+        parse_str(parse_url($videoBlog, PHP_URL_QUERY), $query_params);
+        $video_id = $query_params['v'];
+        // Construir la URL de incrustación
+        $embed_url = "https://www.youtube.com/embed/" . $video_id;
 
         $fileContent = <<<HTML
         <?php
@@ -89,26 +101,87 @@ class ControllerPosteo{
         </head> 
         <body>
             <?php require_once "../layout/header.php" ?>
+            <script>
+                // Función para calcular la diferencia en días
+                function calcularDiasDiferencia(fechaPublicacion) {
+                    const fechaActual = new Date();
+                    const fechaPub = new Date(fechaPublicacion);
+                    const diferenciaMs = fechaActual - fechaPub;
+                    const diferenciaDias = Math.floor(diferenciaMs / (1000 * 60 * 60 * 24));
+                    return diferenciaDias;
+                }
+                // Función para actualizar el texto en el segundo span
+                function actualizarTextoFechaRelativa() {
+                    const fechaPublicacionStr = document.getElementById('f').textContent.replace('Publicado: ', '');
+                    const diasDiferencia = calcularDiasDiferencia(fechaPublicacionStr); 
+                    const textoFechaRelativa = diasDiferencia === 0 ? 'hoy' :
+                                    diasDiferencia === 1 ? 'hace 1 día' :
+                                    'hace ' + diasDiferencia + ' días';
 
+                    document.getElementById('hoy').textContent = textoFechaRelativa;
+                }
+                document.addEventListener('DOMContentLoaded', actualizarTextoFechaRelativa);
+            </script>
             <div class="blog-post">
-                <h1>$titulo</h1>
-                <h2>$subtitulo</h2>
-                <p>$resumen</p>
-                <div>
-                    <img src="../../public/imagenes/imagesBlogBd/$imagen_principal" alt="Imagen Principal">
-                    <img src="../../public/imagenes/imagesBlogBd/$imagen_secundaria" alt="Imagen Secundaria">
-                </div>
-                <p>$contenido</p>
-                <div>
-                    <iframe src="$videoBlog" frameborder="0" allowfullscreen></iframe>
+                <div class="blog-container">
+                    <span class="categoria">Categoría: $categoria</span>
+                    <header class="blog-header">
+                        <h1>$titulo</h1>
+                        <div class="blog-banner">
+                            <img src="../../public/imagenes/imagesBlogBd/$imagen_principal" alt="Imagen Principal" class="imgprin">
+                            <div class="text-box">
+                                <p>$resumen</p>
+                            </div>
+                        </div>
+                    </header>
+                    <main class="blog-main">
+                        <article class="blog-article">
+                            <hr>
+                            <div class="meta">
+                                <span id="f">Publicado: $fecha</span>
+                                <span id="hoy"></span>
+                            </div>
+                            <hr>
+                            <div class="neon-logo">
+                                <img src="../../public/imagenes/logo-black.png" alt="Logo" class="logo-blog">
+                                <span class="logo-span">By NeonHouseLed</span>
+                            </div>
+                            <h2>$subtitulo</h2>
+                            <div class="blog-body">
+                                <img src="../../public/imagenes/imagesBlogBd/$imagen_secundaria" alt="Imagen Secundaria">
+                                <p>$contenido</p>
+                            </div>
+                            <div class="container-video">
+                                <iframe src="$embed_url" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                            <br>
+                            <br>
+                            <hr>
+                            <br>
+                            <br>
+                            <hr>
+                            <br>
+                            <br>
+                        </article>
+                    </main>
+                    <div class="otros">
+                        <div class="container-otros">
+                            <h2>Otros Blogs</h2>
+                            <a href="">Ver Todos</a>
+                        </div>
+                        <div class="container-otros-body">
+                            <?php require_once "../../admin2/app/trigger/autoBlog.php" ?>
+                            <?php getBlogCat('$categoria', $id) ?>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-            <?php require_once "../layout/foother.php" ?>
-            <!-- <script src="../js/script.js"></script> -->
-        </body>
-        </html>
-        HTML;
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <?php require_once "../layout/foother.php" ?>
+        <!-- <script src="../js/script.js"></script> -->
+</body>
+</html>
+HTML;
         
     file_put_contents($fileName, $fileContent);
 
