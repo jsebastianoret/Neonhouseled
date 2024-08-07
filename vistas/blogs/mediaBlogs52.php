@@ -1,12 +1,9 @@
-        <?php
-        session_start();
-        ?>
         <!DOCTYPE html>
         <html lang="es"> 
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Diseño de Restaurantes: Creando Espacios que Seducen al Paladar y al Corazón</title>
+            <title>Transformando el Espacio Nocturno: El Arte del Diseño de Discotecas</title>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
             <link rel="stylesheet" href="../../public/css/all_blog.css">
@@ -37,13 +34,13 @@
             </script>
             <div class="blog-post">
                 <div class="blog-container">
-                    <span class="categoria">Categoría: Cocina</span>
+                    <span class="categoria">Categoría: CAFETERÍA Y JUGUERIA</span>
                     <header class="blog-header">
-                        <h1>Diseño de Restaurantes: Creando Espacios que Seducen al Paladar y al Corazón</h1>
+                        <h1>Transformando el Espacio Nocturno: El Arte del Diseño de Discotecas</h1>
                         <div class="blog-banner">
-                            <img src="../../public/imagenes/imagesBlogBd/com.jpg" alt="Imagen Principal" class="imgprin">
+                            <img src="../../public/imagenes/imagesBlogBd/../../../public/imagenes/imagesBlogBd/com.jpg" alt="Imagen Portada" class="imgprin">
                             <div class="text-box">
-                                <p>¡Bienvenidos a nuestro blog sobre diseño de restaurantes! En este espacio, exploraremos cómo el diseño puede transformar un simple local en un lugar encantador y funcional, donde cada elemento contribuye a una experiencia gastronómica inolvidable. Si estás pensando en abrir un restaurante o renovar el que ya tienes, aquí encontrarás ideas y consejos para hacer que tu restaurante sea el lugar más deseado de la ciudad.</p>
+                                <p>Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final.</p>
                             </div>
                         </div>
                     </header>
@@ -51,7 +48,7 @@
                         <article class="blog-article">
                             <hr>
                             <div class="meta">
-                                <span id="f">Publicado: 2024-08-02 10:42:47</span>
+                                <span id="f">Publicado: </span>
                                 <span id="hoy"></span>
                             </div>
                             <hr>
@@ -59,26 +56,29 @@
                                 <img src="../../public/imagenes/logo-black.png" alt="Logo" class="logo-blog">
                                 <span class="logo-span">By NeonHouseLed</span>
                             </div>
-                            <h2>El Primer Encuentro: La Entrada y el Foyer</h2>
+                            <h2>La Zona de Relax: Áreas VIP y de Descanso</h2>
                             <div class="blog-body">
-                                <img src="../../public/imagenes/imagesBlogBd/comidassss.jpg" alt="Imagen Secundaria">
-                                <p>La entrada de tu restaurante es la primera impresión que los clientes tendrán, por lo que debe ser acogedora y sugerente.
-
-Diseño de la Entrada: Una entrada bien diseñada puede atraer a los transeúntes y crear anticipación. Considera el uso de una señalización distintiva y una puerta que se abra de manera fluida. La entrada debe reflejar el estilo y la temática del restaurante.
-
-Foyer o Recepción: El área de recepción debe ser funcional y estéticamente agradable. Asegúrate de que haya un espacio suficiente para esperar, con una decoración que sumerja a los clientes en el ambiente del restaurante desde el primer momento.
-
-La entrada de tu restaurante es la primera impresión que los clientes tendrán, por lo que debe ser acogedora y sugerente.
-
-Diseño de la Entrada: Una entrada bien diseñada puede atraer a los transeúntes y crear anticipación. Considera el uso de una señalización distintiva y una puerta que se abra de manera fluida. La entrada debe reflejar el estilo y la temática del restaurante.
-
-Foyer o Recepción: El área de recepción debe ser funcional y estéticamente agradable. Asegúrate de que haya un espacio suficiente para esperar, con una decoración que sumerja a los clientes en el ambiente del restaurante desde el primer momento.
-
-La entrada de tu restaurante es la primera impresión que los clientes tendrán, por lo que debe ser acogedora y sugerente.
-
-Diseño de la Entrada: Una entrada bien diseñada puede atraer a los transeúntes y crear anticipación. Considera el uso de una señalización distintiva y una puerta que se abra de manera fluida. La entrada debe reflejar el estilo y la temática del restaurante.
-
-Foyer o Recepción: El área de recepción debe ser funcional y estéticamente agradable. Asegúrate de que haya un espacio suficiente para esperar, con una decoración que sumerja a los clientes en el ambiente del restaurante desde el primer momento.</p>
+                                <img src="../../public/imagenes/imagesBlogBd/../../../public/imagenes/imagesBlogBd/960x0.webp" alt="Imagen Principal">
+                                <div>
+                                    <p>Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final.edde</p>
+                                    <br>
+                                    <br>
+                                    <p>Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final.</p>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="blog-body">
+                                <div>
+                                    <p>Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final.</p>
+                                    <br>
+                                    <br>
+                                    <p>Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final.</p>
+                                </div>
+                                <br>
+                                <br>
+                                <img src="../../public/imagenes/imagesBlogBd/../../../public/imagenes/imagesBlogBd/dsfdscsdc.jpg" alt="Imagen Secundaria">
                             </div>
                             <div class="container-video">
                                 <iframe src="https://www.youtube.com/embed/RgKAFK5djSk" frameborder="0" allowfullscreen></iframe>
@@ -100,7 +100,7 @@ Foyer o Recepción: El área de recepción debe ser funcional y estéticamente a
                         </div>
                         <div class="container-otros-body">
                             <?php require_once "../../admin2/app/trigger/autoBlog.php" ?>
-                            <?php getBlogCat('Cocina', 28) ?>
+                            <?php getBlogCat('CAFETERÍA Y JUGUERIA', 52) ?>
                         </div>
                     </div>
                 </div>

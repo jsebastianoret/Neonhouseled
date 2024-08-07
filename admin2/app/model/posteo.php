@@ -42,10 +42,10 @@ class ModelPosteo{
         return $res->get_result()->fetch_all(MYSQLI_ASSOC);
     }
 
-    public static function update($id, $nombre_categoria, $titulo, $resumen, $subtitulo, $contenido, $imagen_principal, $imagen_secundaria, $videoBlog) {
+    public static function update($id, $nombre_categoria, $titulo, $resumen, $subtitulo, $parrafo1, $parrafo2, $parrafo3, $parrafo4, $imagen_principal, $imagen_secundaria, $imagen_portada, $videoBlog) {
         [$err, $res] = DB::query(
-            'UPDATE posting_blog SET nombre_categoria = ?, titulo = ?, resumen = ?, subtitulo = ?, contenido = ?, imagen_principal = ?, imagen_secundaria = ?, videoBlog = ? WHERE id = ?',
-            [$nombre_categoria, $titulo, $resumen, $subtitulo, $contenido, $imagen_principal, $imagen_secundaria, $videoBlog, $id]
+            'UPDATE posting_blog SET nombre_categoria = ?, titulo = ?, resumen = ?, subtitulo = ?, parrafo_uno = ?, parrafo_dos = ?, parrafo_tres = ?, parrafo_cuatro = ?, imagen_principal = ?, imagen_secundaria = ?, imagen_portada = ?,videoBlog = ? WHERE id = ?',
+            [$nombre_categoria, $titulo, $resumen, $subtitulo, $parrafo1, $parrafo2, $parrafo3, $parrafo4, $imagen_principal, $imagen_secundaria, $imagen_portada, $videoBlog, $id]
         );
 
         if ($err) {

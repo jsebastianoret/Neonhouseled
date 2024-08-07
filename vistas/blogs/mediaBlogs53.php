@@ -1,12 +1,9 @@
-        <?php
-        session_start();
-        ?>
         <!DOCTYPE html>
         <html lang="es"> 
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Transformando el Espacio Nocturno: El Arte del Diseño de Discotecas</title>
+            <title>HOLA</title>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
             <link rel="stylesheet" href="../../public/css/all_blog.css">
@@ -37,13 +34,13 @@
             </script>
             <div class="blog-post">
                 <div class="blog-container">
-                    <span class="categoria">Categoría: Discoteca</span>
+                    <span class="categoria">Categoría: CAFETERÍA Y JUGUERIA</span>
                     <header class="blog-header">
-                        <h1>Transformando el Espacio Nocturno: El Arte del Diseño de Discotecas</h1>
+                        <h1>HOLA</h1>
                         <div class="blog-banner">
-                            <img src="../../public/imagenes/imagesBlogBd/pngtree-vibrant-disco-lights-magnificent-abstract-backdrop-with-a-luxurious-and-dynamic-picture-image_6738752.jpg" alt="Imagen Principal" class="imgprin">
+                            <img src="../../public/imagenes/imagesBlogBd/com.jpg" alt="Imagen Portada" class="imgprin">
                             <div class="text-box">
-                                <p>El diseño acústico de una discoteca es fundamental. La calidad del sonido puede hacer o deshacer la experiencia del cliente.</p>
+                                <p>Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final.</p>
                             </div>
                         </div>
                     </header>
@@ -51,7 +48,7 @@
                         <article class="blog-article">
                             <hr>
                             <div class="meta">
-                                <span id="f">Publicado: 2024-08-02 10:40:55</span>
+                                <span id="f">Publicado: 2024-08-06 10:25:31</span>
                                 <span id="hoy"></span>
                             </div>
                             <hr>
@@ -61,16 +58,27 @@
                             </div>
                             <h2>La Experiencia Sensorial: Sonido y Música</h2>
                             <div class="blog-body">
-                                <img src="../../public/imagenes/imagesBlogBd/party-people-on-disco-lights-background-vector.jpg" alt="Imagen Secundaria">
-                                <p>Sistema de Sonido: Invierte en un sistema de sonido de alta calidad y asegúrate de que esté bien equilibrado en todo el espacio. La distribución adecuada de altavoces ayudará a evitar puntos muertos de sonido y asegurará una experiencia auditiva uniforme.
-
-Diseño Acústico: Usa materiales que ayuden a controlar la reverberación y absorban el sonido de manera efectiva. Paneles acústicos y diseño de techos pueden mejorar significativamente la calidad del sonido.
-Sistema de Sonido: Invierte en un sistema de sonido de alta calidad y asegúrate de que esté bien equilibrado en todo el espacio. La distribución adecuada de altavoces ayudará a evitar puntos muertos de sonido y asegurará una experiencia auditiva uniforme.
-
-Diseño Acústico: Usa materiales que ayuden a controlar la reverberación y absorban el sonido de manera efectiva. Paneles acústicos y diseño de techos pueden mejorar significativamente la calidad del sonido.
-Sistema de Sonido: Invierte en un sistema de sonido de alta calidad y asegúrate de que esté bien equilibrado en todo el espacio. La distribución adecuada de altavoces ayudará a evitar puntos muertos de sonido y asegurará una experiencia auditiva uniforme.
-
-Diseño Acústico: Usa materiales que ayuden a controlar la reverberación y absorban el sonido de manera efectiva. Paneles acústicos y diseño de techos pueden mejorar significativamente la calidad del sonido.</p>
+                                <img src="../../public/imagenes/imagesBlogBd/fvdfvdvfdvdvdf.jpg" alt="Imagen Principal">
+                                <div>
+                                    <p>Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final.</p>
+                                    <br>
+                                    <br>
+                                    <p>Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final.</p>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="blog-body">
+                                <div>
+                                    <p>Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final.</p>
+                                    <br>
+                                    <br>
+                                    <p>Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final.</p>
+                                </div>
+                                <br>
+                                <br>
+                                <img src="../../public/imagenes/imagesBlogBd/portada_avif-YZ9Xx52wgxU8lpjB.avif" alt="Imagen Secundaria">
                             </div>
                             <div class="container-video">
                                 <iframe src="https://www.youtube.com/embed/RgKAFK5djSk" frameborder="0" allowfullscreen></iframe>
@@ -92,7 +100,7 @@ Diseño Acústico: Usa materiales que ayuden a controlar la reverberación y abs
                         </div>
                         <div class="container-otros-body">
                             <?php require_once "../../admin2/app/trigger/autoBlog.php" ?>
-                            <?php getBlogCat('Discoteca', 27) ?>
+                            <?php getBlogCat('CAFETERÍA Y JUGUERIA', 53) ?>
                         </div>
                     </div>
                 </div>

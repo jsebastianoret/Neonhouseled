@@ -41,7 +41,38 @@ if( isset($_SESSION['id']) ){
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="category" class="form-label">Categoria</label>
-                                            <input type="text" name="category" id="category" class="form-control" required>
+                                            <!--FRANK Agregar todas las categorias disponobles en una lista desplegable-->
+                                            <select name="category" id="category" class="form-control" required>
+                                                <option value="" disabled selected>Seleccione una categoría</option>
+                                                <option value="RESTAURANTE">RESTAURANTE</option>
+                                                <option value="CEVICHERÍA">CEVICHERÍA</option>
+                                                <option value="SANGUCHERÍA">SANGUCHERÍA</option>
+                                                <option value="FAST FOOD">FAST FOOD</option>
+                                                <option value="POLLERÍA">POLLERÍA</option>
+                                                <option value="DISCOTECA">DISCOTECA</option>
+                                                <option value="PIZZERÍA">PIZZERÍA</option>
+                                                <option value="CAFETERÍA Y JUGUERIA">CAFETERÍA Y JUGUERIA</option>
+                                                <option value="PANADERÍA Y PASTELERÍA">PANADERÍA Y PASTELERÍA</option>
+                                                <option value="SALON SPA Y BARBERÍA">SALON SPA Y BARBERÍA</option>
+                                                <option value="BAR">BAR</option>
+                                                <option value="HOGAR">HOGAR</option>
+                                                <option value="MINIMARKET">MINIMARKET</option>
+                                                <option value="CLINICA DENTAL">CLINICA DENTAL</option>
+                                                <option value="DEPARTAMENTO">DEPARTAMENTO</option>
+                                                <option value="DORMITORIO PARA NIÑOS">DORMITORIO PARA NIÑOS</option>
+                                                <option value="ESTILO INDUSTRIAL">ESTILO INDUSTRIAL</option>
+                                                <option value="FUENTE DE SODA">FUENTE DE SODA</option>
+                                                <option value="GIMNASIO">GIMNASIO</option>
+                                                <option value="HOTELES">HOTELES</option>
+                                                <option value="RECEPCIONES">RECEPCIONES</option>
+                                                <option value="RESTOBAR">RESTOBAR</option>
+                                                <option value="SALÓN DE BELLEZA Y BARBERIA">SALÓN DE BELLEZA Y BARBERIA</option>
+                                                <option value="TERRAZA">TERRAZA</option>
+                                                <option value="ROPA">ROPA</option>
+                                                <option value="VETERINARIA">VETERINARIA</option>
+                                                <option value="HELADERIA">HELADERIA</option>
+                                            </select>
+                                            <!---->
                                         </div> 
                                         <div class="mb-3">
                                             <label for="title" class="form-label">Titulo</label>
@@ -55,18 +86,35 @@ if( isset($_SESSION['id']) ){
                                         <div class="mb-3">
                                             <label for="subtitle" class="form-label">Subtitulo</label>
                                             <input type="text" name="subtitle" id="subtitle" class="form-control" required>
-                                        </div> 
+                                        </div>
+                                        <!--Agregar 4 campos para 4 parrafos -->  
                                         <div class="mb-3">
-                                            <label for="content" class="form-label">Contenido</label>
-                                            <textarea type="text" name="content" id="content" class="form-control"  style="height: 20vh;" required></textarea>
+                                            <label for="content" class="form-label">Párrafo 1</label>
+                                            <textarea type="text" name="content1" id="content1" class="form-control"  style="height: 20vh;" required></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="content" class="form-label">Párrafo 2</label>
+                                            <textarea type="text" name="content2" id="content2" class="form-control"  style="height: 20vh;" required></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="content" class="form-label">Párrafo 3</label>
+                                            <textarea type="text" name="content3" id="content3" class="form-control"  style="height: 20vh;" required></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="content" class="form-label">Párrafo 4</label>
+                                            <textarea type="text" name="content4" id="content4" class="form-control"  style="height: 20vh;" required></textarea>
+                                        </div><!---->
+                                        <div class="mb-3">
+                                            <label for="imagep" class="form-label">Imagen Portada</label>
+                                            <input type="file" name="image_portada" id="image_portada" class="form-control" required accept=".jpg,.jpeg,.png,.webp,.avif">
                                         </div> 
                                         <div class="mb-3">
                                             <label for="image1" class="form-label">Imagen Principal</label>
-                                            <input type="file" name="image1" id="image1" class="form-control" required accept=".jpg,.jpeg,.png">
+                                            <input type="file" name="image1" id="image1" class="form-control" required accept=".jpg,.jpeg,.png,.webp,.avif">
                                         </div> 
                                         <div class="mb-3">
                                             <label for="image2" class="form-label">Imagen Secundaria</label>
-                                            <input type="file" name="image2" id="image2" class="form-control" required accept=".jpg,.jpeg,.png"> 
+                                            <input type="file" name="image2" id="image2" class="form-control" required accept=".jpg,.jpeg,.png,.webp,.avif"> 
                                         </div> 
                                         <div class="mb-3">
                                             <label for="linkVideo" class="form-label">Link de Video</label>
@@ -111,7 +159,38 @@ if( isset($_SESSION['id']) ){
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="category2" class="form-label">Categoria</label>
-                                            <input type="text" name="category2" id="category2" class="form-control" required>
+                                            <!--FRANK Agregar todas las categorias disponobles en una lista desplegable-->
+                                            <select name="category2" id="category2" class="form-control" required>
+                                                <option value="" disabled selected>Seleccione una categoría</option>
+                                                <option value="RESTAURANTE">RESTAURANTE</option>
+                                                <option value="CEVICHERÍA">CEVICHERÍA</option>
+                                                <option value="SANGUCHERÍA">SANGUCHERÍA</option>
+                                                <option value="FAST FOOD">FAST FOOD</option>
+                                                <option value="POLLERÍA">POLLERÍA</option>
+                                                <option value="DISCOTECA">DISCOTECA</option>
+                                                <option value="PIZZERÍA">PIZZERÍA</option>
+                                                <option value="CAFETERÍA Y JUGUERIA">CAFETERÍA Y JUGUERIA</option>
+                                                <option value="PANADERÍA Y PASTELERÍA">PANADERÍA Y PASTELERÍA</option>
+                                                <option value="SALON SPA Y BARBERÍA">SALON SPA Y BARBERÍA</option>
+                                                <option value="BAR">BAR</option>
+                                                <option value="HOGAR">HOGAR</option>
+                                                <option value="MINIMARKET">MINIMARKET</option>
+                                                <option value="CLINICA DENTAL">CLINICA DENTAL</option>
+                                                <option value="DEPARTAMENTO">DEPARTAMENTO</option>
+                                                <option value="DORMITORIO PARA NIÑOS">DORMITORIO PARA NIÑOS</option>
+                                                <option value="ESTILO INDUSTRIAL">ESTILO INDUSTRIAL</option>
+                                                <option value="FUENTE DE SODA">FUENTE DE SODA</option>
+                                                <option value="GIMNASIO">GIMNASIO</option>
+                                                <option value="HOTELES">HOTELES</option>
+                                                <option value="RECEPCIONES">RECEPCIONES</option>
+                                                <option value="RESTOBAR">RESTOBAR</option>
+                                                <option value="SALÓN DE BELLEZA Y BARBERIA">SALÓN DE BELLEZA Y BARBERIA</option>
+                                                <option value="TERRAZA">TERRAZA</option>
+                                                <option value="ROPA">ROPA</option>
+                                                <option value="VETERINARIA">VETERINARIA</option>
+                                                <option value="HELADERIA">HELADERIA</option>
+                                            </select>
+                                            <!---->
                                         </div> 
                                         <div class="mb-3">
                                             <label for="title2" class="form-label">Titulo</label>
@@ -126,19 +205,38 @@ if( isset($_SESSION['id']) ){
                                             <label for="subtitle2" class="form-label">Subtitulo</label>
                                             <input type="text" name="subtitle2" id="subtitle2" class="form-control" required>
                                         </div> 
+                                        <!--Nuevos campos de Parrafo en editar-->
                                         <div class="mb-3">
-                                            <label for="content2" class="form-label">Contenido</label>
-                                            <textarea type="text" name="content2" id="content2" class="form-control"  style="height: 20vh;" required></textarea>
+                                            <label for="content2" class="form-label">Párrafo 1</label>
+                                            <textarea type="text" name="content12" id="content12" class="form-control"  style="height: 20vh;" required></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="content2" class="form-label">Párrafo 2</label>
+                                            <textarea type="text" name="content22" id="content22" class="form-control"  style="height: 20vh;" required></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="content2" class="form-label">Párrafo 3</label>
+                                            <textarea type="text" name="content32" id="content32" class="form-control"  style="height: 20vh;" required></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="content2" class="form-label">Párrafo 4</label>
+                                            <textarea type="text" name="content42" id="content42" class="form-control"  style="height: 20vh;" required></textarea>
+                                        </div>
+                                        <!---->
+                                        <div class="mb-3">
+                                            <label for="image1_portada" class="form-label">Imagen Portada</label>
+                                            <img id="previewImagep_2" src="" alt="Vista Previa Imagen Portada" style="width: 90px; height: 90px; margin-left: 70px; margin-bottom: 15px;">
+                                            <input type="file" name="image1_portada" id="image1_portada" class="form-control" accept=".jpg,.jpeg,.png,.webp,.avif">
                                         </div> 
                                         <div class="mb-3">
                                             <label for="image1_2" class="form-label">Imagen Principal</label>
                                             <img id="previewImage1_2" src="" alt="Vista Previa Imagen1" style="width: 90px; height: 90px; margin-left: 70px; margin-bottom: 15px;">
-                                            <input type="file" name="image1_2" id="image1_2" class="form-control" accept=".jpg,.jpeg,.png">
+                                            <input type="file" name="image1_2" id="image1_2" class="form-control" accept=".jpg,.jpeg,.png,.webp,.avif">
                                         </div> 
                                         <div class="mb-3">
                                             <label for="image2_2" class="form-label">Imagen Secundaria</label>
                                             <img id="previewImage2_2" src="" alt="Vista Previa Imagen2" style="width: 90px; height: 90px; margin-left: 56px; margin-bottom: 15px;">
-                                            <input type="file" name="image2_2" id="image2_2" class="form-control"  accept=".jpg,.jpeg,.png">
+                                            <input type="file" name="image2_2" id="image2_2" class="form-control"  accept=".jpg,.jpeg,.png,.webp,.avif">
                                         </div> 
                                         <div class="mb-3">
                                             <label for="linkVideo2" class="form-label">Link de Video</label>
@@ -176,7 +274,11 @@ if( isset($_SESSION['id']) ){
                         <th scope="col">TITULO</th>
                         <th scope="col">RESUMEN</th>
                         <th scope="col">SUBTITULO</th>
-                        <th scope="col">CONTENIDO</th>
+                        <th scope="col">PARRAFO 1</th>
+                        <th scope="col">PARRAFO 2</th>
+                        <th scope="col">PARRAFO 3</th>
+                        <th scope="col">PARRAFO 4</th>
+                        <th scope="col">IMAGEN PORTADA</th>
                         <th scope="col">IMAGEN PRINCIPAL</th>
                         <th scope="col">IMAGEN SECUNDARIA</th>
                         <th scope="col">LINK</th>
@@ -206,7 +308,7 @@ if( isset($_SESSION['id']) ){
                 console.log("Boton activado");  
                 e.preventDefault();
                 // validarData("title", "complement", "link", "ADD")
-                validarData("category", "title", "resumen", "subtitle", "content", "image1", "image2", "linkVideo", "ADD")  //Llama a la funcion validarData, con sus id("") nombres
+                validarData("category", "title", "resumen", "subtitle", "content1", "content2", "content3", "content4", "image_portada", "image1", "image2", "linkVideo", "ADD")  //Llama a la funcion validarData, con sus id("") nombres
             });
         }
 
@@ -217,18 +319,22 @@ if( isset($_SESSION['id']) ){
                 console.log("Boton activado Update");
                 e.preventDefault();
                 // validarData("title2", "complement2", "link2", "UPDATE")
-                validarData("category2", "title2", "resumen2", "subtitle2", "content2", "image1_2", "image2_2", "linkVideo2", "UPDATE") //Como parametro ponemos UPDATE
+                validarData("category2", "title2", "resumen2", "subtitle2", "content12", "content22", "content32", "content42", "image1_portada", "image1_2", "image2_2", "linkVideo2", "UPDATE") //Como parametro ponemos UPDATE
             });
         }
         // POST-UPDATE Function 1, Sea que llamen a esta funcion en waitToGo() o waitToGoUpdate(), con el tipe se vera si es ADD o UPDATE
-        function validarData(ca, ti, re, subti, cont, img1, img2, link, tipe) {
+        function validarData(ca, ti, re, subti, cont1, cont2, cont3, cont4, imgp, img1, img2, link, tipe) {
             const categories = document.getElementById(ca);
             const titles = document.getElementById(ti);
             const resumens = document.getElementById(re);
             const subtitles = document.getElementById(subti);
-            const contents = document.getElementById(cont);
+            const parrafo1 = document.getElementById(cont1);
+            const parrafo2 = document.getElementById(cont2);
+            const parrafo3 =document.getElementById(cont3);
+            const parrafo4 = document.getElementById(cont4);
             const imgs1 = document.getElementById(img1);
             const imgs2 = document.getElementById(img2);
+            const imgsp = document.getElementById(imgp);
             const links = document.getElementById(link);
             const idm = document.querySelector(".inputText");   //Esto es por si estamos en el modal editar, agarramos el id que ya esta en un elemento <p>
 
@@ -236,7 +342,10 @@ if( isset($_SESSION['id']) ){
             if (titles.value === "") alert("Agregue un Titulo");
             if (resumens.value === "") alert("Agregue un resumen");
             if (subtitles.value === "") alert("Agregue un subtitulo");
-            if (contents.value === "") alert("Agregue Contenido");
+            if (parrafo1.value === "") alert("Agregue el primer parrafo");
+            if (parrafo2.value === "") alert("Agregue el segundo parrafo");
+            if (parrafo3.value === "") alert("Agregue el tercer parrafo");
+            if (parrafo4.value === "") alert("Agregue el cuarto parrafo");
             if (links === "") alert("Agregue link");
 
             if (
@@ -244,8 +353,10 @@ if( isset($_SESSION['id']) ){
                 titles.value != "" &&
                 resumens.value != ""  &&
                 subtitles.value != "" &&
-                contents.value != ""
-
+                parrafo1.value != "" &&
+                parrafo2.value != "" &&
+                parrafo3.value != "" &&
+                parrafo4.value != ""
             ) {
                 alert("Todos los campos son correctos." + tipe);
                 if (tipe == "ADD") {            //Si se va hacer un POST, nos manda a dos funciones mas de acuerdo al tipe
@@ -262,39 +373,48 @@ if( isset($_SESSION['id']) ){
                     const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
                     console.log(formattedDateTime);  // Esto mostrará la fecha y hora actual en formato YYYY-MM-DD HH:MM:SS
 
-                    catchDate(categories, titles, resumens, subtitles, contents, imgs1, imgs2, links,    formattedDateTime, tipe);
-                    cleanDate(categories, titles, resumens, subtitles, contents, imgs1, imgs2, links);
+                    catchDate(categories, titles, resumens, subtitles, parrafo1, parrafo2, parrafo3, parrafo4, imgs1, imgs2, imgsp, links,    formattedDateTime, tipe);
+                    cleanDate(categories, titles, resumens, subtitles, parrafo1, parrafo2, parrafo3, parrafo4, imgs1, imgs2, imgsp, links);
                 } else if (tipe == "UPDATE") {  //Si se va hacer un UPDATE, nos manda a dos funciones mas
-                catchDateUp(idm, categories, titles, resumens, subtitles, contents, imgs1, imgs2, links, tipe);
+                catchDateUp(idm, categories, titles, resumens, subtitles, parrafo1, parrafo2, parrafo3, parrafo4, imgs1, imgs2, imgsp, links, tipe);
                 modificarYCerrarModal();
                 }
             }
         }
 
         // POST Function 4
-        function cleanDate(c,t,r,s,co,img,img2,l) {
+        function cleanDate(c,t,r,s,p1,p2,p3,p4,img,img2,imgp,l) {
             c.value = ""
             t.value= ""
             r.value = ""
             s.value = ""
-            co.value = ""
+            p1.value = ""
+            p2.value = ""
+            p3.value = ""
+            p4.value = ""
             img.value = ""
             img2.value = ""
+            imgp.value = ""
             l.value = ""
         }
 
         // POST Function 2
-        function catchDate(ca,ti,re,sub,cont,i1,i2,l,      f,tipe) {
+        function catchDate(ca,ti,re,sub,p1,p2,p3,p4,i1,i2,ip,l,      f,tipe) {
             const body = new FormData();
             body.append('nombre_categoria', ca.value.trim());
             body.append('titulo', ti.value.trim());
             body.append('resumen', re.value);
             body.append('subtitulo', sub.value.trim());
-            body.append('contenido', cont.value);
+            body.append('parrafo_uno', p1.value.trim());
+            body.append('parrafo_dos', p2.value.trim());
+            body.append('parrafo_tres', p3.value.trim());
+            body.append('parrafo_cuatro', p4.value.trim());
             body.append('imagen_principal', i1.files[0]);
             body.append('imagen_secundaria', i2.files[0]);
+            body.append('imagen_portada', ip.files[0]);
             body.append('videoBlog', l.value.trim());
             body.append("fecha", f);
+            
             
             //Nos manda a la ultima funcion para un POST, por medio de type, nos dira si es un POST o UPDATE
             sentDataToServerSide(body, tipe);
@@ -306,7 +426,7 @@ if( isset($_SESSION['id']) ){
         }
 
         //UPDATE Function 2
-        function catchDateUp(i,ca,ti,re,sub,cont,i1,i2,l,  tipe) {
+        function catchDateUp(i,ca,ti,re,sub,p1,p2,p3,p4,i1,i2,ip,l,  tipe) {
             const body = new FormData();
             //Usar fecha en UPDATE
             const now = new Date();
@@ -316,16 +436,19 @@ if( isset($_SESSION['id']) ){
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
             const seconds = String(now.getSeconds()).padStart(2, '0');
-            const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+            //const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
             ///////
             body.append("id", i.textContent);
             body.append('nombre_categoria', ca.value.trim());
             body.append('titulo', ti.value.trim());
             body.append('resumen', re.value);
             body.append('subtitulo', sub.value.trim());
-            body.append('contenido', cont.value);
+            body.append('parrafo_uno', p1.value);
+            body.append('parrafo_dos', p2.value);
+            body.append('parrafo_tres', p3.value);
+            body.append('parrafo_cuatro', p4.value);
             body.append('videoBlog', l.value.trim());
-            body.append('fecha', formattedDateTime);
+            //body.append('fecha', formattedDateTime);
             // chekea si ya hay un documento subido en el inputFile, sino coge su ruta que no ha cambiado y que lo pusimos en un atributo nuevo
             // Si hay una imagen nueva, la ruta antigua lo pasamos al body para asi eliminar la imagen antigua
             if (i1.files.length > 0) {
@@ -340,6 +463,13 @@ if( isset($_SESSION['id']) ){
                 body.append('imagen_secundaria_antigua', i2.getAttribute('data-existing-file'));
             } else {
                 body.append('imagen_secundaria', i2.getAttribute('data-existing-file'));
+            }
+
+            if (ip.files.length > 0) {
+                body.append('imagen_portada', ip.files[0]);
+                body.append('imagen_portada_antigua', ip.getAttribute('data-existing-file'));
+            } else {
+                body.append('imagen_portada', ip.getAttribute('data-existing-file'));
             }
             
 
@@ -372,9 +502,11 @@ if( isset($_SESSION['id']) ){
 
                 const img1Element = tr.querySelector(".image1");
                 const img2Element = tr.querySelector(".image2");
+                const imgPortadaElement = tr.querySelector(".image_portada");
                 //Agarramos la ruta de las imagenes de la fila que se va a eliminar, para eliminar las imagenes  
                 const img1 = img1Element.getAttribute('ruta1');
                 const img2 = img2Element.getAttribute('ruta2');
+                const imgp =imgPortadaElement.getAttribute('ruta3');
                 
 
                 const id = tr.getAttribute("data-id");
@@ -394,13 +526,14 @@ if( isset($_SESSION['id']) ){
                 }
                 */
                 if (condicion) {
-                    fetch(`../../../app/trigger/posteo.php?action=DELETE&id=${id}&image1=${img1}&image2=${img2}`, {
+                    fetch(`../../../app/trigger/posteo.php?action=DELETE&id=${id}&image1=${img1}&image2=${img2}&image3=${imgp}`, {
                         method: 'DELETE' // Establece el método correcto
                     })
                     .then((res) => res.json())
                     .then(data => {
                         console.log(data); // Aquí se imprime la respuesta JSON del servidor
                         // Puedes agregar más lógica aquí para manejar la respuesta
+                        window.location.reload();
                     })
                     .catch(error => {
                         console.error("Error en la solicitud:", error);
@@ -423,7 +556,11 @@ if( isset($_SESSION['id']) ){
                         <td>${data.titulo}</td>
                         <td>${data.resumen}</td>
                         <td>${data.subtitulo}</td>
-                        <td>${data.contenido} </td>
+                        <td>${data.parrafo_uno}</td>
+                        <td>${data.parrafo_dos}</td>
+                        <td>${data.parrafo_tres}</td>
+                        <td>${data.parrafo_cuatro}</td>
+                        <td><img class="image_portada" ruta3="${data.imagen_portada}" id="imagen_portada" src="../${data.imagen_portada}" alt="Imagen Portada" style="width: 90px; height: 90px;"></td>
                         <td><img class="image1" ruta1="${data.imagen_principal}" id="imagen1" src="../${data.imagen_principal}" alt="Imagen Principal" style="width: 90px; height: 90px;"></td>
                         <td><img class="image2" ruta2="${data.imagen_secundaria}" id="imagen2" src="../${data.imagen_secundaria}" alt="Imagen Secunaria" style="width: 90px; height: 90px;"></td>
                         <td>${data.videoBlog}</td>
@@ -456,26 +593,35 @@ if( isset($_SESSION['id']) ){
                             const titu2 = document.getElementById("title2");
                             const res2 = document.getElementById("resumen2");
                             const subti2 = document.getElementById("subtitle2");
-                            const conte2 = document.getElementById("content2");
+                            const parrafo12 = document.getElementById("content12");
+                            const parrafo22 = document.getElementById("content22");
+                            const parrafo32 = document.getElementById("content32");
+                            const parrafo42 = document.getElementById("content42");
                             const i1_2 = document.getElementById("image1_2");
                             const i2_2 = document.getElementById("image2_2");
+                            const ip_2 = document.getElementById("image1_portada");
                             const link2 = document.getElementById("linkVideo2");
 
                             
                             ids.textContent = userData.id;
-                            cate2.value = userData.nombre_categoria
+                            cate2.value = userData.nombre_categoria;
                             titu2.value = userData.titulo;
                             res2.value = userData.resumen;
                             subti2.value = userData.subtitulo;
-                            conte2.value = userData.contenido;
+                            parrafo12.value = userData.parrafo_uno;
+                            parrafo22.value = userData.parrafo_dos;
+                            parrafo32.value = userData.parrafo_tres;
+                            parrafo42.value = userData.parrafo_cuatro;      
                             //Creamos un atributo nuevo que contenga la ruta original, no importa si el file cambia, esta fue la ruta y/o nombre original de la imagen
                             i1_2.setAttribute('data-existing-file', userData.imagen_principal);
                             i2_2.setAttribute('data-existing-file', userData.imagen_secundaria);
+                            ip_2.setAttribute('data-existing-file', userData.imagen_portada);
 
 
 
                             previewImage1_2.src = `../${userData.imagen_principal}`;
                             previewImage2_2.src = `../${userData.imagen_secundaria}`;
+                            previewImagep_2.src = `../${userData.imagen_portada}`;
 
                             link2.value = userData.videoBlog;
                         
@@ -501,6 +647,17 @@ if( isset($_SESSION['id']) ){
                         const reader = new FileReader();
                         reader.onload = function (e) {
                         document.getElementById('previewImage2_2').src = e.target.result;
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                    });
+
+                    document.getElementById('image1_portada').addEventListener('change', function (event) {
+                    const file = event.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                        document.getElementById('previewImagep_2').src = e.target.result;
                         };
                         reader.readAsDataURL(file);
                     }

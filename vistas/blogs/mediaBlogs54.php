@@ -1,6 +1,3 @@
-        <?php
-        session_start();
-        ?>
         <!DOCTYPE html>
         <html lang="es"> 
         <head>
@@ -37,13 +34,13 @@
             </script>
             <div class="blog-post">
                 <div class="blog-container">
-                    <span class="categoria">Categoría: Discoteca</span>
+                    <span class="categoria">Categoría: BAR</span>
                     <header class="blog-header">
                         <h1>Transformando el Espacio Nocturno: El Arte del Diseño de Discotecas</h1>
                         <div class="blog-banner">
-                            <img src="../../public/imagenes/imagesBlogBd/Discoteca-bar-fiesta-concierto-LPDerecho.png" alt="Imagen Principal" class="imgprin">
+                            <img src="../../public/imagenes/imagesBlogBd/noche.jpg" alt="Imagen Portada" class="imgprin">
                             <div class="text-box">
-                                <p>No todos los clientes están allí solo para bailar. Las áreas VIP y de descanso son cruciales para proporcionar un respiro y un espacio donde se pueda socializar.</p>
+                                <p>resumen</p>
                             </div>
                         </div>
                     </header>
@@ -51,7 +48,7 @@
                         <article class="blog-article">
                             <hr>
                             <div class="meta">
-                                <span id="f">Publicado: 2024-08-02 10:39:27</span>
+                                <span id="f">Publicado: 2024-08-07 12:12:10</span>
                                 <span id="hoy"></span>
                             </div>
                             <hr>
@@ -59,21 +56,29 @@
                                 <img src="../../public/imagenes/logo-black.png" alt="Logo" class="logo-blog">
                                 <span class="logo-span">By NeonHouseLed</span>
                             </div>
-                            <h2>La Zona de Relax: Áreas VIP y de Descanso</h2>
+                            <h2>subtitulo</h2>
                             <div class="blog-body">
-                                <img src="../../public/imagenes/imagesBlogBd/b12-moda.jpg" alt="Imagen Secundaria">
-                                <p>Diseño de Áreas VIP: Estas áreas deben ofrecer una experiencia exclusiva con mobiliario cómodo, una decoración elegante y un servicio excepcional. La separación de estas zonas del resto del espacio puede lograrse mediante particiones decorativas o cambios en el nivel del suelo.
-
-Áreas de Descanso: Considera muebles acogedores y áreas de descanso que permitan a los clientes relajarse sin alejarse demasiado del ambiente festivo.
-Diseño de Áreas VIP: Estas áreas deben ofrecer una experiencia exclusiva con mobiliario cómodo, una decoración elegante y un servicio excepcional. La separación de estas zonas del resto del espacio puede lograrse mediante particiones decorativas o cambios en el nivel del suelo.
-
-Áreas de Descanso: Considera muebles acogedores y áreas de descanso que permitan a los clientes relajarse sin alejarse demasiado del ambiente festivo.
-Diseño de Áreas VIP: Estas áreas deben ofrecer una experiencia exclusiva con mobiliario cómodo, una decoración elegante y un servicio excepcional. La separación de estas zonas del resto del espacio puede lograrse mediante particiones decorativas o cambios en el nivel del suelo.
-
-Áreas de Descanso: Considera muebles acogedores y áreas de descanso que permitan a los clientes relajarse sin alejarse demasiado del ambiente festivo.
-Diseño de Áreas VIP: Estas áreas deben ofrecer una experiencia exclusiva con mobiliario cómodo, una decoración elegante y un servicio excepcional. La separación de estas zonas del resto del espacio puede lograrse mediante particiones decorativas o cambios en el nivel del suelo.
-
-Áreas de Descanso: Considera muebles acogedores y áreas de descanso que permitan a los clientes relajarse sin alejarse demasiado del ambiente festivo.</p>
+                                <img src="../../public/imagenes/imagesBlogBd/axaxs.jpg" alt="Imagen Principal">
+                                <div>
+                                    <p>parrafo1</p>
+                                    <br>
+                                    <br>
+                                    <p>parrafo2</p>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="blog-body">
+                                <div>
+                                    <p>parrafo3</p>
+                                    <br>
+                                    <br>
+                                    <p>parrafo4</p>
+                                </div>
+                                <br>
+                                <br>
+                                <img src="../../public/imagenes/imagesBlogBd/assaas.jpg" alt="Imagen Secundaria">
                             </div>
                             <div class="container-video">
                                 <iframe src="https://www.youtube.com/embed/RgKAFK5djSk" frameborder="0" allowfullscreen></iframe>
@@ -95,7 +100,7 @@ Diseño de Áreas VIP: Estas áreas deben ofrecer una experiencia exclusiva con 
                         </div>
                         <div class="container-otros-body">
                             <?php require_once "../../admin2/app/trigger/autoBlog.php" ?>
-                            <?php getBlogCat('Discoteca', 26) ?>
+                            <?php getBlogCat('BAR', 54) ?>
                         </div>
                     </div>
                 </div>

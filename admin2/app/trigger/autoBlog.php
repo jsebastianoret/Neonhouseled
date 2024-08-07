@@ -16,7 +16,7 @@ function getBlogCat($categoria, $id) {
     $html = "";
     foreach ($data as $blog) {
         $html .= '<div class="otros-article">';
-        $html .= '<img src="../../public/imagenes/imagesBlogBd/' . htmlspecialchars($blog['imagen_principal']) . '" alt="Blog">';
+        $html .= '<img src="../../public/imagenes/imagesBlogBd/' . htmlspecialchars($blog['imagen_portada']) . '" alt="Blog">';
         $html .= '<div class="otros-info">';
         $html .= '<a href="mediaBlogs' . htmlspecialchars($blog['id']) .'.php">';
         $html .= '<span>' . htmlspecialchars($blog['nombre_categoria']) . '</span>';

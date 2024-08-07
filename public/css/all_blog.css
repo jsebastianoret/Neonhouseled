@@ -112,6 +112,7 @@ html{
 }
 .blog-body{
     display: flex;
+    gap: 2rem;
 }
 .blog-body img{
     float: left; 
