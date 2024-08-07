@@ -1,6 +1,13 @@
 <?php
+require_once '../utils/FileHelper.php';
+require_once '../utils/BlogPosteoHelper.php';
 
 class ControllerPosteo{
+
+    private const POST_MEDIA_PATH="../../../vistas/blogs/mediaBlogs";
+    private const ERROR_DELETE_FAILED = 'Failed to delete post from database';
+    private const SUCCESS_MESSAGE = 'Post deleted successfully';
+
     public static function get(){
         return ModelPosteo::get();
     }
@@ -223,46 +230,39 @@ HTML;
         return ModelPosteo::getMost($id); 
     }
 
-    public static function delete(){
+    public static function delete(): string {
+        try {
 
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-            $imgPrincipal =   $_GET['image1'];
-            $imgSecundaria  = $_GET['image2'];
-            $imgPortada = $_GET['image3'];
+            $id = BlogPosteoHelper::validateAndGetId();
+            $postInfo = BlogPosteoHelper::getAndValidatePostInfo($id);
+            $images = BlogPosteoHelper::getImagePaths();
 
-            // Eliminar las imágenes
-            self::deleteImg($imgPrincipal, $imgSecundaria, $imgPortada);
-            // Eliminar el archivo creado automáticamente
-            self::deleteFile("../../../vistas/blogs/mediaBlogs{$id}.php");
+            self::deleteAssociatedData($id, $images);
 
-            
- 
-            // Eliminar el post de la base de datos
-            return ModelPosteo::delete($id);
-        }  
-    }
-
-
-    public static function deleteFile($filePath) {
-        if (file_exists($filePath)) {
-            unlink($filePath);
-            
+            return json_encode(['status' => true, 'message' => self::SUCCESS_MESSAGE]);
+        } catch (Exception $e) {
+            error_log('Error when deleting the post: ' . $e->getMessage());
+            return json_encode(['status' => false, 'message' => 'Error deleting post: ' . $e->getMessage()]);
         }
     }
 
-    public static function deleteImg($image1, $image2, $image3) {
-        if (file_exists($image1)) {
-            unlink($image1);
-        } 
+    private static function deleteAssociatedData(int $id, array $images): void {
+        BlogPosteoHelper::deleteImagesFromPost($images);
+        self::deleteMediaFile($id);
+        self::deletePostFromDatabase($id);
+    }
 
-        if (file_exists($image2)) {
-            unlink($image2);
-        } 
+    private static function deleteMediaFile(int $id): void {
+        $filePath = self::POST_MEDIA_PATH . "{$id}.php";
+        FileHelper::deleteFile($filePath);
+    }
 
-        if (file_exists($image3)) {
-            unlink($image3);
-        } 
+    private static function deletePostFromDatabase(int $id): void {
+        $result = ModelPosteo::delete($id);
+        if (!$result) {
+            error_log(self::ERROR_DELETE_FAILED);
+            throw new Exception(self::ERROR_DELETE_FAILED);
+        }
     }
 
     public static function update() {
@@ -291,7 +291,8 @@ HTML;
         if (isset($_FILES['imagen_principal']) && $_FILES['imagen_principal']['name'] != '') {
             $imagen_principal = "../../../public/imagenes/imagesBlogBd/" . basename($_FILES["imagen_principal"]["name"]);
             move_uploaded_file($_FILES["imagen_principal"]["tmp_name"], $imagen_principal);
-            self::deleteImg($oldImage1, $oldImage2, $oldImage3);
+            FileHelper::deleteIndividualImage($oldImage1);
+            FileHelper::deleteIndividualImage($oldImage2);
         } elseif (isset($_POST['imagen_principal'])) {
             $imagen_principal = $_POST['imagen_principal'];
         }
@@ -300,7 +301,8 @@ HTML;
         if (isset($_FILES['imagen_secundaria']) && $_FILES['imagen_secundaria']['name'] != '') {
             $imagen_secundaria = "../../../public/imagenes/imagesBlogBd/" . basename($_FILES["imagen_secundaria"]["name"]);
             move_uploaded_file($_FILES["imagen_secundaria"]["tmp_name"], $imagen_secundaria);
-            self::deleteImg($oldImage1, $oldImage2, $oldImage3);
+            FileHelper::deleteIndividualImage($oldImage1);
+            FileHelper::deleteIndividualImage($oldImage2);
         } elseif (isset($_POST['imagen_secundaria'])) {
             $imagen_secundaria = $_POST['imagen_secundaria'];
         }

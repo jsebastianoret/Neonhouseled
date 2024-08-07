@@ -322,65 +322,123 @@ if( isset($_SESSION['id']) ){
                 validarData("category2", "title2", "resumen2", "subtitle2", "content12", "content22", "content32", "content42", "image1_portada", "image1_2", "image2_2", "linkVideo2", "UPDATE") //Como parametro ponemos UPDATE
             });
         }
-        // POST-UPDATE Function 1, Sea que llamen a esta funcion en waitToGo() o waitToGoUpdate(), con el tipe se vera si es ADD o UPDATE
-        function validarData(ca, ti, re, subti, cont1, cont2, cont3, cont4, imgp, img1, img2, link, tipe) {
-            const categories = document.getElementById(ca);
-            const titles = document.getElementById(ti);
-            const resumens = document.getElementById(re);
-            const subtitles = document.getElementById(subti);
-            const parrafo1 = document.getElementById(cont1);
-            const parrafo2 = document.getElementById(cont2);
-            const parrafo3 =document.getElementById(cont3);
-            const parrafo4 = document.getElementById(cont4);
-            const imgs1 = document.getElementById(img1);
-            const imgs2 = document.getElementById(img2);
-            const imgsp = document.getElementById(imgp);
-            const links = document.getElementById(link);
-            const idm = document.querySelector(".inputText");   //Esto es por si estamos en el modal editar, agarramos el id que ya esta en un elemento <p>
 
-            if (categories.value === "") alert("Agregue una Categoria");
-            if (titles.value === "") alert("Agregue un Titulo");
-            if (resumens.value === "") alert("Agregue un resumen");
-            if (subtitles.value === "") alert("Agregue un subtitulo");
-            if (parrafo1.value === "") alert("Agregue el primer parrafo");
-            if (parrafo2.value === "") alert("Agregue el segundo parrafo");
-            if (parrafo3.value === "") alert("Agregue el tercer parrafo");
-            if (parrafo4.value === "") alert("Agregue el cuarto parrafo");
-            if (links === "") alert("Agregue link");
+        //Funciones auxiliares
+        // Genera un formato de fecha y hora
+        function generateDateFormat() {
+            const now = new Date();
 
-            if (
-                categories.value != "" &&
-                titles.value != "" &&
-                resumens.value != ""  &&
-                subtitles.value != "" &&
-                parrafo1.value != "" &&
-                parrafo2.value != "" &&
-                parrafo3.value != "" &&
-                parrafo4.value != ""
-            ) {
-                alert("Todos los campos son correctos." + tipe);
-                if (tipe == "ADD") {            //Si se va hacer un POST, nos manda a dos funciones mas de acuerdo al tipe
-                    const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');  // Los meses van de 0 a 11
+            const day = String(now.getDate()).padStart(2, '0');
 
-                    const year = now.getFullYear();
-                    const month = String(now.getMonth() + 1).padStart(2, '0');  // Los meses van de 0 a 11
-                    const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
 
-                    const hours = String(now.getHours()).padStart(2, '0');
-                    const minutes = String(now.getMinutes()).padStart(2, '0');
-                    const seconds = String(now.getSeconds()).padStart(2, '0');
+            return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+        }
 
-                    const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-                    console.log(formattedDateTime);  // Esto mostrará la fecha y hora actual en formato YYYY-MM-DD HH:MM:SS
+        //Función que permite el cambio de nombre en la imagen
+        // Procesa una imagen, creando un nuevo archivo con un nombre único basado en el timestamp
+        function processImage(imgInput,timestamp){
+            if (imgInput.files.length > 0) {
+                const file = imgInput.files[0];
+                // Crear nuevos objetos File con el nuevo nombre(con el fin de evitar borrados
+                // o edición de imagenes que tengan el mismo nombre)
+                const newName = `blog_${timestamp}_${file.name}`;
+                return new File([file], newName, {
+                    type: file.type,
+                    lastModified: file.lastModified
+                });
+            }
+            return null;
+        }
 
-                    catchDate(categories, titles, resumens, subtitles, parrafo1, parrafo2, parrafo3, parrafo4, imgs1, imgs2, imgsp, links,    formattedDateTime, tipe);
-                    cleanDate(categories, titles, resumens, subtitles, parrafo1, parrafo2, parrafo3, parrafo4, imgs1, imgs2, imgsp, links);
-                } else if (tipe == "UPDATE") {  //Si se va hacer un UPDATE, nos manda a dos funciones mas
-                catchDateUp(idm, categories, titles, resumens, subtitles, parrafo1, parrafo2, parrafo3, parrafo4, imgs1, imgs2, imgsp, links, tipe);
-                modificarYCerrarModal();
+
+        // Maneja la lógica de actualización de imágenes, incluyendo el procesamiento de nuevas imágenes y el manejo de imágenes existentes
+        // Función que revisa si ya hay un documento subido en el inputFile,
+        // sino coge su ruta que no ha cambiado y que lo pusimos en un atributo nuevo
+        function handleImageForUpdate(input,fieldName,body,timestamp){
+            if (input.files.length > 0) {
+                const newFile = processImage(input, timestamp);
+                body.append(fieldName, newFile);
+                // Si hay una imagen nueva, la ruta antigua lo pasamos al body para asi eliminar la imagen antigua
+                if (input.hasAttribute('data-existing-file')) {
+                    body.append(`${fieldName}_antigua`, input.getAttribute('data-existing-file'));
                 }
+            } else if (input.hasAttribute('data-existing-file')) {
+                body.append(fieldName, input.getAttribute('data-existing-file'));
             }
         }
+
+        // Valida que todos los campos obligatorios estén llenos
+        function validarCamposObligatorios(campos) {
+            let isValid = true;
+            campos.forEach(({ campo, mensaje }) => {
+                if (campo.value.trim() === "") {
+                    alert(mensaje);
+                    isValid = false;
+                }
+            });
+            return isValid;
+        }
+
+        // Función principal que valida los datos del formulario y maneja la lógica de agregar o actualizar posts
+        // POST-UPDATE Function 1, Sea que llamen a esta funcion en waitToGo() o waitToGoUpdate(), con el tipe se vera si es ADD o UPDATE
+        function validarData(ca, ti, re, subti, cont, img1, img2, link, tipe) {
+            const elements = {
+                categories: document.getElementById(ca),
+                titles: document.getElementById(ti),
+                resumens: document.getElementById(re),
+                subtitles: document.getElementById(subti),
+                contents: document.getElementById(cont),
+                imgs1: document.getElementById(img1),
+                imgs2: document.getElementById(img2),
+                links: document.getElementById(link),
+                idm: document.querySelector(".inputText") //Esto es por si estamos en el modal editar, agarramos el id que ya esta en un elemento <p>
+            };
+
+            const camposObligatorios = [
+                { campo: elements.categories, mensaje: "Agregue una Categoría" },
+                { campo: elements.titles, mensaje: "Agregue un Título" },
+                { campo: elements.resumens, mensaje: "Agregue un resumen" },
+                { campo: elements.subtitles, mensaje: "Agregue un subtítulo" },
+                { campo: elements.contents, mensaje: "Agregue Contenido" },
+                { campo: elements.links, mensaje: "Agregue link" }
+            ];
+
+            if (!validarCamposObligatorios(camposObligatorios)) return;
+
+            alert("Todos los campos son correctos. " + tipe);
+
+            if (tipe === "ADD") {
+                handleAdd(elements);
+            } else if (tipe === "UPDATE") {
+                handleUpdate(elements);
+            }
+        }
+
+        // Maneja la lógica para agregar un nuevo post
+        function handleAdd(elements) {
+            const timestamp = Date.now();
+            const newFile1 = processImage(elements.imgs1, timestamp);
+            const newFile2 = processImage(elements.imgs2, timestamp);
+            const formattedDateTime = generateDateFormat();
+
+            catchDate(elements.categories, elements.titles, elements.resumens, elements.subtitles,
+                elements.contents, newFile1, newFile2, elements.links, formattedDateTime, "ADD");
+            cleanDate(elements.categories, elements.titles, elements.resumens, elements.subtitles,
+                elements.contents, elements.imgs1, elements.imgs2, elements.links);
+        }
+
+        // Maneja la lógica para actualizar un post existente
+        function handleUpdate(elements) {
+            catchDateUp(elements.idm, elements.categories, elements.titles, elements.resumens,
+                elements.subtitles, elements.contents, elements.imgs1, elements.imgs2, elements.links, "UPDATE");
+            modificarYCerrarModal();
+        }
+
 
         // POST Function 4
         function cleanDate(c,t,r,s,p1,p2,p3,p4,img,img2,imgp,l) {
@@ -398,20 +456,18 @@ if( isset($_SESSION['id']) ){
             l.value = ""
         }
 
+        // Prepara y envía los datos para crear un nuevo post
         // POST Function 2
-        function catchDate(ca,ti,re,sub,p1,p2,p3,p4,i1,i2,ip,l,      f,tipe) {
+        function catchDate(ca,ti,re,sub,cont,i1,i2,l,      f,tipe) {
+
             const body = new FormData();
             body.append('nombre_categoria', ca.value.trim());
             body.append('titulo', ti.value.trim());
             body.append('resumen', re.value);
             body.append('subtitulo', sub.value.trim());
-            body.append('parrafo_uno', p1.value.trim());
-            body.append('parrafo_dos', p2.value.trim());
-            body.append('parrafo_tres', p3.value.trim());
-            body.append('parrafo_cuatro', p4.value.trim());
-            body.append('imagen_principal', i1.files[0]);
-            body.append('imagen_secundaria', i2.files[0]);
-            body.append('imagen_portada', ip.files[0]);
+            body.append('contenido', cont.value);
+            body.append('imagen_principal', i1);
+            body.append('imagen_secundaria', i2);
             body.append('videoBlog', l.value.trim());
             body.append("fecha", f);
             
@@ -425,19 +481,12 @@ if( isset($_SESSION['id']) ){
             modalInstance.hide();
         }
 
+        // Prepara y envía los datos para actualizar un post existente
         //UPDATE Function 2
-        function catchDateUp(i,ca,ti,re,sub,p1,p2,p3,p4,i1,i2,ip,l,  tipe) {
+        function catchDateUp(i, ca, ti, re, sub, cont, i1, i2, l, tipe) {
             const body = new FormData();
-            //Usar fecha en UPDATE
-            const now = new Date();
-            const year = now.getFullYear();
-            const month = String(now.getMonth() + 1).padStart(2, '0');  // Los meses van de 0 a 11
-            const day = String(now.getDate()).padStart(2, '0');
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            //const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-            ///////
+            const timestamp = Date.now();
+
             body.append("id", i.textContent);
             body.append('nombre_categoria', ca.value.trim());
             body.append('titulo', ti.value.trim());
@@ -448,34 +497,15 @@ if( isset($_SESSION['id']) ){
             body.append('parrafo_tres', p3.value);
             body.append('parrafo_cuatro', p4.value);
             body.append('videoBlog', l.value.trim());
-            //body.append('fecha', formattedDateTime);
-            // chekea si ya hay un documento subido en el inputFile, sino coge su ruta que no ha cambiado y que lo pusimos en un atributo nuevo
-            // Si hay una imagen nueva, la ruta antigua lo pasamos al body para asi eliminar la imagen antigua
-            if (i1.files.length > 0) {
-                body.append('imagen_principal', i1.files[0]);
-                body.append('imagen_principal_antigua', i1.getAttribute('data-existing-file'));
-            } else {
-                body.append('imagen_principal', i1.getAttribute('data-existing-file'));
-            }
 
-            if (i2.files.length > 0) {
-                body.append('imagen_secundaria', i2.files[0]);
-                body.append('imagen_secundaria_antigua', i2.getAttribute('data-existing-file'));
-            } else {
-                body.append('imagen_secundaria', i2.getAttribute('data-existing-file'));
-            }
-
-            if (ip.files.length > 0) {
-                body.append('imagen_portada', ip.files[0]);
-                body.append('imagen_portada_antigua', ip.getAttribute('data-existing-file'));
-            } else {
-                body.append('imagen_portada', ip.getAttribute('data-existing-file'));
-            }
-            
+            handleImageForUpdate(i1, 'imagen_principal', body, timestamp);
+            handleImageForUpdate(i2, 'imagen_secundaria', body, timestamp);
 
             sentDataToServerSide(body, tipe);
         }
 
+
+        // Envía los datos al servidor y maneja la respuesta
         // POST Function 3, depende del type si es POST o UPDATE
         function sentDataToServerSide(form, tipe) {
             fetch(`../../../app/trigger/posteo.php?action=${tipe}`, {
@@ -494,54 +524,87 @@ if( isset($_SESSION['id']) ){
         const tableBody = document.getElementById("tableBody");
 
         // METODO ELIMINAR
-        tableBody.addEventListener("click", (e) => {
+        tableBody.addEventListener("click",(e)=>{
             const button = e.target.closest("button");
 
-            if (button) {
-                const tr = button.closest("tr");
+            if(button && button.getAttribute("data-action") === "eliminar"){
+                const tr= button.closest("tr");
+                const id= tr.getAttribute("data-id");
+                const img1 = tr.querySelector(".image1").getAttribute('ruta1');
+                const img2 = tr.querySelector(".image2").getAttribute('ruta2');
 
-                const img1Element = tr.querySelector(".image1");
-                const img2Element = tr.querySelector(".image2");
-                const imgPortadaElement = tr.querySelector(".image_portada");
-                //Agarramos la ruta de las imagenes de la fila que se va a eliminar, para eliminar las imagenes  
-                const img1 = img1Element.getAttribute('ruta1');
-                const img2 = img2Element.getAttribute('ruta2');
-                const imgp =imgPortadaElement.getAttribute('ruta3');
-                
-
-                const id = tr.getAttribute("data-id");
-                const action = button.getAttribute("data-action");
-
-                if (action == "eliminar") {
-                let condicion = confirm("Desea Continuar?");
-                alert(img1);
-                /*
-                if (condicion) {
-                    //tr.remove();
-                    fetch(`../../../app/trigger/posteo.php?action=DELETE&id=${id}&image1=${img1}&image2=${img2}`)
-                    .then((res) => res.json())
-                    .then((res) => {
-                        console.log(res);
-                    });
+                if (confirm("¿Está seguro que desea eliminar este registro?")) {
+                    attemptToDeleteRecord(id, img1, img2, tr);
                 }
-                */
-                if (condicion) {
-                    fetch(`../../../app/trigger/posteo.php?action=DELETE&id=${id}&image1=${img1}&image2=${img2}&image3=${imgp}`, {
-                        method: 'DELETE' // Establece el método correcto
-                    })
-                    .then((res) => res.json())
-                    .then(data => {
-                        console.log(data); // Aquí se imprime la respuesta JSON del servidor
-                        // Puedes agregar más lógica aquí para manejar la respuesta
-                        window.location.reload();
-                    })
-                    .catch(error => {
-                        console.error("Error en la solicitud:", error);
-                    });
-                }
+
+            }
+        })
+
+        //Delete Post de Blog
+        function attemptToDeleteRecord(id,img1,img2,tr){
+            const numericId = validateAndConvertId(id);
+            if (numericId === null) {
+                console.error('El ID no es un número válido:', id);
+                alert('El ID del post no es válido. No se puede eliminar el registro.');
+                return;
+            }
+
+            const data = prepareBlogDataForDeletion(numericId, img1, img2);
+            logFormattedData(data); // Log data for debugging purposes
+            sendDeleteRequest(data, tr);
+        }
+
+        //Validar y convertir ID de post a número
+        function validateAndConvertId(id) {
+            const numericId = Number(id);
+            return isNaN(numericId) ? null : numericId;
+        }
+
+        function prepareBlogDataForDeletion(id,img1,img2){
+            return {
+                id: id,
+                image1: img1,
+                image2: img2
+            };
+        }
+
+        // Registrar datos formateados en la consola
+        function logFormattedData(data) {
+            const dataWithTypes = addTypeInfo(data);
+            console.log('Deleting post with data:', JSON.stringify(dataWithTypes, null, 2));
+        }
+
+        // Crear una función para añadir tipos de datos (con propositos meramente informativos)
+        function addTypeInfo(obj) {
+            const typedObj = {};
+            for (const key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    typedObj[key] = {
+                        value: obj[key],
+                        type: typeof obj[key]
+                    };
                 }
             }
-        });
+            return typedObj;
+        }
+
+        // Enviar solicitud de eliminación
+        function sendDeleteRequest(data, tr) {
+            $.ajax({
+                url: '../../../app/trigger/posteo.php?action=DELETE',
+                type: 'POST',
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                success: function (response) {
+                    console.log('Success:', response);
+                    tr.remove();
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error:', error);
+                    alert('Hubo un error al eliminar el registro. Por favor, intente de nuevo.');
+                }
+            });
+        }
 
         //Funcion GET ALL
         const dataRender = () => {
