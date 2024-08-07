@@ -10,7 +10,7 @@ try {
     $paginaActual = max(1, $paginaActual); // Asegurarse de que la página actual esté en el rango válido
 
     // Consulta para obtener el total de artículos para la categoría
-    $categoria = isset($_GET['categoria']) ? $_GET['categoria'] : 'fastfood'; 
+    $categoria = isset($_GET['categoria']) ? $_GET['categoria'] : 'fast food'; 
     $stmtTotal = $conn->prepare("SELECT COUNT(*) FROM posting_blog WHERE LOWER(nombre_categoria) = :categoria");
     $stmtTotal->bindValue(':categoria', strtolower($categoria));
     $stmtTotal->execute();
@@ -47,17 +47,15 @@ try {
         gtag('js', new Date());
         gtag('config', 'G-QRZPWCXDM8');
     </script>
-    <title>Blog - FAST FOOD</title>
+    <title>Blog - FAST FOOD</title>    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="shortcut icon" href="../ico.ico" type="image/x-icon">
-
     <link rel="stylesheet" href="../public/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../public/css/categorias-blog.css">
-    <link rel="stylesheet" href="../public/css/style-blog.css">
     <link rel="stylesheet" href="../public/css/global.css">
     <link rel="stylesheet" href="../public/css/blog.css">
     <link rel="stylesheet" href="../public/css/shared/header.css">
     <link rel="stylesheet" href="../public/css/shared/footer.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- Añadir el estilo para los enlaces -->
     <style>
@@ -120,7 +118,7 @@ try {
                                 <img src="<?php echo htmlspecialchars('../public/imagenes/imagenesBlogBd/' . $articulo['imagen_principal']); ?>" width="100%">
                             </div>
                             <div class="articulos__item__texto">
-                                <p><?php echo htmlspecialchars('FASTFOOD'); ?></p>
+                                <p><?php echo htmlspecialchars('FAST FOOD'); ?></p>
                                 <h4><?php echo htmlspecialchars($articulo['titulo']); ?></h4>
                             </div>
                         </a>

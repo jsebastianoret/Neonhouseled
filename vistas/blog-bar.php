@@ -1,4 +1,5 @@
 <?php
+
 require_once '../admin2/config/db.php';
 try {
     // Configurar PDO para que lance excepciones en caso de error
@@ -48,15 +49,16 @@ try {
         gtag('js', new Date());
         gtag('config', 'G-QRZPWCXDM8');
     </script>
-    <title>Blog - BAR</title>
-    <link rel="stylesheet" href="../public/css/swiper-bundle.min.css">
+    <title>Blog - BAR</title>    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="shortcut icon" href="../ico.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="../ico.ico" type="image/x-icon">
+        <link rel="stylesheet" href="../public/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../public/css/categorias-blog.css">
-    <link rel="stylesheet" href="../public/css/style-blog.css">
     <link rel="stylesheet" href="../public/css/global.css">
     <link rel="stylesheet" href="../public/css/blog.css">
     <link rel="stylesheet" href="../public/css/shared/header.css">
     <link rel="stylesheet" href="../public/css/shared/footer.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         .articulos__item a {
             color: inherit;
@@ -73,7 +75,6 @@ try {
 <body>
     <h1 style="display:none">Sección de Blog</h1>
     <?php require_once "layout/header.php"; ?>
-
     <section class="image_blog position-relative section-padding">
         <div class="position-absolute top-50 start-0 translate-middle-y text-left mx-4 pl-5">
             <div class="mx-5">
@@ -82,7 +83,7 @@ try {
         </div>
     </section>
 
-    <section class="blog-navigation">
+  <section class="blog-navigation">
         <ul>
             <li><a href="#">Artículos</a></li>
             <li><a href="#">Tips</a></li>
