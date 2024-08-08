@@ -34,6 +34,8 @@
     .title-blog {
         font-size: 3rem;
         letter-spacing: 0.5rem;
+        justify-content: center; 
+        align-items: center;
     }
 
     a.link_blog{
@@ -77,4 +79,19 @@
     border-color: #1c6f8a;  
     color: white;
     transition: all .5s ease;
+}
+
+@media screen and (max-width: 576px) {
+    .contenedor {
+        padding: 40px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .contenedor {
+        flex-direction: column-reverse;
+        gap: 50px;
+        padding-left: 90px;
+        padding-right: 90px;
+    }
 }

@@ -1,4 +1,6 @@
-
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 body {
     font-family: Helvetica, Arial, sans-serif;
     font-weight: lighter; 
@@ -112,12 +114,37 @@ h1 {
     font-size: 5rem !important;
     font-weight: 700;
     font-family: 'Franklin Gothic Medium';  
+    color:  #02B8AE;
+    text-shadow: 
+    2px 2px 0px black, /* Sombra abajo a la derecha */
+    -2px 2px 0px white, /* Sombra abajo a la izquierda */
+    2px -2px 0px white, /* Sombra arriba a la derecha */
+    -2px -2px 0px white, /* Sombra arriba a la izquierda */
+    2px 0px 0px white, /* Sombra derecha */
+    -2px 0px 0px rgb(56, 56, 56), /* Sombra izquierda */
+    0px 2px 0px white, /* Sombra abajo */
+    0px -2px 0px black; /* Sombra arriba */
+
 }
 
 .contenedor {
     margin-bottom: 40px;
 }
 
+@media screen and (max-width: 576px) {
+    .contenedor {
+        padding: 40px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .contenedor {
+        flex-direction: column-reverse;
+        gap: 50px;
+        padding-left: 90px;
+        padding-right: 90px;
+    }
+}
 .articulos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -228,6 +255,11 @@ h2 {
     border: 2px solid #dfe0e5; /* Borde sólido de 2px de grosor y color */
 
 }
+@media screen and (max-width: 1200px) {
+    .barra-lateral {
+        margin-top: 0;
+    }
+}
 
 .barra-lateral ul {
     list-style-type: none;
@@ -293,7 +325,9 @@ header{
   font-size: 1.5rem;
   padding: 20px 0px;
 }
-
+footer{
+    font-weight: 400;
+ }
 
 .blog-header{
   font-size: 1.5rem;

@@ -50,7 +50,7 @@ try {
         gtag('config', 'G-QRZPWCXDM8');
     </script>
     <title>Blog - BAR</title>    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css">
         <link rel="shortcut icon" href="../ico.ico" type="image/x-icon">
         <link rel="shortcut icon" href="../ico.ico" type="image/x-icon">
         <link rel="stylesheet" href="../public/css/swiper-bundle.min.css">
@@ -82,7 +82,7 @@ try {
             </div>
         </div>
     </section>
-
+    <script src="../public/bootstrap/bootstrap.bundle.min.js"></script>
   <section class="blog-navigation">
         <ul>
             <li><a href="#">Artículos</a></li>
@@ -181,7 +181,7 @@ try {
 
     <?php include './layout/foother.php'; ?>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../public/bootstrap/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper(".mySwiper", {
             loop: true,

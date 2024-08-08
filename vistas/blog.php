@@ -39,10 +39,11 @@ $articulosActuales = array_slice($articulos, $indiceInicio, $articulosPorPagina)
         gtag('config', 'G-QRZPWCXDM8');
     </script>
     <title>Neon House Led - Blog</title>    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css">
     <link rel="shortcut icon" href="../ico.ico" type="image/x-icon">    
     <link rel="stylesheet" href="../public/css/blog.css">
     <link rel="stylesheet" href="../public/css/global.css">
+    <link rel="stylesheet" href="../public/css/categorias-blog.css">
     <link rel="stylesheet" href="../public/css/estilos-blog.css">
     <link rel="stylesheet" href="../public/css/shared/header.css">
     <link rel="stylesheet" href="../public/css/shared/footer.css">
@@ -70,7 +71,7 @@ $articulosActuales = array_slice($articulos, $indiceInicio, $articulosPorPagina)
             <li><a href="#">Ideas</a></li>
         </ul>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../public/bootstrap/bootstrap.bundle.min.js"></script>
 
     <div class="categorias">
         <div class="contenedor-principal">
