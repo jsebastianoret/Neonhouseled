@@ -51,7 +51,6 @@ class ModelPosteo{
         if ($err) {
             return false;
         }
-
         return $res->affected_rows > 0;
     }
 

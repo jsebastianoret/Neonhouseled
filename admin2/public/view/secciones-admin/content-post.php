@@ -293,6 +293,7 @@ if( isset($_SESSION['id']) ){
     </main>
 
     <script>
+        let fecha = "";
         const objRegex_lost = {
             pass: /^(?!.*\s).*.{6,}$/,
         };//resistencia Nazari
@@ -386,13 +387,17 @@ if( isset($_SESSION['id']) ){
 
         // Función principal que valida los datos del formulario y maneja la lógica de agregar o actualizar posts
         // POST-UPDATE Function 1, Sea que llamen a esta funcion en waitToGo() o waitToGoUpdate(), con el tipe se vera si es ADD o UPDATE
-        function validarData(ca, ti, re, subti, cont, img1, img2, link, tipe) {
+        function validarData(ca, ti, re, subti, parrafo1, parrafo2, parrafo3, parrafo4, imgp, img1, img2, link, tipe) {
             const elements = {
                 categories: document.getElementById(ca),
                 titles: document.getElementById(ti),
                 resumens: document.getElementById(re),
                 subtitles: document.getElementById(subti),
-                contents: document.getElementById(cont),
+                text1:document.getElementById(parrafo1),
+                text2:document.getElementById(parrafo2),
+                text3:document.getElementById(parrafo3),
+                text4:document.getElementById(parrafo4),
+                imgsp: document.getElementById(imgp),
                 imgs1: document.getElementById(img1),
                 imgs2: document.getElementById(img2),
                 links: document.getElementById(link),
@@ -404,7 +409,10 @@ if( isset($_SESSION['id']) ){
                 { campo: elements.titles, mensaje: "Agregue un Título" },
                 { campo: elements.resumens, mensaje: "Agregue un resumen" },
                 { campo: elements.subtitles, mensaje: "Agregue un subtítulo" },
-                { campo: elements.contents, mensaje: "Agregue Contenido" },
+                { campo: elements.text1, mensaje: "Agregue texto en parrafo 1" },
+                { campo: elements.text2, mensaje: "Agregue texto en parrafo 2" },
+                { campo: elements.text3, mensaje: "Agregue texto en parrafo 3" },
+                { campo: elements.text4, mensaje: "Agregue texto en parrafo 4" },
                 { campo: elements.links, mensaje: "Agregue link" }
             ];
 
@@ -422,20 +430,21 @@ if( isset($_SESSION['id']) ){
         // Maneja la lógica para agregar un nuevo post
         function handleAdd(elements) {
             const timestamp = Date.now();
-            const newFile1 = processImage(elements.imgs1, timestamp);
-            const newFile2 = processImage(elements.imgs2, timestamp);
+            const newFile1 = processImage(elements.imgsp, timestamp);
+            const newFile2 = processImage(elements.imgs1, timestamp);
+            const newFile3 = processImage(elements.imgs2, timestamp);
             const formattedDateTime = generateDateFormat();
 
             catchDate(elements.categories, elements.titles, elements.resumens, elements.subtitles,
-                elements.contents, newFile1, newFile2, elements.links, formattedDateTime, "ADD");
+                elements.text1, elements.text2, elements.text3, elements.text4, newFile1, newFile2, newFile3, elements.links, formattedDateTime, "ADD");
             cleanDate(elements.categories, elements.titles, elements.resumens, elements.subtitles,
-                elements.contents, elements.imgs1, elements.imgs2, elements.links);
+                elements.text1, elements.text2, elements.text3, elements.text4, elements.imgsp, elements.imgs1, elements.imgs2, elements.links);
         }
 
         // Maneja la lógica para actualizar un post existente
         function handleUpdate(elements) {
             catchDateUp(elements.idm, elements.categories, elements.titles, elements.resumens,
-                elements.subtitles, elements.contents, elements.imgs1, elements.imgs2, elements.links, "UPDATE");
+                elements.subtitles, elements.text1, elements.text2, elements.text3, elements.text4, elements.imgsp ,elements.imgs1, elements.imgs2, elements.links, "UPDATE");
             modificarYCerrarModal();
         }
 
@@ -458,19 +467,22 @@ if( isset($_SESSION['id']) ){
 
         // Prepara y envía los datos para crear un nuevo post
         // POST Function 2
-        function catchDate(ca,ti,re,sub,cont,i1,i2,l,      f,tipe) {
+        function catchDate(ca,ti,re,sub,p1, p2, p3, p4,i1,i2,i3,l,      f,tipe) {
 
             const body = new FormData();
             body.append('nombre_categoria', ca.value.trim());
             body.append('titulo', ti.value.trim());
             body.append('resumen', re.value);
             body.append('subtitulo', sub.value.trim());
-            body.append('contenido', cont.value);
-            body.append('imagen_principal', i1);
-            body.append('imagen_secundaria', i2);
+            body.append('parrafo_uno', p1.value);
+            body.append('parrafo_dos', p2.value);
+            body.append('parrafo_tres', p3.value);
+            body.append('parrafo_cuatro', p4.value);
+            body.append('imagen_portada', i1);
+            body.append('imagen_principal', i2);
+            body.append('imagen_secundaria', i3);
             body.append('videoBlog', l.value.trim());
             body.append("fecha", f);
-            
             
             //Nos manda a la ultima funcion para un POST, por medio de type, nos dira si es un POST o UPDATE
             sentDataToServerSide(body, tipe);
@@ -483,7 +495,7 @@ if( isset($_SESSION['id']) ){
 
         // Prepara y envía los datos para actualizar un post existente
         //UPDATE Function 2
-        function catchDateUp(i, ca, ti, re, sub, cont, i1, i2, l, tipe) {
+        function catchDateUp(i, ca, ti, re, sub, p1, p2, p3, p4, i1, i2, i3, l, tipe) {
             const body = new FormData();
             const timestamp = Date.now();
 
@@ -497,9 +509,10 @@ if( isset($_SESSION['id']) ){
             body.append('parrafo_tres', p3.value);
             body.append('parrafo_cuatro', p4.value);
             body.append('videoBlog', l.value.trim());
-
-            handleImageForUpdate(i1, 'imagen_principal', body, timestamp);
-            handleImageForUpdate(i2, 'imagen_secundaria', body, timestamp);
+            body.append('fecha', fecha);
+            handleImageForUpdate(i1, 'imagen_portada', body, timestamp);
+            handleImageForUpdate(i2, 'imagen_principal', body, timestamp);
+            handleImageForUpdate(i3, 'imagen_secundaria', body, timestamp);
 
             sentDataToServerSide(body, tipe);
         }
@@ -532,16 +545,17 @@ if( isset($_SESSION['id']) ){
                 const id= tr.getAttribute("data-id");
                 const img1 = tr.querySelector(".image1").getAttribute('ruta1');
                 const img2 = tr.querySelector(".image2").getAttribute('ruta2');
+                const img3 = tr.querySelector(".image_portada").getAttribute('ruta3');
 
                 if (confirm("¿Está seguro que desea eliminar este registro?")) {
-                    attemptToDeleteRecord(id, img1, img2, tr);
+                    attemptToDeleteRecord(id, img1, img2, img3, tr);
                 }
 
             }
         })
 
         //Delete Post de Blog
-        function attemptToDeleteRecord(id,img1,img2,tr){
+        function attemptToDeleteRecord(id,img1,img2,img3,tr){
             const numericId = validateAndConvertId(id);
             if (numericId === null) {
                 console.error('El ID no es un número válido:', id);
@@ -549,7 +563,7 @@ if( isset($_SESSION['id']) ){
                 return;
             }
 
-            const data = prepareBlogDataForDeletion(numericId, img1, img2);
+            const data = prepareBlogDataForDeletion(numericId, img1, img2, img3);
             logFormattedData(data); // Log data for debugging purposes
             sendDeleteRequest(data, tr);
         }
@@ -560,11 +574,12 @@ if( isset($_SESSION['id']) ){
             return isNaN(numericId) ? null : numericId;
         }
 
-        function prepareBlogDataForDeletion(id,img1,img2){
+        function prepareBlogDataForDeletion(id,img1,img2,img3){
             return {
                 id: id,
                 image1: img1,
-                image2: img2
+                image2: img2,
+                image3: img3
             };
         }
 
@@ -674,7 +689,8 @@ if( isset($_SESSION['id']) ){
                             parrafo12.value = userData.parrafo_uno;
                             parrafo22.value = userData.parrafo_dos;
                             parrafo32.value = userData.parrafo_tres;
-                            parrafo42.value = userData.parrafo_cuatro;      
+                            parrafo42.value = userData.parrafo_cuatro;
+                            fecha = userData.fecha;      
                             //Creamos un atributo nuevo que contenga la ruta original, no importa si el file cambia, esta fue la ruta y/o nombre original de la imagen
                             i1_2.setAttribute('data-existing-file', userData.imagen_principal);
                             i2_2.setAttribute('data-existing-file', userData.imagen_secundaria);

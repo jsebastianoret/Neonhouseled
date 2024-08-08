@@ -275,7 +275,7 @@ HTML;
         $parrafo2 = isset($_POST['parrafo_dos']) ? $_POST['parrafo_dos'] : null;
         $parrafo3 = isset($_POST['parrafo_tres']) ? $_POST['parrafo_tres'] : null;
         $parrafo4 = isset($_POST['parrafo_cuatro']) ? $_POST['parrafo_cuatro'] : null;
-        //$fecha = isset($_POST['fecha']) ? $_POST['fecha'] : null;
+        $fecha = isset($_POST['fecha']) ? $_POST['fecha'] : null;
         //Se comprueba si se ha cargado una nueva imagen principal/secundaria
         //Si es así, se forma la ruta completa para la imagen usando el directorio de destino y el nombre del archivo
         //Si no se ha cargado una nueva imagen, la variable se establece en null
@@ -293,6 +293,7 @@ HTML;
             move_uploaded_file($_FILES["imagen_principal"]["tmp_name"], $imagen_principal);
             FileHelper::deleteIndividualImage($oldImage1);
             FileHelper::deleteIndividualImage($oldImage2);
+            FileHelper::deleteIndividualImage($oldImage3);
         } elseif (isset($_POST['imagen_principal'])) {
             $imagen_principal = $_POST['imagen_principal'];
         }
@@ -303,6 +304,7 @@ HTML;
             move_uploaded_file($_FILES["imagen_secundaria"]["tmp_name"], $imagen_secundaria);
             FileHelper::deleteIndividualImage($oldImage1);
             FileHelper::deleteIndividualImage($oldImage2);
+            FileHelper::deleteIndividualImage($oldImage3);
         } elseif (isset($_POST['imagen_secundaria'])) {
             $imagen_secundaria = $_POST['imagen_secundaria'];
         }
@@ -311,13 +313,15 @@ HTML;
         if (isset($_FILES['imagen_portada']) && $_FILES['imagen_portada']['name'] != '') {
             $imagen_portada = "../../../public/imagenes/imagesBlogBd/" . basename($_FILES["imagen_portada"]["name"]);
             move_uploaded_file($_FILES["imagen_portada"]["tmp_name"], $imagen_portada);
-            self::deleteImg($oldImage1, $oldImage2, $oldImage3);
+            FileHelper::deleteIndividualImage($oldImage1);
+            FileHelper::deleteIndividualImage($oldImage2);
+            FileHelper::deleteIndividualImage($oldImage3);
         } elseif (isset($_POST['imagen_portada'])) {
             $imagen_portada = $_POST['imagen_portada'];
         }
 
         $lista = [
-            $nombre_categoria, $titulo, $resumen, $subtitulo, $parrafo1, $parrafo2, $parrafo3, $parrafo4, $imagen_principal, $imagen_secundaria, $imagen_portada, $videoBlog
+            $nombre_categoria, $titulo, $resumen, $subtitulo, $parrafo1, $parrafo2, $parrafo3, $parrafo4, $imagen_principal, $imagen_secundaria, $imagen_portada, $videoBlog, $fecha
         ]; 
 
         $respuesta = ModelPosteo::update(
