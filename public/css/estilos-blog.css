@@ -114,16 +114,16 @@ h1 {
     font-size: 5rem !important;
     font-weight: 700;
     font-family: 'Franklin Gothic Medium';  
-    color:  #02B8AE;
+    color:  black;
     text-shadow: 
-    2px 2px 0px black, /* Sombra abajo a la derecha */
+    2px 2px 0px rgb(179, 175, 175), /* Sombra abajo a la derecha */
     -2px 2px 0px white, /* Sombra abajo a la izquierda */
     2px -2px 0px white, /* Sombra arriba a la derecha */
     -2px -2px 0px white, /* Sombra arriba a la izquierda */
     2px 0px 0px white, /* Sombra derecha */
     -2px 0px 0px rgb(56, 56, 56), /* Sombra izquierda */
     0px 2px 0px white, /* Sombra abajo */
-    0px -2px 0px black; /* Sombra arriba */
+    0px -2px 0px rgb(172, 167, 167); /* Sombra arriba */
 
 }
 
