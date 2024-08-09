@@ -1,0 +1,348 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: lighter; 
+    margin: 0;
+    padding: 0;
+    background-color: #fefaf5;
+}
+
+.blog-header {
+    position: relative;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+}
+
+.blog-title {
+    margin: 0;
+    padding: 0 80px;
+    background-color: rgba(186, 186, 250, 0.65);
+    border-radius: 0 80px 80px 0;
+    font-size: 2em;
+    color: white;
+}
+
+.blog-title, h2 {
+    font-size: 40px;
+}
+
+.blog-description {
+    max-width: 650px;
+    margin: 10px 0 0;
+    padding: 0 40px;
+    background-color: rgba(13, 13, 94, 0.6);
+    border-radius: 0 80px 80px 0;
+    font-size: 1.2em;
+    color: white;
+}
+
+.blog-navigation {
+    background-color: #123456; /* Adjust to the specific color */
+    color: white;
+    display: none;
+    justify-content: center;
+    padding: 30px;
+}
+
+.blog-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.blog-navigation ul li {
+    margin: 0 55px;
+}
+
+.blog-navigation ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.blog-navigation ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.categorias {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 50px;
+    font-weight: 400;
+    
+
+}
+h1 {
+    font-size: 3rem;
+    margin: 20px 0; 
+    text-align: center;
+    width: 100%;
+}
+.resultado-busqueda {
+    font-size: 70px; 
+    margin-left: 20px;
+}
+.contenedor-principal {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    align-items: center; /* Centra horizontalmente */
+}
+
+.contenedor-principal h1 {
+    font-size: 5rem !important;
+    font-weight: 700;
+    font-family: 'Franklin Gothic Medium';  
+    color:  black;
+    text-shadow: 
+    2px 2px 0px rgb(179, 175, 175), /* Sombra abajo a la derecha */
+    -2px 2px 0px white, /* Sombra abajo a la izquierda */
+    2px -2px 0px white, /* Sombra arriba a la derecha */
+    -2px -2px 0px white, /* Sombra arriba a la izquierda */
+    2px 0px 0px white, /* Sombra derecha */
+    -2px 0px 0px rgb(56, 56, 56), /* Sombra izquierda */
+    0px 2px 0px white, /* Sombra abajo */
+    0px -2px 0px rgb(172, 167, 167); /* Sombra arriba */
+
+}
+
+.contenedor {
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 576px) {
+    .contenedor {
+        padding: 40px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .contenedor {
+        flex-direction: column-reverse;
+        gap: 50px;
+        padding-left: 90px;
+        padding-right: 90px;
+    }
+}
+.articulos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px; /* Ajusta el espaciado entre las imágenes */
+    justify-items: center; /* Centra los elementos hijos horizontalmente en el grid */
+}
+
+.articulo {
+    border: 1px solid #c7c9d1;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    height: 650px; /* Fija la altura del contenedor */
+    margin: 0 auto;
+    position: relative; /* Para posicionar elementos dentro del contenedor */
+}
+
+.articulo a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.articulo img {
+    width: 100%; /* Ocupa el ancho total del contenedor */
+    height: calc(100% - 200px); /* Deja espacio para la sección de información */
+    object-fit: cover;
+}
+
+.info-articulo {
+    background: white;
+    color: #000000;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: left; /* Alinea el texto a la izquierda */
+    height: 200px; /* Fija la altura de la sección de información */
+    box-sizing: border-box;
+}
+
+.info-articulo h4{
+    font-size: 3rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.categoria {
+    display: block;
+    color: gray;
+    font-size: 15px;
+    background-color: #edeff5;
+    padding: 4px 10px; /* Aumenta el padding para agrandar el contenedor */
+    border-radius: 4px; /* Bordes redondeados */
+    margin-bottom: 30px;
+    display: inline-block; /* Hace que el contenedor sólo ocupe el espacio necesario */
+}
+
+h2 {
+    font-size: 30px; /* Tamaño de fuente más grande para el título */
+    margin: 0;
+}
+
+
+.paginacion button {
+    background-color: #fff;
+    border: 1px solid #000; 
+    padding: 5px 20px; /* Reduce el padding vertical para reducir la altura */
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px; /* Mantén el tamaño de la fuente */
+}
+
+.paginacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;
+    width: 100%;
+}
+
+.paginacion span {
+    font-size: 16px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido del span */
+}
+
+
+.barra-lateral {
+    margin-top: 110px;
+    min-width: 260px;
+    height: max-content;
+    padding: 20px;
+     /* Ajusta este valor según sea necesario para mover la barra lateral hacia abajo */
+    
+    /* Estilos para bordes redondos */
+    border-radius: 30px; /* Valor alto para hacer los bordes redondos */
+    
+    /* Estilos para el borde */
+    border: 2px solid #dfe0e5; /* Borde sólido de 2px de grosor y color */
+
+}
+@media screen and (max-width: 1200px) {
+    .barra-lateral {
+        margin-top: 0;
+    }
+}
+
+.barra-lateral ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.barra-lateral li {
+    font-weight: 400;
+
+    font-size: 14px; /* Tamaño de fuente para los elementos de lista */
+    line-height: 1.6; /* Espaciado entre líneas para una mejor legibilidad */
+}
+
+.barra-lateral a {
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
+    color: #3f4350; /* Color de texto gris (#81838b) para los enlaces */
+    display: block; /* Hace que los enlaces ocupen todo el ancho del contenedor de lista */
+    padding: 8px 15px; /* Espaciado interno para los enlaces */
+    border-radius: 5px; /* Bordes redondos para los enlaces */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave para el cambio de color de fondo y texto */
+}
+
+.barra-lateral a:hover {
+    background-color: #e0e0e0; 
+    color: #333; 
+}
+
+.barra-lateral a.active {
+    background-color: #81838b;
+    color: #fff; 
+}
+
+.caja-buscar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.caja-buscar input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+}
+
+.caja-buscar button {
+    padding: 10px;
+    background-color: #ddd;
+    border: 1px solid #ddd;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.caja-buscar button img {
+    width: 13px;
+    height: 13px;
+}
+
+/*CORRECCION DE CODIGO NAV EN CATEGORIAS POR ESTILOS DEL GLOBAL*/
+header{
+  font-size: 1.5rem;
+  padding: 20px 0px;
+}
+footer{
+    font-weight: 400;
+ }
+
+.blog-header{
+  font-size: 1.5rem;
+}
+
+.blog-title{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.blog-description{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.blog-navigation{
+  font-size: 2rem;
+}

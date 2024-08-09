@@ -22,7 +22,7 @@
 
 
 .title-blog{
-    font-size: 7rem;
+    font-size: 10rem !important;
     font-weight: 700;
     letter-spacing: 1.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -34,6 +34,8 @@
     .title-blog {
         font-size: 3rem;
         letter-spacing: 0.5rem;
+        justify-content: center; 
+        align-items: center;
     }
 
     a.link_blog{
@@ -41,10 +43,14 @@
     }
 }
 
+
+
  
 .container-blogs {
     margin-top: 40px;
     margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
 }
 
  
@@ -73,4 +79,19 @@
     border-color: #1c6f8a;  
     color: white;
     transition: all .5s ease;
+}
+
+@media screen and (max-width: 576px) {
+    .contenedor {
+        padding: 40px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .contenedor {
+        flex-direction: column-reverse;
+        gap: 50px;
+        padding-left: 90px;
+        padding-right: 90px;
+    }
 }

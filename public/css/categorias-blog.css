@@ -1,0 +1,238 @@
+/*CODIGO CSS PARA CATEGORIAS BLOG*/
+    .contenedor{
+      width: 100%;
+      display: flex;
+      padding: 40px 140px;
+      gap: 120px;
+      background-color: #fefaf5;
+    }
+    .contenedor__articulos{
+      position: relative;
+      width: 60%;
+      height: 100%;
+    }
+    .contenedor__buscador{
+      width: 400px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #adb5bd;
+      width: 100%;
+      height: 1200px;
+    }
+    .contenedor__articulos__swiper{
+      position: relative;
+    }
+    .swiper{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-slide {
+      background: #fff;
+    }
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swipe-slider__texto{
+      position: absolute;
+      padding: 40px;
+      color: #fff;
+      z-index: 10;
+      text-align: center;
+      font-size: 18px;
+    }
+    .swipe-slider__texto h3{
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    .swipe-slider__texto p{
+      background-color: #02B8AE;
+      padding: 10px;
+      border-radius: 20px;
+    }
+    .articulos__items{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 70px;
+    }
+    .articulos__item{
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid #adb5bd;
+      cursor: pointer;
+    }
+
+    .articulos__item>a{
+      display: inline-block;
+      width: 100%;
+    }
+
+    .articulos__item__imagen{
+      width: 100%;
+      height: 300px;
+    }
+    .articulos__item__imagen img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .articulos__item__texto{
+      padding: 15px;
+    }
+    .articulos__item__texto p{
+      padding: 5px;
+      background-color: #ccd6e0;
+      width: max-content;
+      border-radius: 5px;
+    }
+    .articulos__item__texto h4{
+      font-size: 3rem;
+      margin-top: 10px;
+      font-weight: normal;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+    .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+      bottom: -40px
+    }
+    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+      width: 1.3rem;
+      height: 1.3rem;
+      margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 6px);
+    }
+
+/*CORRECCION DE CODIGO NAV EN CATEGORIAS POR ESTILOS DEL GLOBAL*/
+header{
+  font-size: 1.5rem;
+  padding: 20px 0px;
+}
+
+.blog-header{
+  font-size: 1.5rem;
+}
+
+.blog-title{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.blog-description{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.blog-navigation{
+  display:none;
+  font-size: 2rem;
+}
+
+/*ESTILOS DE LA BARRA LATERAL*/
+.barra-lateral {
+    min-width: 260px;
+    height: max-content;
+    padding: 20px;
+    
+    /* Estilos para bordes redondos */
+    border-radius: 10px; /* Valor alto para hacer los bordes redondos */
+    
+    /* Estilos para el borde */
+    border: 2px solid #dfe0e5; /* Borde sólido de 2px de grosor y color */
+}
+
+.barra-lateral ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.barra-lateral li {
+    
+    font-size: 14px; /* Tamaño de fuente para los elementos de lista */
+    line-height: 1.6; /* Espaciado entre líneas para una mejor legibilidad */
+}
+
+.barra-lateral a {
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
+    color: #3f4350; /* Color de texto gris (#81838b) para los enlaces */
+    display: block; /* Hace que los enlaces ocupen todo el ancho del contenedor de lista */
+    padding: 8px 15px; /* Espaciado interno para los enlaces */
+    border-radius: 5px; /* Bordes redondos para los enlaces */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave para el cambio de color de fondo y texto */
+}
+
+.barra-lateral a:hover {
+    background-color: #e0e0e0; 
+    color: #333; 
+}
+
+.barra-lateral a.active {
+    background-color: #81838b;
+    color: #fff; 
+}
+
+.caja-buscar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.caja-buscar input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+}
+
+.caja-buscar button {
+    padding: 5px 10px;
+    background-color: #ddd;
+    border: 1px solid #ddd;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    height: 100%;
+}
+
+.caja-buscar button img {
+    width: 20px;
+    height: 20px;
+}
+
+.paginacion button {
+    background-color: #fff;
+    border: 1px solid #000; 
+    padding: 5px 20px; /* Reduce el padding vertical para reducir la altura */
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px; /* Mantén el tamaño de la fuente */
+}
+
+.paginacion {
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;
+    width: 100%;
+}
+
+.paginacion span {
+  font-size: 16px;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente el contenido del span */
+}

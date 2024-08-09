@@ -1,111 +1,194 @@
 <?php
-session_start();
+// Incluir el archivo de configuración de la base de datos
+require_once '../admin2/config/db.php';
+
+try {
+    $sql = "SELECT titulo, nombre_categoria, imagen_principal, id FROM posting_blog";
+    $stmt = $conn->query($sql);
+
+    $articulos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die("Error al ejecutar la consulta: " . $e->getMessage());
+}
+
+
+$articulosPorPagina = 4; // Número de artículos por página
+$totalArticulos = count($articulos); // Total de artículos
+$totalPaginas = ceil($totalArticulos / $articulosPorPagina); // Total de páginas
+
+// Obtener la página actual desde la URL (predeterminada a 1 si no está establecida)
+$paginaActual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+$paginaActual = max(1, min($totalPaginas, $paginaActual)); // Asegurarse de que la página actual esté en el rango válido
+
+// Calcular el índice de inicio para los artículos de la página actual
+$indiceInicio = ($paginaActual - 1) * $articulosPorPagina;
+$articulosActuales = array_slice($articulos, $indiceInicio, $articulosPorPagina); // Obtener los artículos para la página actual
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
-    <title>Neon House Led - Blog</title>
-    <link rel="shortcut icon" href="../ico.ico" type="image/x-icon">
-     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QRZPWCXDM8');
+    </script>
+    <title>Neon House Led - Blog</title>    
+    <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css">
+    <link rel="shortcut icon" href="../ico.ico" type="image/x-icon">    
     <link rel="stylesheet" href="../public/css/blog.css">
-    <link rel="stylesheet" href="../public/imagenes/img-blog/blog-1.jpg">
+    <link rel="stylesheet" href="../public/css/global.css">
+    <link rel="stylesheet" href="../public/css/categorias-blog.css">
+    <link rel="stylesheet" href="../public/css/estilos-blog.css">
     <link rel="stylesheet" href="../public/css/shared/header.css">
     <link rel="stylesheet" href="../public/css/shared/footer.css">
 </head>
 
+
 <body>
-    <h1 style="display:none" >Seccion de Blog</h1>
-    <?php require_once "layout/header.php" ?>
+    <h1 style="display:none">Sección de Blog</h1>
+    <?php require_once "layout/header.php"; ?>
 
-    <main class="pb-5">
-        <section class="image_blog position-relative section-padding">
-            <div class="position-absolute top-50 start-0 translate-middle-y text-left mx-4 pl-5">
-                <div class="mx-5 ">
-                    <h1 class="title-blog">
-                        BLOG
-                    </h1>
-                </div>
-
+    <section class="image_blog position-relative section-padding">
+        <div class="position-absolute top-50 start-0 translate-middle-y text-left mx-4 pl-5">
+            <div class="mx-5">
+                <h1 class="title-blog">BLOG</h1>
             </div>
+        </div>
+    </section>
 
+    <section class="blog-navigation">
+        <ul>
+            <li><a href="#">Artículos</a></li>
+            <li><a href="#">Tips</a></li>
+            <li><a href="#">Tendencias</a></li>
+            <li><a href="#">Novedades</a></li>
+            <li><a href="#">Ideas</a></li>
+        </ul>
+    </section>
+    <script src="../public/bootstrap/bootstrap.bundle.min.js"></script>
 
-        </section>
+    <div class="categorias">
+        <div class="contenedor-principal">
+            <h1 id="tituloPrincipal">Todos los artículos</h1>
+            <section class="articulos" id="articulos">
+                <?php foreach ($articulosActuales as $articulo) { ?>
+                    <div class="articulo">
+                    <a href="<?php echo htmlspecialchars('../vistas/blogs/mediaBlogs' . $articulo['id']). '.php'; ?>">                            <img src="<?php echo htmlspecialchars('../public/imagenes/imagenesBlogBd/' . $articulo['imagen_principal']); ?>" width="100%">
+                            <div class="info-articulo">
+                                <span class="categoria"><?php echo htmlspecialchars($articulo['nombre_categoria']); ?></span>
+                                <h2><?php echo htmlspecialchars($articulo['titulo']); ?></h2>
+                            </div>
+                        </a>
+                    </div>
+                <?php } ?>
+            </section>
 
+            <div class="paginacion">
+                <?php if ($paginaActual > 1) { ?>
+                    <button onclick="window.location.href='?pagina=<?php echo $paginaActual - 1; ?>'">Atrás</button>
+                <?php } ?>
+                <span><?php echo $paginaActual; ?>/<?php echo $totalPaginas; ?></span>
+                <?php if ($paginaActual < $totalPaginas) { ?>
+                    <button onclick="window.location.href='?pagina=<?php echo $paginaActual + 1; ?>'">Siguiente</button>
+                <?php } ?>
+            </div>
+        </div>
 
+        <div class="barra-lateral">
+            <div class="caja-buscar">
+                <input type="text" id="buscarTexto" placeholder="Buscar...">
+                <button id="botonBuscar"><img src="../admin2/public/img/lupa.webp" alt="Buscar"></button>
+            </div>
+            <ul>
+                <!-- Categorías -->
+                <li><strong>CATEGORÍAS:</strong></li>
+            <li><a href="./blog-restaurante.php">• RESTAURANTE.</a></li>
+            <li><a href="./blog-cevicheria.php">• CEVICHERIA.</a></li>
+            <li><a href="./blog-fast-food.php">• FAST FOOD.</a></li>
+            <li><a href="./blog-sangucheria.php">• SANGUCHERIA.</a></li>
+            <li><a href="./blog-polleria.php">• POLLERIA.</a></li>
+            <li><a href="./blog-discoteca.php">• DISCOTECA.</a></li>
+            <li><a href="./blog-pizzeria.php">• PIZZERIA.</a></li>
+            <li><a href="./blog-cafe-jugo.php">• CAFETERIA Y JUGUERIA.</a></li>
+            <li><a href="./blog-pan-pastel.php">• PANADERIA Y PASTELERIA.</a></li>
+            <li><a href="./blog-spa-barberia.php">• SALON SPA Y BARBERIA.</a></li>
+            <li><a href="./blog-bar.php">• BAR.</a></li>
+            <li><a href="./blog-hogar.php">• HOGAR.</a></li>
+            <li><a href="./blog-minimarket.php">• MINIMARKET.</a></li>
+            <li><a href="./blog-clinica-dental.php">• CLINICA DENTAL.</a></li>
+            <li><a href="./blog-departamento.php">• DEPARTAMENTO.</a></li>
+            <li><a href="./blog-dormitorio.php">• DORMITORIO PARA NIÑOS.</a></li>
+            <li><a href="./blog-estilo-industrial.php">• ESTILO INDUSTRIAL.</a></li>
+            <li><a href="./blog-fuente-soda.php">• FUENTE DE SODA.</a></li>
+            <li><a href="./blog-gimnasio.php">• GIMNASIO.</a></li>
+            <li><a href="./blog-hoteles.php">• HOTELES.</a></li>
+            <li><a href="./blog-recepciones.php">• RECEPCIONES.</a></li>
+            <li><a href="./blog-restobar.php">• RESTOBAR.</a></li>
+            <li><a href="./blog-belleza-barberia.php">• SALON BELLEZA Y BARBERIA.</a></li>
+            <li><a href="./blog-terraza.php">• TERRAZA.</a></li>
+            <li><a href="./blog-ropa.php">• ROPA.</a></li>
+            <li><a href="./blog-veterinaria.php">• VETERINARIA.</a></li>
+            <li><a href="./blog-heladeria.php">• HELADERIA.</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <?php include 'layout/foother.php' ?>
+    <script>
+        var todosLosArticulos = <?php echo json_encode($articulos); ?>;
+        document.getElementById('botonBuscar').addEventListener('click', function() {
+            var textoBuscar = document.getElementById('buscarTexto').value.toLowerCase();
+            var articulos = document.getElementById('articulos');
+            var tituloPrincipal = document.getElementById('tituloPrincipal');
+            articulos.innerHTML = ''; // Limpiar los artículos mostrados
+            var encontrado = false;
 
-        <section class="pt-4 section-container-blogs" id="sectionBlog">
+            todosLosArticulos.forEach(function(articulo) {
+                var titulo = articulo.titulo.toLowerCase();
+                var categoria = articulo.nombre_categoria.toLowerCase();
+                if (titulo.includes(textoBuscar) || categoria.includes(textoBuscar)) {
+                    var articuloHtml = `
+                        <div class="articulo">
+                            <a href="./vista-blog.php?id=${articulo.id}">
+                                <img src="../public/imagenes/imagenesBlogBd/${articulo.imagen_principal}" width="100%">
+                                <div class="info-articulo">
+                                    <span class="categoria">${articulo.nombre_categoria}</span>
+                                    <h2>${articulo.titulo}</h2>
+                                </div>
+                            </a>
+                        </div>
+                    `;
+                    articulos.innerHTML += articuloHtml;
+                    encontrado = true;
+                }
+            });
 
-             
+            if (textoBuscar === "") {
+                tituloPrincipal.innerText = "Todos los artículos";
+                tituloPrincipal.classList.remove('resultado-busqueda');
+                window.location.reload(); // Recargar la página si la búsqueda está vacía
+            } else if (encontrado) {
+                tituloPrincipal.innerText = "Resultado de la búsqueda";
+                tituloPrincipal.classList.add('resultado-busqueda');
+            } else {
+                tituloPrincipal.innerText = "No se encontraron resultados";
+                tituloPrincipal.classList.add('resultado-busqueda');
+            }
+        });
 
-        </section>
-
-
-
-
-
-    </main>
-
-
-
-    <?php require_once "layout/foother.php" ?>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        document.getElementById('buscarTexto').addEventListener('input', function() {
+            if (this.value === "") {
+                document.getElementById('tituloPrincipal').innerText = "Todos los artículos";
+                document.getElementById('tituloPrincipal').classList.remove('resultado-busqueda');
+                window.location.reload(); // Recargar la página si la búsqueda está vacía
+            }
+        });
+    </script>
 </body>
 </html>
-<script>
-    //section blog
-    const htmlBlog = document.getElementById('sectionBlog');
-
-    //lista de imagenes
-    const list_img = ['../public/imagenes/img-blog/blog-1.jpg','../public/imagenes/img-blog/blog-2.jpg',
-    '../public/imagenes/img-blog/blog-3.jpg','../public/imagenes/img-blog/blog-4.jpg',
-    '../public/imagenes/img-blog/blog-5.jpg','../public/imagenes/img-blog/blog-6.jpg',
-    '../public/imagenes/img-blog/blog-7.jpg','../public/imagenes/img-blog/blog-8.jpg',
-    '../public/imagenes/img-blog/blog-9.jpg','../public/imagenes/img-blog/blog-10.jpg'
-    ]
-
-    //funcion, mostrar el contenido de la bd al blog , especificamente dentro del section blog
-    const dataSee = () => {
-        fetch('../admin2/app/trigger/posteo.php?action=GETB')
-            .then((res) => res.json())
-            .then((Data) =>{
-                let intervalo = 0;
-                //iterar de la Lista , dupla, etc, con foreach 
-                Data.forEach(data => {
-                    //sumar mostrar cada Secmento del codigo , y se muestra
-                    // de forma independiente
-                    htmlBlog.innerHTML += 
-                    `
-                    <div class="container-blogs mb-4">
-                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative mx-auto" style="max-width: 80%;">
-                            <div class="col p-4 d-flex flex-column position-static">
-                                <strong class="d-inline-block mb-2 text-primary">Blog</strong>
-                                <h3 class="mb-4">${data.titulo}</h3>
-                                <p class="card-text mb-auto">${data.resumen}</p>
-                                <a href="../vistas/blogs/mediaBlogs${data.id}.php" class="link_blog">Leer más</a>
-                            </div>
-                            <div class="col-auto d-none d-lg-block">
-                                <img class="blog-img" src="../public/imagenes/imagesBlogBd/${data.imagen_principal}" alt="" width="200" height="250">
-                            </div>
-                        </div>
-                    </div>
-                    `;
-                    htmlBlog.innerHTML += '\n';
-                    intervalo ++;
-                    //repetir imagen una vez llegado a 10 blog section
-                    if(intervalo >= 10){
-                        intervalo = 0;
-                    }
-                
-                
-                });
-                
-            })
-    }
-    dataSee();
-</script>
