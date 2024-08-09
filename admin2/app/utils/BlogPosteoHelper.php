@@ -1,6 +1,8 @@
 <?php
-require_once '../utils/FileHelper.php';
-require_once '../utils/JsonHelper.php';
+//require_once '../utils/FileHelper.php';
+//require_once '../utils/JsonHelper.php';
+require_once __DIR__ . '/FileHelper.php';
+require_once __DIR__ . '/JsonHelper.php';
 
 class BlogPosteoHelper {
     private const ERROR_ID_NOT_PROVIDED = 'Post ID not provided';
@@ -31,7 +33,8 @@ class BlogPosteoHelper {
 
         return [
             $data['image1'] ?? null,
-            $data['image2'] ?? null
+            $data['image2'] ?? null,
+            $data['iamge3'] ?? null
         ];
     }
 

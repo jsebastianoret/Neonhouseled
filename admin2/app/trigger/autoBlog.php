@@ -1,14 +1,36 @@
 <?php 
-require_once 'C:/xampp/htdocs/proyecto/Neonhouseled/admin2/config/db.php';
-require_once 'C:/xampp/htdocs/proyecto/Neonhouseled/admin2/app/controller/posteo.php';
-require_once 'C:/xampp/htdocs/proyecto/Neonhouseled/admin2/app/model/posteo.php';
-require_once 'C:/xampp/htdocs/proyecto/Neonhouseled/admin2/app/db/db.php';
+//require_once 'C:/xampp/htdocs/proyecto/Neonhouseled/admin2/config/db.php';
+//require_once 'C:/xampp/htdocs/proyecto/Neonhouseled/admin2/app/controller/posteo.php';
+//require_once 'C:/xampp/htdocs/proyecto/Neonhouseled/admin2/app/model/posteo.php';
+//require_once 'C:/xampp/htdocs/proyecto/Neonhouseled/admin2/app/db/db.php';
+
 //require_once '../../config/db.php';
 //require_once '../controller/posteo.php';
 //require_once '../model/posteo.php';
 //require_once '../db/db.php';
 
- 
+//require_once '../../admin2/config/db.php';
+//require_once '../../admin2/app/controller/posteo.php';
+//require_once '../../admin2/app/model/posteo.php';
+//require_once '../../admin2/app/db/db.php';
+//require_once '../../admin2/app/utils/FileHelper.php';
+
+//require_once '../../admin2/config/db.php';
+//require_once '../../admin2/app/controller/posteo.php';
+//require_once '../../admin2/app/model/posteo.php';
+//require_once '../../admin2/app/db/db.php';
+//require_once '../../admin2/app/utils/FileHelper.php';
+
+
+require_once dirname(dirname(__DIR__)) . '/config/db.php';
+require_once dirname(__DIR__) . '/controller/posteo.php';
+require_once dirname(__DIR__) . '/model/posteo.php';
+require_once dirname(__DIR__) . '/db/db.php';
+
+
+
+
+
 
 
 function getBlogCat($categoria, $id) {

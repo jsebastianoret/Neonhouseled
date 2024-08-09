@@ -1,6 +1,8 @@
 <?php
-require_once '../utils/FileHelper.php';
-require_once '../utils/BlogPosteoHelper.php';
+//require_once '../utils/FileHelper.php';
+//require_once '../utils/BlogPosteoHelper.php';
+require_once dirname(__DIR__) . '/utils/FileHelper.php';
+require_once dirname(__DIR__) . '/utils/BlogPosteoHelper.php';
 
 class ControllerPosteo{
 
