@@ -105,15 +105,27 @@ if( isset($_SESSION['id']) ){
                                             <textarea type="text" name="content4" id="content4" class="form-control"  style="height: 20vh;" required></textarea>
                                         </div><!---->
                                         <div class="mb-3">
+                                            <label for="imagec" class="form-label">Imagen Card</label>
+                                            <br>
+                                            <label>Dimensiones: 310 x 330</label>
+                                            <input type="file" name="image_card" id="image_card" class="form-control" required accept=".jpg,.jpeg,.png,.webp,.avif">
+                                        </div> 
+                                        <div class="mb-3">
                                             <label for="imagep" class="form-label">Imagen Portada</label>
+                                            <br>
+                                            <label>Dimensiones: 1000 x 480</label>
                                             <input type="file" name="image_portada" id="image_portada" class="form-control" required accept=".jpg,.jpeg,.png,.webp,.avif">
                                         </div> 
                                         <div class="mb-3">
                                             <label for="image1" class="form-label">Imagen Principal</label>
+                                            <br>
+                                            <label>Dimensiones: 400 x 475</label>
                                             <input type="file" name="image1" id="image1" class="form-control" required accept=".jpg,.jpeg,.png,.webp,.avif">
                                         </div> 
                                         <div class="mb-3">
                                             <label for="image2" class="form-label">Imagen Secundaria</label>
+                                            <br>
+                                            <label>Dimensiones: 400 x 475</label>
                                             <input type="file" name="image2" id="image2" class="form-control" required accept=".jpg,.jpeg,.png,.webp,.avif"> 
                                         </div> 
                                         <div class="mb-3">
@@ -224,17 +236,30 @@ if( isset($_SESSION['id']) ){
                                         </div>
                                         <!---->
                                         <div class="mb-3">
+                                            <label for="image1_card" class="form-label">Imagen Card</label>
+                                            <br>
+                                            <label>Dimensiones: 310 x 330</label>
+                                            <img id="previewImagec_2" src="" alt="Vista Previa Imagen Card" style="width: 90px; height: 90px; margin-left: 70px; margin-bottom: 15px;">
+                                            <input type="file" name="image1_card" id="image1_card" class="form-control" accept=".jpg,.jpeg,.png,.webp,.avif">
+                                        </div> 
+                                        <div class="mb-3">
                                             <label for="image1_portada" class="form-label">Imagen Portada</label>
+                                            <br>
+                                            <label>Dimensiones: 1000 x 480</label>
                                             <img id="previewImagep_2" src="" alt="Vista Previa Imagen Portada" style="width: 90px; height: 90px; margin-left: 70px; margin-bottom: 15px;">
                                             <input type="file" name="image1_portada" id="image1_portada" class="form-control" accept=".jpg,.jpeg,.png,.webp,.avif">
                                         </div> 
                                         <div class="mb-3">
                                             <label for="image1_2" class="form-label">Imagen Principal</label>
+                                            <br>
+                                            <label>Dimensiones: 400 x 475</label>
                                             <img id="previewImage1_2" src="" alt="Vista Previa Imagen1" style="width: 90px; height: 90px; margin-left: 70px; margin-bottom: 15px;">
                                             <input type="file" name="image1_2" id="image1_2" class="form-control" accept=".jpg,.jpeg,.png,.webp,.avif">
                                         </div> 
                                         <div class="mb-3">
                                             <label for="image2_2" class="form-label">Imagen Secundaria</label>
+                                            <br>
+                                            <label>Dimensiones: 400 x 475</label>
                                             <img id="previewImage2_2" src="" alt="Vista Previa Imagen2" style="width: 90px; height: 90px; margin-left: 56px; margin-bottom: 15px;">
                                             <input type="file" name="image2_2" id="image2_2" class="form-control"  accept=".jpg,.jpeg,.png,.webp,.avif">
                                         </div> 
@@ -278,6 +303,7 @@ if( isset($_SESSION['id']) ){
                         <th scope="col">PARRAFO 2</th>
                         <th scope="col">PARRAFO 3</th>
                         <th scope="col">PARRAFO 4</th>
+                        <th scope="col">IMAGEN CARD</th>
                         <th scope="col">IMAGEN PORTADA</th>
                         <th scope="col">IMAGEN PRINCIPAL</th>
                         <th scope="col">IMAGEN SECUNDARIA</th>
@@ -309,7 +335,7 @@ if( isset($_SESSION['id']) ){
                 console.log("Boton activado");  
                 e.preventDefault();
                 // validarData("title", "complement", "link", "ADD")
-                validarData("category", "title", "resumen", "subtitle", "content1", "content2", "content3", "content4", "image_portada", "image1", "image2", "linkVideo", "ADD")  //Llama a la funcion validarData, con sus id("") nombres
+                validarData("category", "title", "resumen", "subtitle", "content1", "content2", "content3", "content4", "image_card", "image_portada", "image1", "image2", "linkVideo", "ADD")  //Llama a la funcion validarData, con sus id("") nombres
             });
         }
 
@@ -320,7 +346,7 @@ if( isset($_SESSION['id']) ){
                 console.log("Boton activado Update");
                 e.preventDefault();
                 // validarData("title2", "complement2", "link2", "UPDATE")
-                validarData("category2", "title2", "resumen2", "subtitle2", "content12", "content22", "content32", "content42", "image1_portada", "image1_2", "image2_2", "linkVideo2", "UPDATE") //Como parametro ponemos UPDATE
+                validarData("category2", "title2", "resumen2", "subtitle2", "content12", "content22", "content32", "content42", "image1_card", "image1_portada", "image1_2", "image2_2", "linkVideo2", "UPDATE") //Como parametro ponemos UPDATE
             });
         }
 
@@ -387,7 +413,7 @@ if( isset($_SESSION['id']) ){
 
         // Función principal que valida los datos del formulario y maneja la lógica de agregar o actualizar posts
         // POST-UPDATE Function 1, Sea que llamen a esta funcion en waitToGo() o waitToGoUpdate(), con el tipe se vera si es ADD o UPDATE
-        function validarData(ca, ti, re, subti, parrafo1, parrafo2, parrafo3, parrafo4, imgp, img1, img2, link, tipe) {
+        function validarData(ca, ti, re, subti, parrafo1, parrafo2, parrafo3, parrafo4, imgc, imgp, img1, img2, link, tipe) {
             const elements = {
                 categories: document.getElementById(ca),
                 titles: document.getElementById(ti),
@@ -397,6 +423,7 @@ if( isset($_SESSION['id']) ){
                 text2:document.getElementById(parrafo2),
                 text3:document.getElementById(parrafo3),
                 text4:document.getElementById(parrafo4),
+                imgsc:document.getElementById(imgc),
                 imgsp: document.getElementById(imgp),
                 imgs1: document.getElementById(img1),
                 imgs2: document.getElementById(img2),
@@ -430,27 +457,28 @@ if( isset($_SESSION['id']) ){
         // Maneja la lógica para agregar un nuevo post
         function handleAdd(elements) {
             const timestamp = Date.now();
-            const newFile1 = processImage(elements.imgsp, timestamp);
-            const newFile2 = processImage(elements.imgs1, timestamp);
-            const newFile3 = processImage(elements.imgs2, timestamp);
+            const newFile1 = processImage(elements.imgsc, timestamp);
+            const newFile2 = processImage(elements.imgsp, timestamp);
+            const newFile3 = processImage(elements.imgs1, timestamp);
+            const newFile4 = processImage(elements.imgs2, timestamp);
             const formattedDateTime = generateDateFormat();
 
             catchDate(elements.categories, elements.titles, elements.resumens, elements.subtitles,
-                elements.text1, elements.text2, elements.text3, elements.text4, newFile1, newFile2, newFile3, elements.links, formattedDateTime, "ADD");
+                elements.text1, elements.text2, elements.text3, elements.text4, newFile1, newFile2, newFile3, newFile4, elements.links, formattedDateTime, "ADD");
             cleanDate(elements.categories, elements.titles, elements.resumens, elements.subtitles,
-                elements.text1, elements.text2, elements.text3, elements.text4, elements.imgsp, elements.imgs1, elements.imgs2, elements.links);
+                elements.text1, elements.text2, elements.text3, elements.text4, elements.imgsc, elements.imgsp, elements.imgs1, elements.imgs2, elements.links);
         }
 
         // Maneja la lógica para actualizar un post existente
         function handleUpdate(elements) {
             catchDateUp(elements.idm, elements.categories, elements.titles, elements.resumens,
-                elements.subtitles, elements.text1, elements.text2, elements.text3, elements.text4, elements.imgsp ,elements.imgs1, elements.imgs2, elements.links, "UPDATE");
+                elements.subtitles, elements.text1, elements.text2, elements.text3, elements.text4, elements.imgsc, elements.imgsp ,elements.imgs1, elements.imgs2, elements.links, "UPDATE");
             modificarYCerrarModal();
         }
 
 
         // POST Function 4
-        function cleanDate(c,t,r,s,p1,p2,p3,p4,img,img2,imgp,l) {
+        function cleanDate(c,t,r,s,p1,p2,p3,p4,imgc,imgp,img1,img2,l) {
             c.value = ""
             t.value= ""
             r.value = ""
@@ -459,15 +487,16 @@ if( isset($_SESSION['id']) ){
             p2.value = ""
             p3.value = ""
             p4.value = ""
-            img.value = ""
-            img2.value = ""
+            imgc.value = ""
             imgp.value = ""
+            img1.value = ""
+            img2.value = ""
             l.value = ""
         }
 
         // Prepara y envía los datos para crear un nuevo post
         // POST Function 2
-        function catchDate(ca,ti,re,sub,p1, p2, p3, p4,i1,i2,i3,l,      f,tipe) {
+        function catchDate(ca,ti,re,sub,p1, p2, p3, p4,i1,i2,i3,i4,l,      f,tipe) {
 
             const body = new FormData();
             body.append('nombre_categoria', ca.value.trim());
@@ -478,9 +507,10 @@ if( isset($_SESSION['id']) ){
             body.append('parrafo_dos', p2.value);
             body.append('parrafo_tres', p3.value);
             body.append('parrafo_cuatro', p4.value);
-            body.append('imagen_portada', i1);
-            body.append('imagen_principal', i2);
-            body.append('imagen_secundaria', i3);
+            body.append('imagen_card', i1);
+            body.append('imagen_portada', i2);
+            body.append('imagen_principal', i3);
+            body.append('imagen_secundaria', i4);
             body.append('videoBlog', l.value.trim());
             body.append("fecha", f);
             
@@ -495,7 +525,7 @@ if( isset($_SESSION['id']) ){
 
         // Prepara y envía los datos para actualizar un post existente
         //UPDATE Function 2
-        function catchDateUp(i, ca, ti, re, sub, p1, p2, p3, p4, i1, i2, i3, l, tipe) {
+        function catchDateUp(i, ca, ti, re, sub, p1, p2, p3, p4, i1, i2, i3, i4, l, tipe) {
             const body = new FormData();
             const timestamp = Date.now();
 
@@ -510,9 +540,10 @@ if( isset($_SESSION['id']) ){
             body.append('parrafo_cuatro', p4.value);
             body.append('videoBlog', l.value.trim());
             body.append('fecha', fecha);
-            handleImageForUpdate(i1, 'imagen_portada', body, timestamp);
-            handleImageForUpdate(i2, 'imagen_principal', body, timestamp);
-            handleImageForUpdate(i3, 'imagen_secundaria', body, timestamp);
+            handleImageForUpdate(i1, 'imagen_card', body, timestamp);
+            handleImageForUpdate(i2, 'imagen_portada', body, timestamp);
+            handleImageForUpdate(i3, 'imagen_principal', body, timestamp);
+            handleImageForUpdate(i4, 'imagen_secundaria', body, timestamp);
 
             sentDataToServerSide(body, tipe);
         }
@@ -546,16 +577,17 @@ if( isset($_SESSION['id']) ){
                 const img1 = tr.querySelector(".image1").getAttribute('ruta1');
                 const img2 = tr.querySelector(".image2").getAttribute('ruta2');
                 const img3 = tr.querySelector(".image_portada").getAttribute('ruta3');
+                const img4 = tr.querySelector(".image_card").getAttribute('ruta4');
 
                 if (confirm("¿Está seguro que desea eliminar este registro?")) {
-                    attemptToDeleteRecord(id, img1, img2, img3, tr);
+                    attemptToDeleteRecord(id, img1, img2, img3, img4, tr);
                 }
 
             }
         })
 
         //Delete Post de Blog
-        function attemptToDeleteRecord(id,img1,img2,img3,tr){
+        function attemptToDeleteRecord(id,img1,img2,img3,img4,tr){
             const numericId = validateAndConvertId(id);
             if (numericId === null) {
                 console.error('El ID no es un número válido:', id);
@@ -563,7 +595,7 @@ if( isset($_SESSION['id']) ){
                 return;
             }
 
-            const data = prepareBlogDataForDeletion(numericId, img1, img2, img3);
+            const data = prepareBlogDataForDeletion(numericId, img1, img2, img3, img4);
             logFormattedData(data); // Log data for debugging purposes
             sendDeleteRequest(data, tr);
         }
@@ -574,12 +606,13 @@ if( isset($_SESSION['id']) ){
             return isNaN(numericId) ? null : numericId;
         }
 
-        function prepareBlogDataForDeletion(id,img1,img2,img3){
+        function prepareBlogDataForDeletion(id,img1,img2,img3,img4){
             return {
                 id: id,
                 image1: img1,
                 image2: img2,
-                image3: img3
+                image3: img3,
+                image4: img4
             };
         }
 
@@ -638,6 +671,7 @@ if( isset($_SESSION['id']) ){
                         <td>${data.parrafo_dos}</td>
                         <td>${data.parrafo_tres}</td>
                         <td>${data.parrafo_cuatro}</td>
+                        <td><img class="image_card" ruta4="${data.imagen_card}" id="imagen_card" src="../${data.imagen_card}" alt="Imagen Card" style="width: 90px; height: 90px;"></td>
                         <td><img class="image_portada" ruta3="${data.imagen_portada}" id="imagen_portada" src="../${data.imagen_portada}" alt="Imagen Portada" style="width: 90px; height: 90px;"></td>
                         <td><img class="image1" ruta1="${data.imagen_principal}" id="imagen1" src="../${data.imagen_principal}" alt="Imagen Principal" style="width: 90px; height: 90px;"></td>
                         <td><img class="image2" ruta2="${data.imagen_secundaria}" id="imagen2" src="../${data.imagen_secundaria}" alt="Imagen Secunaria" style="width: 90px; height: 90px;"></td>
@@ -678,6 +712,7 @@ if( isset($_SESSION['id']) ){
                             const i1_2 = document.getElementById("image1_2");
                             const i2_2 = document.getElementById("image2_2");
                             const ip_2 = document.getElementById("image1_portada");
+                            const ic_2 = document.getElementById("image1_card");
                             const link2 = document.getElementById("linkVideo2");
 
                             
@@ -695,12 +730,14 @@ if( isset($_SESSION['id']) ){
                             i1_2.setAttribute('data-existing-file', userData.imagen_principal);
                             i2_2.setAttribute('data-existing-file', userData.imagen_secundaria);
                             ip_2.setAttribute('data-existing-file', userData.imagen_portada);
+                            ic_2.setAttribute('data-existing-file', userData.imagen_card);
 
 
 
                             previewImage1_2.src = `../${userData.imagen_principal}`;
                             previewImage2_2.src = `../${userData.imagen_secundaria}`;
                             previewImagep_2.src = `../${userData.imagen_portada}`;
+                            previewImagec_2.src = `../${userData.imagen_card}`;
 
                             link2.value = userData.videoBlog;
                         
@@ -737,6 +774,17 @@ if( isset($_SESSION['id']) ){
                         const reader = new FileReader();
                         reader.onload = function (e) {
                         document.getElementById('previewImagep_2').src = e.target.result;
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                    });
+
+                    document.getElementById('image1_card').addEventListener('change', function (event) {
+                    const file = event.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                        document.getElementById('previewImagec_2').src = e.target.result;
                         };
                         reader.readAsDataURL(file);
                     }

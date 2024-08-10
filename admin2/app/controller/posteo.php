@@ -29,17 +29,19 @@ class ControllerPosteo{
             isset($_POST['parrafo_uno']) && isset($_POST['parrafo_dos']) &&
             isset($_POST['parrafo_tres']) && isset($_POST['parrafo_cuatro']) && 
             isset($_FILES['imagen_principal']) && isset($_FILES['imagen_secundaria']) && 
-            isset($_FILES['imagen_portada']) && isset( $_POST['videoBlog']) &&
-            isset($_POST['fecha'])
+            isset($_FILES['imagen_portada']) && isset( $_FILES['imagen_card']) &&
+            isset( $_POST['videoBlog']) && isset($_POST['fecha'])
         ) {
             // Creamos una variable que contenga la ruta donde se cargaran las imagenes
             $targetDir = "../../../public/imagenes/imagesBlogBd/";
             //Creamos unas variables donde concatenaremos la ruta + el nombre del archivo carga, OJ SOLO EL NOMBRE "name"
+            $imagen_card = $targetDir . basename($_FILES["imagen_card"]["name"]);
             $imagen_portada = $targetDir . basename($_FILES["imagen_portada"]["name"]);
             $imagen_principal = $targetDir . basename($_FILES["imagen_principal"]["name"]);
             $imagen_secundaria = $targetDir . basename($_FILES["imagen_secundaria"]["name"]);
 
             //APARTE DE TODO, creamos otra variable para las imagenes que llamaremos desde los archivos nuevos creado automaticamente
+            $imagen_card_2 = basename($_FILES["imagen_card"]["name"]);
             $imagen_portada_2 = basename($_FILES["imagen_portada"]["name"]);
             $imagen_principal_2 = basename($_FILES["imagen_principal"]["name"]);
             $imagen_secundaria_2 = basename($_FILES["imagen_secundaria"]["name"]);
@@ -48,6 +50,7 @@ class ControllerPosteo{
 
             //$_FILES["imagen_principal"]["tmp_name"] obtiene la ruta temporal donde se guarda la imagen en el servidor después de la carga.
             //move_uploaded_file() mueve la imagen desde su ubicación temporal a la ubicación final especificada por $imagen_principal.
+            move_uploaded_file($_FILES["imagen_card"]["tmp_name"], $imagen_card);
             move_uploaded_file($_FILES["imagen_portada"]["tmp_name"], $imagen_portada);
             move_uploaded_file($_FILES["imagen_principal"]["tmp_name"], $imagen_principal);
             move_uploaded_file($_FILES["imagen_secundaria"]["tmp_name"], $imagen_secundaria);
@@ -55,12 +58,13 @@ class ControllerPosteo{
             $lista = [
                 $_POST['nombre_categoria'], $_POST['titulo'], $_POST['resumen'],
                 $_POST['subtitulo'], $_POST['parrafo_uno'], $_POST['parrafo_dos'],
-                $_POST['parrafo_tres'], $_POST['parrafo_cuatro'] ,$imagen_portada,
-                $imagen_principal, $imagen_secundaria, $_POST['videoBlog'], $_POST['fecha']
+                $_POST['parrafo_tres'], $_POST['parrafo_cuatro'] , $imagen_card, 
+                $imagen_portada, $imagen_principal, $imagen_secundaria, 
+                $_POST['videoBlog'], $_POST['fecha']
             ];
             $respuesta = ModelPosteo::add(
                 "posting_blog",
-                ["nombre_categoria", "titulo", "resumen", "subtitulo", "parrafo_uno", "parrafo_dos", "parrafo_tres", "parrafo_cuatro", "imagen_portada", "imagen_principal", "imagen_secundaria","videoBlog", "fecha"],
+                ["nombre_categoria", "titulo", "resumen", "subtitulo", "parrafo_uno", "parrafo_dos", "parrafo_tres", "parrafo_cuatro", "imagen_card", "imagen_portada", "imagen_principal", "imagen_secundaria","videoBlog", "fecha"],
                 $lista
             );
 
@@ -95,8 +99,8 @@ class ControllerPosteo{
         $imagen_principal = $img1;
         $imagen_secundaria = $img2;
         $imagen_portada = $imgp;
-        $videoBlog = $valores[11];
-        $fecha = $valores[12];
+        $videoBlog = $valores[12];
+        $fecha = $valores[13];
 
 
         // Extraer el ID del video de la URL
@@ -287,6 +291,7 @@ HTML;
         $oldImage1 = isset($_POST['imagen_principal_antigua']) ? $_POST['imagen_principal_antigua'] : null;
         $oldImage2 = isset($_POST['imagen_secundaria_antigua']) ? $_POST['imagen_secundaria_antigua'] : null;
         $oldImage3 = isset($_POST['imagen_portada_antigua']) ? $_POST['imagen_portada_antigua'] : null;
+        $oldImage4 = isset($_POST['imagen_card_antigua']) ? $_POST['imagen_card_antigua'] : null;
 
         // Si se ha cargado una nueva imagen principal, se mueve desde la ubicación temporal a la ubicación final
         $imagen_principal = null;
@@ -296,6 +301,7 @@ HTML;
             FileHelper::deleteIndividualImage($oldImage1);
             FileHelper::deleteIndividualImage($oldImage2);
             FileHelper::deleteIndividualImage($oldImage3);
+            FileHelper::deleteIndividualImage($oldImage4);
         } elseif (isset($_POST['imagen_principal'])) {
             $imagen_principal = $_POST['imagen_principal'];
         }
@@ -307,6 +313,7 @@ HTML;
             FileHelper::deleteIndividualImage($oldImage1);
             FileHelper::deleteIndividualImage($oldImage2);
             FileHelper::deleteIndividualImage($oldImage3);
+            FileHelper::deleteIndividualImage($oldImage4);
         } elseif (isset($_POST['imagen_secundaria'])) {
             $imagen_secundaria = $_POST['imagen_secundaria'];
         }
@@ -318,16 +325,29 @@ HTML;
             FileHelper::deleteIndividualImage($oldImage1);
             FileHelper::deleteIndividualImage($oldImage2);
             FileHelper::deleteIndividualImage($oldImage3);
+            FileHelper::deleteIndividualImage($oldImage4);
         } elseif (isset($_POST['imagen_portada'])) {
             $imagen_portada = $_POST['imagen_portada'];
         }
 
+        $imagen_card = null;
+        if (isset($_FILES['imagen_card']) && $_FILES['imagen_card']['name'] != '') {
+            $imagen_card = "../../../public/imagenes/imagesBlogBd/" . basename($_FILES["imagen_card"]["name"]);
+            move_uploaded_file($_FILES["imagen_card"]["tmp_name"], $imagen_card);
+            FileHelper::deleteIndividualImage($oldImage1);
+            FileHelper::deleteIndividualImage($oldImage2);
+            FileHelper::deleteIndividualImage($oldImage3);
+            FileHelper::deleteIndividualImage($oldImage4);
+        } elseif (isset($_POST['imagen_card'])) {
+            $imagen_card = $_POST['imagen_card'];
+        }
+
         $lista = [
-            $nombre_categoria, $titulo, $resumen, $subtitulo, $parrafo1, $parrafo2, $parrafo3, $parrafo4, $imagen_principal, $imagen_secundaria, $imagen_portada, $videoBlog, $fecha
+            $nombre_categoria, $titulo, $resumen, $subtitulo, $parrafo1, $parrafo2, $parrafo3, $parrafo4, $imagen_principal, $imagen_secundaria, $imagen_portada, $imagen_card, $videoBlog, $fecha
         ]; 
 
         $respuesta = ModelPosteo::update(
-            $id, $nombre_categoria, $titulo, $resumen, $subtitulo, $parrafo1, $parrafo2, $parrafo3, $parrafo4, $imagen_principal, $imagen_secundaria, $imagen_portada, $videoBlog
+            $id, $nombre_categoria, $titulo, $resumen, $subtitulo, $parrafo1, $parrafo2, $parrafo3, $parrafo4, $imagen_principal, $imagen_secundaria, $imagen_portada, $imagen_card, $videoBlog
         );
 
         if ($respuesta) {

@@ -3,7 +3,7 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Transformando el Espacio Nocturno: El Arte del Diseño de Discotecas</title>
+            <title>dsadasd</title>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
             <link rel="stylesheet" href="../../public/css/all_blog.css">
@@ -36,11 +36,11 @@
                 <div class="blog-container">
                     <span class="categoria">Categoría: FAST FOOD</span>
                     <header class="blog-header">
-                        <h1>Transformando el Espacio Nocturno: El Arte del Diseño de Discotecas</h1>
+                        <h1>dsadasd</h1>
                         <div class="blog-banner">
-                            <img src="../../public/imagenes/imagesBlogBd/../../../public/imagenes/imagesBlogBd/blog_1723139927007_6c5f20793c3926732fd5d6552009079c.jpg" alt="Imagen Portada" class="imgprin">
+                            <img src="../../public/imagenes/imagesBlogBd/../../../public/imagenes/imagesBlogBd/blog_1723232466861_960x0.webp" alt="Imagen Portada" class="imgprin">
                             <div class="text-box">
-                                <p>dferferfr</p>
+                                <p>sadas</p>
                             </div>
                         </div>
                     </header>
@@ -48,7 +48,7 @@
                         <article class="blog-article">
                             <hr>
                             <div class="meta">
-                                <span id="f">Publicado: 2024-08-08 12:58:47</span>
+                                <span id="f">Publicado: 2024-08-09 14:35:22</span>
                                 <span id="hoy"></span>
                             </div>
                             <hr>
@@ -56,14 +56,14 @@
                                 <img src="../../public/imagenes/logo-black.png" alt="Logo" class="logo-blog">
                                 <span class="logo-span">By NeonHouseLed</span>
                             </div>
-                            <h2>La Experiencia Sensorial: Sonido y Música</h2>
+                            <h2>sadasd</h2>
                             <div class="blog-body">
-                                <img src="../../public/imagenes/imagesBlogBd/../../../public/imagenes/imagesBlogBd/blog_1723225965170_b12-moda.jpg" alt="Imagen Principal">
+                                <img src="../../public/imagenes/imagesBlogBd/../../../public/imagenes/imagesBlogBd/blog_1723232122070_pul.jpg" alt="Imagen Principal">
                                 <div>
-                                    <p>ferfer</p>
+                                    <p>sadasd</p>
                                     <br>
                                     <br>
-                                    <p>rfre</p>
+                                    <p>dasdas</p>
                                 </div>
                             </div>
                             <br>
@@ -71,17 +71,17 @@
                             <br>
                             <div class="blog-body">
                                 <div>
-                                    <p>ferf</p>
+                                    <p>dasd</p>
                                     <br>
                                     <br>
-                                    <p>ref</p>
+                                    <p>dasdas</p>
                                 </div>
                                 <br>
                                 <br>
-                                <img src="../../public/imagenes/imagesBlogBd/../../../public/imagenes/imagesBlogBd/blog_1723139927007_cccsaa.jpg" alt="Imagen Secundaria">
+                                <img src="../../public/imagenes/imagesBlogBd/../../../public/imagenes/imagesBlogBd/blog_1723232122070_axaxs.jpg" alt="Imagen Secundaria">
                             </div>
                             <div class="container-video">
-                                <iframe src="https://www.youtube.com/embed/RgKAFK5djSk" frameborder="0" allowfullscreen></iframe>
+                                <iframe src="https://www.youtube.com/embed/q-9--T224xw" frameborder="0" allowfullscreen></iframe>
                             </div>
                             <br>
                             <br>
@@ -100,7 +100,7 @@
                         </div>
                         <div class="container-otros-body">
                             <?php require_once "../../admin2/app/trigger/autoBlog.php" ?>
-                            <?php getBlogCat('FAST FOOD', 63) ?>
+                            <?php getBlogCat('FAST FOOD', 68) ?>
                         </div>
                     </div>
                 </div>

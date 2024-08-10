@@ -34,7 +34,8 @@ class BlogPosteoHelper {
         return [
             $data['image1'] ?? null,
             $data['image2'] ?? null,
-            $data['iamge3'] ?? null
+            $data['image3'] ?? null,
+            $data['image4'] ?? null
         ];
     }
 

@@ -42,10 +42,10 @@ class ModelPosteo{
         return $res->get_result()->fetch_all(MYSQLI_ASSOC);
     }
 
-    public static function update($id, $nombre_categoria, $titulo, $resumen, $subtitulo, $parrafo1, $parrafo2, $parrafo3, $parrafo4, $imagen_principal, $imagen_secundaria, $imagen_portada, $videoBlog) {
+    public static function update($id, $nombre_categoria, $titulo, $resumen, $subtitulo, $parrafo1, $parrafo2, $parrafo3, $parrafo4, $imagen_principal, $imagen_secundaria, $imagen_portada, $imagen_card, $videoBlog) {
         [$err, $res] = DB::query(
-            'UPDATE posting_blog SET nombre_categoria = ?, titulo = ?, resumen = ?, subtitulo = ?, parrafo_uno = ?, parrafo_dos = ?, parrafo_tres = ?, parrafo_cuatro = ?, imagen_principal = ?, imagen_secundaria = ?, imagen_portada = ?,videoBlog = ? WHERE id = ?',
-            [$nombre_categoria, $titulo, $resumen, $subtitulo, $parrafo1, $parrafo2, $parrafo3, $parrafo4, $imagen_principal, $imagen_secundaria, $imagen_portada, $videoBlog, $id]
+            'UPDATE posting_blog SET nombre_categoria = ?, titulo = ?, resumen = ?, subtitulo = ?, parrafo_uno = ?, parrafo_dos = ?, parrafo_tres = ?, parrafo_cuatro = ?, imagen_principal = ?, imagen_secundaria = ?, imagen_portada = ?, imagen_card = ?, videoBlog = ? WHERE id = ?',
+            [$nombre_categoria, $titulo, $resumen, $subtitulo, $parrafo1, $parrafo2, $parrafo3, $parrafo4, $imagen_principal, $imagen_secundaria, $imagen_portada, $imagen_card,$videoBlog, $id]
         );
 
         if ($err) {
@@ -65,7 +65,7 @@ class ModelPosteo{
         return $res->affected_rows > 0;
     }
 
-     //FRANK Obtener blog x categoria, solo tres registros
+     //Obtener blog x categoria, solo tres registros
      public static function getBlogCat($categoria, $id){
         [$err, $res ] = Db::query('SELECT * FROM posting_blog WHERE nombre_categoria = ? AND id != ? LIMIT 3;', [$categoria, $id]);
         if( $err ) {
