@@ -133,7 +133,7 @@ class UserController extends Usuario
     }
     //::::::::::::client::::::::::::::::
 
-    public function showgalleryforclient($id)
+/*    public function showgalleryforclient($id)
     {
         $this->identclientgallery = $id;
         $resultgalleryforclient = $this->galleryforclients();
@@ -152,7 +152,38 @@ class UserController extends Usuario
         }
         echo $articles;
 
+    }*/
+    public function showgalleryforclient($id)
+    {
+        $this->identclientgallery = $id;
+        $resultgalleryforclient = $this->galleryforclients();
+        $articles = '';
+
+        foreach ($resultgalleryforclient as $p) {
+            $iganes = $p['image'];
+            //En la bd está almenado como por ejemplo "552024041020PANORAMICO 1.5.jpg"
+
+            //Como tenemos las mismas imágenes en la carpeta webp entonces podemos hacer el cambio
+            // Cambiar la extensión a .webp
+            $iganesWebp = preg_replace('/\.(jpg|jpeg|png)$/i', '.webp', $iganes);
+
+            // Verificar si la imagen .webp existe
+            $webpPath = "../imgGallery/webp/$iganesWebp";
+            $imagePath = file_exists($webpPath) ? $webpPath : "../imgGallery/$iganes";  // Usa .webp si existe, de lo contrario usa el original
+
+            $articles .= "<article class='product'>
+                       <figure class='img-product'>
+                           <img src='$imagePath' alt='Imagen galleria'>
+                           <h4 class='subtitulo-product'>
+                           " . $p['descripcion'] . "
+                            </h4>
+                       </figure>
+                   </article> <br>";
+        }
+
+        echo $articles;
     }
+
     //:::::::::::::::General::::::::::::::::::::::::::::
 
     public function showgalleryforAll()

@@ -335,7 +335,7 @@ $categoriesHTML = $pageRenderer->renderCategories();
 
         </div>
         <div class="ultimo">
-            <a class="boton_final"">
+            <a class="boton_final"  href="admin/index.php">
                 <img class="imagen_final lazyload" alt="neon" src="public/imagenes/lupa.webp" width="219" height="100">
             </a>
         </div>
