@@ -3,7 +3,7 @@
 require_once '../admin2/config/db.php';
 
 try {
-    $sql = "SELECT titulo, nombre_categoria, imagen_principal, id FROM posting_blog";
+    $sql = "SELECT titulo, nombre_categoria, imagen_card, id FROM posting_blog";
     $stmt = $conn->query($sql);
 
     $articulos = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -79,7 +79,7 @@ $articulosActuales = array_slice($articulos, $indiceInicio, $articulosPorPagina)
             <section class="articulos" id="articulos">
                 <?php foreach ($articulosActuales as $articulo) { ?>
                     <div class="articulo">
-                    <a href="<?php echo htmlspecialchars('../vistas/blogs/mediaBlogs' . $articulo['id']). '.php'; ?>">                            <img src="<?php echo htmlspecialchars('../public/imagenes/imagenesBlogBd/' . $articulo['imagen_principal']); ?>" width="100%">
+                    <a href="<?php echo htmlspecialchars('../vistas/blogs/mediaBlogs' . $articulo['id']). '.php'; ?>">                            <img src="<?php echo htmlspecialchars('../public/imagenes/imagenesBlogBd/' . $articulo['imagen_card']); ?>" width="100%">
                             <div class="info-articulo">
                                 <span class="categoria"><?php echo htmlspecialchars($articulo['nombre_categoria']); ?></span>
                                 <h2><?php echo htmlspecialchars($articulo['titulo']); ?></h2>
@@ -156,7 +156,7 @@ $articulosActuales = array_slice($articulos, $indiceInicio, $articulosPorPagina)
                     var articuloHtml = `
                         <div class="articulo">
                             <a href="./vista-blog.php?id=${articulo.id}">
-                                <img src="../public/imagenes/imagenesBlogBd/${articulo.imagen_principal}" width="100%">
+                                <img src="../public/imagenes/imagenesBlogBd/${articulo.imagen_card}" width="100%">
                                 <div class="info-articulo">
                                     <span class="categoria">${articulo.nombre_categoria}</span>
                                     <h2>${articulo.titulo}</h2>
