@@ -65,7 +65,7 @@ class ModelPosteo{
         return $res->affected_rows > 0;
     }
 
-     //Obtener blog x categoria, solo tres registros
+     //Obtener blog x categoria, pero que no llame al mismo blog por id,solo tres registros
      public static function getBlogCat($categoria, $id){
         [$err, $res ] = Db::query('SELECT * FROM posting_blog WHERE nombre_categoria = ? AND id != ? LIMIT 3;', [$categoria, $id]);
         if( $err ) {
