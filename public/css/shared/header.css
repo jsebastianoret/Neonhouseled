@@ -36,6 +36,8 @@ a{
 	align-items:center;
 	font-family:'Proxima-Nova-Regular';
 	top:0;
+	z-index: 100;
+	position: sticky;
 }
 .header .logo-container{
 	width:220px;
