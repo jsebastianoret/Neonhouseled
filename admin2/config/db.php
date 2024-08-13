@@ -1,10 +1,9 @@
 <?php
 define('HOST', 'localhost');
-define('NAME', 'root');
-define('PASS', '');
-define('DB', 'ghxumdmy_neonhouseled');
+define('NAME', 'ghxumdmy_NHLUser');
+define('PASS', 'AQR-EvieoU)3');
+define('DB', 'ghxumdmy_NeonHouseLed');
 //Datos importantes
-
 
 try {
     $conn = new PDO("mysql:host=" . HOST . ";dbname=" . DB, NAME, PASS);
