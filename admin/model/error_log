@@ -1,0 +1,37 @@
+[06-Jan-2024 14:44:34 America/Boise] PHP Warning:  Array to string conversion in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 11
+[06-Jan-2024 15:13:55 America/Boise] PHP Warning:  require_once(staterController.php): Failed to open stream: No such file or directory in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 4
+[06-Jan-2024 15:13:55 America/Boise] PHP Fatal error:  Uncaught Error: Failed opening required 'staterController.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php:4
+Stack trace:
+#0 {main}
+  thrown in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 4
+[06-Jan-2024 15:13:58 America/Boise] PHP Warning:  require_once(staterController.php): Failed to open stream: No such file or directory in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 4
+[06-Jan-2024 15:13:58 America/Boise] PHP Fatal error:  Uncaught Error: Failed opening required 'staterController.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php:4
+Stack trace:
+#0 {main}
+  thrown in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 4
+[06-Jan-2024 15:14:30 America/Boise] PHP Warning:  require_once(/home3/ghxumdmy/public_html/neonhouseled/admin../model/userModel.php): Failed to open stream: No such file or directory in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 3
+[06-Jan-2024 15:14:30 America/Boise] PHP Fatal error:  Uncaught Error: Failed opening required '/home3/ghxumdmy/public_html/neonhouseled/admin../model/userModel.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php:3
+Stack trace:
+#0 {main}
+  thrown in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 3
+[06-Jan-2024 15:14:53 America/Boise] PHP Warning:  Undefined variable $password in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 27
+[06-Jan-2024 15:15:19 America/Boise] PHP Warning:  Undefined variable $password in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 24
+[06-Jan-2024 15:16:23 America/Boise] PHP Fatal error:  Uncaught Error: Object of class stdClass could not be converted to string in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php:22
+Stack trace:
+#0 {main}
+  thrown in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 22
+[06-Jan-2024 15:16:43 America/Boise] PHP Fatal error:  Uncaught Error: Object of class stdClass could not be converted to string in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php:21
+Stack trace:
+#0 {main}
+  thrown in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 21
+[06-Jan-2024 15:17:26 America/Boise] PHP Warning:  Undefined variable $password in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 25
+[06-Jan-2024 15:18:11 America/Boise] PHP Warning:  Undefined variable $password in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 25
+[06-Jan-2024 15:18:36 America/Boise] PHP Warning:  Undefined variable $password in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 25
+[06-Jan-2024 15:27:04 America/Boise] PHP Warning:  Undefined variable $password in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 23
+[06-Jan-2024 15:27:04 America/Boise] PHP Warning:  Undefined variable $username in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 25
+[06-Jan-2024 15:27:04 America/Boise] PHP Warning:  Undefined variable $password in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 23
+[06-Jan-2024 15:27:04 America/Boise] PHP Warning:  Undefined variable $username in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 25
+[06-Jan-2024 15:28:09 America/Boise] PHP Warning:  Undefined variable $password in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 23
+[06-Jan-2024 15:28:10 America/Boise] PHP Warning:  Undefined variable $username in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 25
+[06-Jan-2024 15:28:10 America/Boise] PHP Warning:  Undefined variable $password in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 23
+[06-Jan-2024 15:28:10 America/Boise] PHP Warning:  Undefined variable $username in /home3/ghxumdmy/public_html/neonhouseled/admin/model/user.php on line 25
