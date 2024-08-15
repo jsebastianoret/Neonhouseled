@@ -405,9 +405,15 @@ session_start();
             <p class="direccion__item">ventasneonhouse@gmail.com</p>
             
         </div>
+        <!-- BOTON VER MIS PROPUESTAS ANTIGUO
         <div class="ultimo">
             <a class="boton_final" href="admin/index.php">
                 <img class="imagen_final lazyload" alt="neon" src="public/imagenes/lupa.webp" width="219" height="100">
+            </a>
+        </div>-->
+        <div class="cont-pro">
+            <a href="admin/index.php">
+                <button>VISUALIZAR MIS PROPUESTAS</button>
             </a>
         </div>
         <div class="sociales">
