@@ -115,14 +115,81 @@ $("#formGaleria").submit(function(e) {
 });
 
 //:::::::::::::::Client ::::::::::::::::
-let identgallery = $("#identgallery").val();
+// admingallery.js
+$(document).ready(function() {
+    let identgallery = $("#identgallery").val();
+    let currentPage = 1;
 
-let urlProds =
-    "../controller/userController.php?action=showGalleryForClient&identgallery=" + identgallery;
-$("#products-container").load(urlProds, { type: "article" }, function() {
+    // Inicializa la carga de la primera página
+    loadGalleryPage(currentPage);
 
+    function loadGalleryPage(page) {
+        let urlProds = "../controller/userController.php?action=showGalleryForClient&identgallery=" + identgallery + "&page=" + page;
 
+        $.get(urlProds, function(response) {
+            const data = JSON.parse(response);
+            renderGallery(data.articles);
+            renderPagination(data.pagination);
+            bindPaginationEvents();
+            handleImageLoading();
+        });
+    }
+
+    // Función para renderizar la galería
+    function renderGallery(articlesHtml) {
+        $("#products-container").html(articlesHtml);
+    }
+
+    // Función para renderizar la paginación
+    function renderPagination(paginationHtml) {
+        $("#pagination-container").html(paginationHtml);
+    }
+
+    // Función para asociar eventos a la paginación
+    function bindPaginationEvents() {
+        $(".page-link").click(function(e) {
+            e.preventDefault();
+            let page = $(this).data("page");
+            loadGalleryPage(page);
+        });
+
+        // Manejo del formulario para ir a una página específica
+        // Dentro de bindPaginationEvents
+        $("#goto-page-form").off("submit").on("submit", function(e) {
+            e.preventDefault();
+            let page = parseInt($("#goto-page-input").val());
+            let totalPages = parseInt($("#total-pages").val());  // Asegúrate de que este valor sea un número
+            if (page >= 1 && page <= totalPages) {
+                loadGalleryPage(page);
+            } else {
+                alert("Número de página no válido");
+            }
+        });
+
+    }
+
+    // Función para manejar la carga de imágenes
+    function handleImageLoading() {
+        $(".gallery-image").each(function() {
+            let img = $(this);
+            let spinner = img.siblings(".loading-container").find(".loading-spinner");
+
+            img.on("load", function() {
+                setTimeout(function() {
+                    spinner.hide();
+                    img.css("opacity", "1");
+                    img.show();
+                }, 0);
+            }).on("error", function() {
+                spinner.hide();
+            });
+
+            spinner.show();
+            img.hide();
+        });
+    }
 });
+
 
 //:::::::::::::::::Gestion::::::::::::::::::::
 //let urlProds1 =

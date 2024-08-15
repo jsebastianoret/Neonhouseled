@@ -153,36 +153,115 @@ class UserController extends Usuario
         echo $articles;
 
     }*/
+// userController.php
+
+// userController.php
+
     public function showgalleryforclient($id)
     {
         $this->identclientgallery = $id;
-        $resultgalleryforclient = $this->galleryforclients();
-        $articles = '';
 
+        $page = $this->getCurrentPage();
+        $itemsPerPage = 6;
+
+        $resultgalleryforclient = $this->galleryforclients($page, $itemsPerPage);
+
+        $totalItems = $this->countGalleryItems();
+        $totalPages = ceil($totalItems / $itemsPerPage);
+
+        $articles = $this->generateArticles($resultgalleryforclient);
+        $pagination = ($totalPages > 1) ? $this->generatePagination($page, $totalPages) : '';
+
+        echo json_encode(['articles' => $articles, 'pagination' => $pagination]);
+    }
+
+    private function getCurrentPage()
+    {
+        return isset($_GET['page']) ? intval($_GET['page']) : 1;
+    }
+
+    private function generateArticles($resultgalleryforclient)
+    {
+        $articles = '';
         foreach ($resultgalleryforclient as $p) {
             $iganes = $p['image'];
-            //En la bd está almenado como por ejemplo "552024041020PANORAMICO 1.5.jpg"
-
-            //Como tenemos las mismas imágenes en la carpeta webp entonces podemos hacer el cambio
-            // Cambiar la extensión a .webp
-            $iganesWebp = preg_replace('/\.(jpg|jpeg|png)$/i', '.webp', $iganes);
-
-            // Verificar si la imagen .webp existe
-            $webpPath = "../imgGallery/webp/$iganesWebp";
-            $imagePath = file_exists($webpPath) ? $webpPath : "../imgGallery/$iganes";  // Usa .webp si existe, de lo contrario usa el original
+            $imagePath = $this->getImagePath($iganes);
 
             $articles .= "<article class='product'>
-                       <figure class='img-product'>
-                           <img src='$imagePath' alt='Imagen galleria'>
-                           <h4 class='subtitulo-product'>
-                           " . $p['descripcion'] . "
+                        <figure class='img-product'>
+                            <div class='loading-container'>
+                                <div class='loading-spinner'></div>
+                            </div>
+                            <img src='$imagePath' alt='Imagen galleria' class='gallery-image'>
+                            <h4 class='subtitulo-product'>
+                                " . $p['descripcion'] . "
                             </h4>
-                       </figure>
-                   </article> <br>";
+                        </figure>
+                    </article>
+                    <br>";
+        }
+        return $articles;
+    }
+
+    private function getImagePath($imageName)
+    {
+        $iganesWebp = preg_replace('/\.(jpg|jpeg|png)$/i', '.webp', $imageName);
+        $webpPath = "../imgGallery/webp/$iganesWebp";
+        return file_exists($webpPath) ? $webpPath : "../imgGallery/$imageName";
+    }
+
+    private function generatePagination($currentPage, $totalPages)
+    {
+        $pagination = '<div class="pagination">';
+
+        // Añadir el total de páginas como un input oculto
+        $pagination .= '<input type="hidden" id="total-pages" value="' . $totalPages . '">';
+
+        // Botón "Anterior"
+        if ($currentPage > 1) {
+            $pagination .= "<a href='#' class='page-link prev' data-page='" . ($currentPage - 1) . "'>❮ Anterior</a>";
         }
 
-        echo $articles;
+        // Mostrar algunas páginas
+        if ($currentPage > 2) {
+            $pagination .= "<a href='#' class='page-link' data-page='1'>1</a>";
+            if ($currentPage > 3) {
+                $pagination .= "<span>...</span>";
+            }
+        }
+
+        for ($i = max(1, $currentPage - 1); $i <= min($totalPages, $currentPage + 1); $i++) {
+            $activeClass = ($i == $currentPage) ? 'active' : '';
+            $pagination .= "<a href='#' class='page-link $activeClass' data-page='$i'>$i</a>";
+        }
+
+        if ($currentPage < $totalPages - 1) {
+            if ($currentPage < $totalPages - 2) {
+                $pagination .= "<span>...</span>";
+            }
+            $pagination .= "<a href='#' class='page-link' data-page='$totalPages'>$totalPages</a>";
+        }
+
+        // Botón "Siguiente"
+        if ($currentPage < $totalPages) {
+            $pagination .= "<a href='#' class='page-link next' data-page='" . ($currentPage + 1) . "'>Siguiente ❯</a>";
+        }
+
+        // Formulario para ir a una página específica
+        $pagination .= '
+    <div class="goto-page">
+        <form id="goto-page-form" onsubmit="return false;">
+            <input type="number" id="goto-page-input" min="1" max="' . $totalPages . '" placeholder="Página" required>
+            <button type="submit" id="goto-page-btn">Ir</button>
+        </form>
+    </div>';
+
+        $pagination .= '</div>';
+
+        return $pagination;
     }
+
+
 
     //:::::::::::::::General::::::::::::::::::::::::::::
 

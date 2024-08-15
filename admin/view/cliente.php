@@ -8,6 +8,7 @@ if(empty($_SESSION['username'])){
 }
 require_once "layout/header.php";
 ?>
+
 <div class="container">
     <h2>Bienvenido Usuario: <?php echo  $_SESSION['username'];?></h2>
 </div>
@@ -16,10 +17,8 @@ require_once "layout/header.php";
 <div class="container">
     <section class="right-section">
 
-        <div id="products-container">
-
-        </div>
-
+        <div class="row row-cols-1 row-cols-sm-2" id="products-container"></div>
+        <div id="pagination-container"></div> <!-- Contenedor separado para la paginación -->
     </section>
 
 </div>

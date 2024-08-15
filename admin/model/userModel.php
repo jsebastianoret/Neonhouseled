@@ -147,21 +147,45 @@ class Usuario
         return $insertar->execute();
     }
 
-    protected function galleryforclients()
+// userModel.php
+
+    protected function galleryforclients($page = 1, $itemsPerPage = 6)  // Cambiado a 6
+    {
+        $offset = ($page - 1) * $itemsPerPage;
+
+        $ic = new Conexion();
+        $sql = "SELECT galeria.descripcion, galeria.image 
+            FROM galeria
+            INNER JOIN users ON galeria.idcliente = users.id
+            WHERE users.username = :username 
+            AND users.user_level = 2
+            LIMIT :limit OFFSET :offset";
+
+        $consulta = $ic->db->prepare($sql);
+        $consulta->bindParam(':username', $this->identclientgallery, PDO::PARAM_STR);
+        $consulta->bindParam(':limit', $itemsPerPage, PDO::PARAM_INT);
+        $consulta->bindParam(':offset', $offset, PDO::PARAM_INT);
+        $consulta->execute();
+
+        return $consulta->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
+// Añade un método para contar el total de imágenes para la paginación
+    protected function countGalleryItems()
     {
         $ic = new Conexion();
-        $sql = "SELECT galeria.descripcion, galeria.image FROM galeria
-        INNER JOIN users
-        ON galeria.idcliente = users.id
-        WHERE users.username = '$this->identclientgallery' AND  users.user_level =2";
+        $sql = "SELECT COUNT(*) AS total 
+            FROM galeria
+            INNER JOIN users ON galeria.idcliente = users.id
+            WHERE users.username = :username 
+            AND users.user_level = 2";
+
         $consulta = $ic->db->prepare($sql);
+        $consulta->bindParam(':username', $this->identclientgallery, PDO::PARAM_STR);
         $consulta->execute();
-        if ($consulta->execute()) {
-            $objetoConsulta = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            return $objetoConsulta;
-        }
 
-
+        return $consulta->fetch(PDO::FETCH_ASSOC)['total'];
     }
 
     protected function galleryforAll()
