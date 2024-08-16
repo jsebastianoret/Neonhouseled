@@ -5,6 +5,7 @@
 }
 
 body {
+    margin-top: 9%;
     background-color: #F5F5F5;
 }
 
@@ -62,7 +63,7 @@ body {
 }
 
 /* Estilos para la imagen */
-.mision_imagen, .vision_imagen {
+.mision__imagen, .vision__imagen {
     position: absolute;
     right: -50px; /* Desplaza la imagen más hacia afuera a la derecha */
     top: 0;
@@ -71,14 +72,14 @@ body {
     z-index: 1;
 }
 
-.mision_img, .vision_img {
+.mision__img, .vision__img {
     width: 90%; /* O el ancho que desees */
     height: 100%;
     object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
 }
 
 /* Estilos para el contenedor del texto */
-.mision_texto, .vision_texto {
+.mision__texto, .vision__texto {
     position: relative;
     z-index: 2; /* Asegura que el texto esté encima de la imagen */
     width: 48%; /* Ajusta el ancho del contenedor de texto */
@@ -88,7 +89,7 @@ body {
     border-radius: 40px;
 }
 
-.mision_titulo, .vision_titulo {
+.mision__titulo, .vision__titulo {
     font-size: 40px;
     font-family: 'Proxima-Nova-SemiBold';
     color: hsl(216deg, 85%, 34%);
@@ -96,7 +97,7 @@ body {
     margin-left: 15rem;
 }
 
-.mision_texto, .vision_texto {
+.mision__texto, .vision__texto {
     text-align: justify;
     margin: 32px 30px;
     font-size: 17px;
@@ -110,7 +111,7 @@ body {
         padding: 0;
     }
 
-    .mision_imagen, .vision_imagen {
+    .mision__imagen, .vision__imagen {
         position: static;
         width: 100%;
         height: auto;
@@ -118,7 +119,7 @@ body {
         margin-bottom: 20px;
     }
 
-    .mision_texto-container, .vision_texto-container {
+    .mision__texto-container, .vision__texto-container {
         width: 100%;
         margin: 0;
     }
