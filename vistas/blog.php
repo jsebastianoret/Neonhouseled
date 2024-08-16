@@ -11,7 +11,6 @@ try {
     die("Error al ejecutar la consulta: " . $e->getMessage());
 }
 
-
 $articulosPorPagina = 4; // Número de artículos por página
 $totalArticulos = count($articulos); // Total de artículos
 $totalPaginas = ceil($totalArticulos / $articulosPorPagina); // Total de páginas
@@ -48,7 +47,6 @@ $articulosActuales = array_slice($articulos, $indiceInicio, $articulosPorPagina)
     <link rel="stylesheet" href="../public/css/shared/header.css">
     <link rel="stylesheet" href="../public/css/shared/footer.css">
 </head>
-
 
 <body>
     <h1 style="display:none">Sección de Blog</h1>
