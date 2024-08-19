@@ -172,12 +172,13 @@ $(document).ready(function() {
     function handleImageLoading() {
         $(".gallery-image").each(function() {
             let img = $(this);
-            let spinner = img.siblings(".loading-container").find(".loading-spinner");
+            let spinner = img.siblings(".loading-container");
 
             img.on("load", function() {
                 setTimeout(function() {
                     spinner.hide();
-                    img.css("opacity", "1");
+                    img.addClass("loaded");
+                    //img.css("opacity", "1");
                     img.show();
                 }, 0);
             }).on("error", function() {

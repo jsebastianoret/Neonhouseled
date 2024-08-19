@@ -16,10 +16,13 @@ require_once "layout/header.php";
 
 <div class="container">
     <section class="right-section">
-
-        <div class="row row-cols-1 row-cols-sm-2" id="products-container"></div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3" id="products-container"></div>
         <div id="pagination-container"></div> <!-- Contenedor separado para la paginación -->
     </section>
-
 </div>
+
+<link href="../public/lightbox/dist/css/lightbox.css" rel="stylesheet">
+<link href="../public/css/gallery_paginator.css" rel="stylesheet">
+<script src="../public/lightbox/dist/js/lightbox-plus-jquery.min.js"></script>
+
 <?php require_once "layout/foother.php";?>

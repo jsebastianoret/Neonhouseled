@@ -3,16 +3,15 @@
 require_once dirname(dirname(__FILE__)) . '/model/userModel.php';
 require_once dirname(dirname(__FILE__)) . '/model/suscriptorModel.php';
 require_once 'staterController.php';
+
 $sesion = new StaterController();
 
 class UserController extends Usuario
 {
-
     public function index()
     {
         require_once 'view/login.php';
     }
-
     public function VerifyLogin($username, $password)
     {
         $this->username = $username;
@@ -115,8 +114,6 @@ class UserController extends Usuario
         //echo $gallery ? json_encode(['title' => 'Perfecto!', 'text' => 'Galeria Agregado Correctamente','icon' => 'success']):
         //json_encode(['title' => 'Noo!', 'text' => 'No se Pudo Agregar Galeria','icon' => 'error']);
     }
-
-
     public function listgallery()
     {
         $objetoConsulta = $this->listviewgallery();
@@ -132,30 +129,6 @@ class UserController extends Usuario
 
     }
     //::::::::::::client::::::::::::::::
-
-/*    public function showgalleryforclient($id)
-    {
-        $this->identclientgallery = $id;
-        $resultgalleryforclient = $this->galleryforclients();
-        //echo json_encode($resultgalleryforclient);
-        $articles = '';
-        foreach ($resultgalleryforclient as $p) {
-            $iganes = $p['image'];
-            $articles .= "<article class='product'>
-                           <figure class='img-product'>
-                               ´<img src='../imgGallery/$iganes' alt='Imagen galleria'>´
-                               <h4 class='subtitulo-product'>
-                               " . $p['descripcion'] . "
-                                </h4>
-                           </figure>
-                       </article> <br>";
-        }
-        echo $articles;
-
-    }*/
-// userController.php
-
-// userController.php
 
     public function showgalleryforclient($id)
     {
@@ -187,18 +160,31 @@ class UserController extends Usuario
             $iganes = $p['image'];
             $imagePath = $this->getImagePath($iganes);
 
-            $articles .= "<article class='product'>
-                        <figure class='img-product'>
-                            <div class='loading-container'>
-                                <div class='loading-spinner'></div>
-                            </div>
+
+            $articles .= "<div class='col gallery'>
+                        <a class='img-hover-zoom' href='$imagePath' data-lightbox='gallery'>
+                                <div class='loading-container'>
+                                    <div class='loading-spinner'></div>
+                                </div>
                             <img src='$imagePath' alt='Imagen galleria' class='gallery-image'>
+                        </a>
+                        <div class='desc'>" . $p['descripcion'] . "</div>
+                      </div>";
+
+/*            $articles .= "<article class='product'>
+                        <figure class='img-product'>
+                            <a href='$imagePath' data-lightbox='gallery'>
+                                <div class='loading-container'>
+                                    <div class='loading-spinner'></div>
+                                </div>
+                                <img src='$imagePath' alt='Imagen galleria' class='gallery-image'>
+                            </a>
                             <h4 class='subtitulo-product'>
                                 " . $p['descripcion'] . "
                             </h4>
                         </figure>
-                    </article>
-                    <br>";
+                      </article>
+                      <br>";*/
         }
         return $articles;
     }
@@ -260,8 +246,6 @@ class UserController extends Usuario
 
         return $pagination;
     }
-
-
 
     //:::::::::::::::General::::::::::::::::::::::::::::
 

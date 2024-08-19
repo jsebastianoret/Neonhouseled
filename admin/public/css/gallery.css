@@ -122,7 +122,7 @@
   text-shadow: 3px 2px 1px saddlebrown;
 } */
 .img-product {
-  max-width:100%; /* Cambia este valor para ajustar el tamaño */
+  max-width:90%; /* Cambia este valor para ajustar el tamaño */
   height: auto;
   border-radius: 10px;
   width: 100%;
@@ -130,11 +130,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: center;
+  align-items: center;
 /*  animation: imagenFade;
   animation-timing-function: linear;
   animation-duration: 1s;
   animation-iteration-count: 1;*/
-  align-items:center;
 }
 .img-product img{
   max-width: 95%;
@@ -169,13 +170,6 @@
     max-width: 100%;
     min-height: 100%;
   }
-  /* .btnSalir{
-    width: 100%;
-    margin: auto;
-    
-    font-size: 16px;
-  } */
-  
 
 }
 @media (max-width: 800px) {
@@ -205,117 +199,77 @@
 
 @media (max-width: 800px) {
   .img-product img {
-    max-width: 70%; /* Ajusta el tamaño para pantallas medianas */
+    max-width: 70%;
   }
 }
 
 @media (max-width: 500px) {
   .img-product img {
-    max-width: 90%; /* Ajusta el tamaño para pantallas pequeñas */
+    max-width: 90%;
   }
 }
 
-.pagination {
-  text-align: center;
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
 
-.page-link {
-  display: inline-block;
-  padding: 8px 12px;
-  margin: 4px;
-  border: 1px solid #ddd;
-  color: #007bff;
-  text-decoration: none;
-  cursor: pointer;
-  box-sizing: border-box;
-}
-
-.page-link.active {
-  background-color: #007bff;
-  color: white;
-  border-color: #007bff;
-}
-
-.page-link:hover {
-  background-color: #ddd;
-}
-
-span {
-  padding: 8px 12px;
-  margin: 4px;
-}
-
-.prev, .next {
-  font-weight: bold;
-}
-
-
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 500px) {
-  .pagination {
-    flex-direction: column; /* Cambia la dirección a columna en pantallas pequeñas */
-    align-items: center;
-  }
-
-  .page-link {
-    padding: 6px 10px; /* Reduce aún más el padding para pantallas pequeñas */
-    margin: 2px 0; /* Ajusta el margen para pantallas pequeñas */
-    width: 100%; /* Asegura que cada link ocupe todo el ancho disponible */
-    text-align: center;
-  }
-}
-
-/*
-
-Formulario
- */
-.goto-page {
-  display: inline-block;
-  margin-left: 20px;
-}
-
-.goto-page input {
-  width: 60px;
-  padding: 5px;
-  margin-right: 5px;
-}
-
-.goto-page button {
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.goto-page button:hover {
-  background-color: #0056b3;
-}
 
 
 /* */
 
+.gallery {
+  border: 1px solid #ccc;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
+  min-height: 50px; /* Ajusta esto según el espacio que necesites para las descripciones */
+}
+
 .loading-container {
   position: relative;
-  width: 100%;  /* Ajusta el ancho al del contenedor */
-  height: 100%; /* Ajusta la altura al contenedor */
+  width: 100%;
+  height: 250px; /* Fija una altura mínima durante la carga */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .gallery-image {
-  display: none; /* Ocultar la imagen inicialmente */
-  width: 100%;  /* Asegura que la imagen tome el ancho del contenedor */
-  height: auto;
-  border-radius: 10px;
+  display: none;
+  width: 100%;
+  height: 250px; /* Asegura que todas las imágenes tengan la misma altura */
+  object-fit: cover;
   opacity: 0;
-  transition: opacity 0.1s ease-in-out; /* Suaviza la transición de la opacidad y la hace más rápida */
+  animation: imagenFade;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  transition: opacity 1s ease-in-out, transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.img-hover-zoom {
+  height: 300px;
+  overflow: hidden;
+}
+
+.img-hover-zoom img {
+  transition: transform .5s ease;
+}
+.img-hover-zoom:hover img {
+  transform: scale(1.02);
+}
+
+.gallery-image.loaded {
+  opacity: 1;
+}
+
+.gallery-image:hover {
+  filter: contrast(80%) brightness(1.1);
 }
 
 .loading-spinner {
@@ -324,9 +278,17 @@ Formulario
   border-top: 4px solid #007bff;
   width: 40px;
   height: 40px;
-  animation: spin 0.5s infinite linear; /* Reduces la duración de la animación para que sea más rápida */
+  animation: spin 0.5s infinite linear;
   z-index: 10; /* Asegura que esté encima de la imagen */
 }
+
+
+@media (min-width: 1024px) {
+  .gallery {
+    margin-bottom: 0;
+  }
+}
+
 
 
 @keyframes spin {
@@ -337,3 +299,8 @@ Formulario
     transform: rotate(360deg);
   }
 }
+
+#products-container {
+  min-height: 700px;
+}
+
