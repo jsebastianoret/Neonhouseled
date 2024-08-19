@@ -378,7 +378,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'listgallery') {
 if (isset($_POST['action']) && $_POST['action'] == 'deletegallery') {
     $instanciaController = new UserController();
 
-    $eliminarimage = $_SERVER["DOCUMENT_ROOT"] . "/admin/imgGallery/" . $_POST['nameimage'];
+    $eliminarimage = $_SERVER["DOCUMENT_ROOT"] . "/admin/imgGallery/webp/" . $_POST['nameimage'];
     unlink($eliminarimage);
 
     $id = intval($_POST['id']);

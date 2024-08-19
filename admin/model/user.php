@@ -1,10 +1,10 @@
 <?php
 require_once dirname(dirname(__FILE__)). '/core/database.php';
 
-$ic = new Conexion();
+$ic = DBConnection::getInstance();
 
 $sql = "SELECT * FROM users WHERE username='admin'";
-$consulta = $ic->db->prepare($sql);
+$consulta = $ic->getDb()->prepare($sql);
 $consulta->execute();
 if($consulta){
     $objetoConsulta = $consulta->fetchAll(PDO::FETCH_OBJ);
