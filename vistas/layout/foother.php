@@ -16,6 +16,8 @@
             <a class="sociales__item" target="_blank" rel="noopener" href="https://twitter.com/NEONHOUSELEDS" aria-label="visitar cuenta de twitter"><i class="fab fa-twitter-square"></i></a>
             <a class="sociales__item" target="_blank" rel="noopener" href="https://www.linkedin.com/in/neonhouseled/" aria-label="visitar cuenta de linkedin"><i class="fab fa-invision"></i></a>
         </div>
+
+        <div class="linea-medio"></div>
 </footer>
 <script defer src="https://kit.fontawesome.com/c702fce202.js" crossorigin="anonymous"></script>
 <script defer src="../../public/js/menu.js"></script>

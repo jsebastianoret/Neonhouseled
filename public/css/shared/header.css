@@ -1,7 +1,6 @@
 *{
 	margin:0;
-	padding:0;
-	box-sizing:border-box
+	padding:0
 }
 a{
 	text-decoration:none
@@ -27,15 +26,18 @@ a{
 	font-display:swap
 }
 .header{
-	background-color:white;
-	width:100%;
+	background: linear-gradient(to right, #546a80, #afe2e2);
 	height:70px;
 	padding:4px 20px;
 	display:flex;
 	justify-content:space-between;
 	align-items:center;
 	font-family:'Proxima-Nova-Regular';
-	top:0;
+	position: fixed;
+    top: 0; /* Fija el header en la parte superior de la página */
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho de la página */
+    z-index: 100; /* Asegura que el header esté por encima de otros elementos */
 }
 .header .logo-container{
 	width:220px;
