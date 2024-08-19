@@ -16,7 +16,7 @@ if (isset($_SESSION['categoria']) && $_SESSION['categoria']) {
     <header class="header">
         <figure class="logo-container">
             <a href="/">
-                <img class="imagen_neonhl" src="../public/imagenes/Neon_House_Logo.webp" alt="Logo Neon House LED">
+                <img class="imagen_neonhl" src="../public/imagenes/Neon_House_Logo.webp" onerror="this.onerror=null; this.src='../../public/imagenes/Neon_House_Logo.webp';" alt="Logo Neon House LED">
             </a>
         </figure>
         <nav class="menu">
