@@ -116,8 +116,6 @@ class ControllerPosteo{
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>$titulo</title>
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
             <link rel="stylesheet" href="../../public/css/all_blog.css">
             <?php require_once "../layout/links.php" ?>
         </head> 
@@ -181,16 +179,16 @@ class ControllerPosteo{
                             <br>
                             <br>
                             <br>
-                            <div class="blog-body">
+                            <div class="blog-body" id="c2">
                                 <div>
                                     <p>$parrafo3</p>
                                     <br>
                                     <br>
                                     <p>$parrafo4</p>
                                 </div>
-                                <br>
-                                <br>
-                                <img src="../../public/imagenes/imagesBlogBd/$imagen_secundaria" alt="Imagen Secundaria">
+                                <br class="br">
+                                <br class="br">
+                                <img src="../../public/imagenes/imagesBlogBd/$imagen_secundaria" alt="Imagen Secundaria" class="img2">
                             </div>
                             <div class="container-video">
                                 <iframe src="$embed_url" frameborder="0" allowfullscreen></iframe>
