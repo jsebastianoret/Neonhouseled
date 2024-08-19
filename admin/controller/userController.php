@@ -4,6 +4,7 @@ require_once dirname(dirname(__FILE__)) . '/model/userModel.php';
 require_once dirname(dirname(__FILE__)) . '/model/suscriptorModel.php';
 require_once 'staterController.php';
 
+require_once __DIR__ . '/../helper/ImageHandler.php';
 $sesion = new StaterController();
 
 class UserController extends Usuario
@@ -324,15 +325,49 @@ if (isset($_GET['action']) && $_GET['action'] == 'showuser') {
 
 if (isset($_POST['action']) && $_POST['action'] == 'isertimg') {
     $instanciaController = new UserController();
-    foreach ($_FILES['files']['name'] as $i => $value) {
+    $imageHandler = new ImageHandler();
+
+    $invalidImages = [];
+    $success = true;
+
+    // Validar todas las immágenes antes de procesarlas
+    foreach ($_FILES['files']['name'] as $i => $originalName) {
+        if (!$imageHandler->validateImageFormat($originalName)) {
+            $invalidImages[] = $originalName;
+            $success = false;
+        }
+    }
+
+    if (!$success) {
+        $res['status'] = false;
+        $res['msg'] = "
+        Los siguientes archivos no son admitidos:\n
+        * " . implode("\n* ", $invalidImages);
+        $res['type'] = 'error';
+        echo json_encode($res);
+        exit;
+    }
+
+    // Procesar todas las imagenes
+    foreach ($_FILES['files']['name'] as $i => $originalName) {
         $imagenTemp = $_FILES['files']['tmp_name'][$i];
         $random = rand(0, 99);
-        $folder = "../imgGallery/";
-        $imagenName = $random . date('YmdH') . $_FILES['files']['name'][$i];
+        $folder = __DIR__ . "/../imgGallery/webp/";
+        $basename = pathinfo($originalName, PATHINFO_FILENAME); 
+        $imagenName = $random . date('YmdH') . $basename . '.webp';
         $img_path = $folder . $imagenName;
-        move_uploaded_file($imagenTemp, $img_path);
+
+        // Convertir y optimizar la imagen a formato WebP
+        $imageHandler->convertImageToWebp($imagenTemp, $img_path);
+
+        // Insertar la imagen en la base de datos
         $instanciaController->insertgallery($_POST['descripcion'], $_POST['users'], $imagenName);
     }
+
+  $res['status'] = true;
+  $res['msg'] = 'Galeria Agregado Correctamente';
+  $res['type'] = 'success';
+  echo json_encode($res);
 }
 
 if (isset($_GET['action']) && $_GET['action'] == 'listgallery') {
