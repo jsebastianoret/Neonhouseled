@@ -25,7 +25,9 @@ $(function() {
                 "targets": -3,
                 "data": 'image',
                 "render": function(data, type, row, meta) {
-                    return '<img src="../imgGallery/' + data + '" alt="' + data + '"height="80" width="80"/>';
+                    let originalPath = '../imgGallery/' + data;
+                    let webpPath = "../imgGallery/webp/" + data.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+                    return '<img src="' + webpPath + '" alt="' + data + '"height="80" width="80" onerror="this.onerror=null;this.src=\'' + originalPath + '\';" />';
                 }
             },
 
@@ -97,12 +99,12 @@ $("#formGaleria").submit(function(e) {
         processData: false,
         contentType: false,
         cache: false,
-        success: function(response) {
-            //let result = JSON.parse(response);
+      success: function (response) {
+            let result = JSON.parse(response);
             swal({
-                title: "Perfecto!",
-                text: "Galeria Agregado Correctamente",
-                icon: "success"
+                title: result.status ? "Perfecto!" : "Opps..!",
+                text: result.msg,
+                icon: result.type
             }).then(function() {
                 $("#modalCRUD1").modal("hide");
                 $("#galeria").DataTable().ajax.reload(null, false);
