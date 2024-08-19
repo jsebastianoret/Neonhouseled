@@ -424,6 +424,8 @@ session_start();
             <a class="sociales__item" rel="noreferrer" aria-label="twitter" target="_blank" href="https://twitter.com/NEONHOUSELEDS"><i class="fab fa-twitter-square"></i></a>
             <a class="sociales__item" rel="noreferrer" aria-label="linkedin" target="_blank" href="https://www.linkedin.com/in/neonhouseled/"><i class="fab fa-invision"></i></a>
         </div>
+        <div class="linea-medio"></div>
+
     </footer>
     <script src="public/js/lazysizes.min.js" async></script>
     <script defer src="https://kit.fontawesome.com/c702fce202.js" crossorigin="anonymous"></script>

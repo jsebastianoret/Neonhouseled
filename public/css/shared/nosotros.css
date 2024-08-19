@@ -109,6 +109,7 @@ body {
         flex-direction: column-reverse;
         text-align: center;
         padding: 0;
+        height: auto; /* Ajuste de altura para pantallas pequeñas */
     }
 
     .mision__imagen, .vision__imagen {
@@ -119,8 +120,20 @@ body {
         margin-bottom: 20px;
     }
 
-    .mision__texto-container, .vision__texto-container {
-        width: 100%;
+    .mision__img, .vision__img {
+        width: 100%; /* Imagen ocupa todo el ancho disponible */
+        height: auto; /* Mantener la relación de aspecto */
+    }
+
+    .mision__texto, .vision__texto {
+        width: 100%; /* Texto ocupa todo el ancho disponible */
+        padding: 20px; /* Reducir el padding para pantallas pequeñas */
         margin: 0;
+    }
+
+    .mision__titulo, .vision__titulo {
+        font-size: 28px; /* Reducir el tamaño de fuente para títulos en pantallas pequeñas */
+        margin-left: 0; /* Eliminar el margen a la izquierda */
+        text-align: center; /* Centrar los títulos en pantallas pequeñas */
     }
 }
