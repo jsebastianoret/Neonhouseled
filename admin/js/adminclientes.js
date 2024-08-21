@@ -37,7 +37,7 @@ $(function () {
     };
     swal({
       title: "Eliminar",
-      text: "è¢ƒDesea eliminar el registro actual?",
+      text: "ÔøΩÔøΩÔøΩDesea eliminar el registro actual?",
       icon: "warning",
       buttons: true,
       dangerMode: true,
@@ -45,7 +45,7 @@ $(function () {
       if (val) {
         $.ajax({
           type: "POST",
-          url: "../controller/userController.php",
+          url: "../controller/galleryController.php",
           data: data,
           success: function (response) {
             let result = JSON.parse(response);

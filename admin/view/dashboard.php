@@ -1,12 +1,14 @@
 <?php
 
-require_once '../controller/staterController.php';
-$redirect = new StaterController();
+require_once __DIR__ . '/../helper/sessionHelper.php';
+
+$redirect = new SessionHelper();
 if (empty($_SESSION['username'])) {
 
-    $redirect->redireccionar();
+    $redirect->redirect();
 
 }
+
 if (isset($_SESSION['rol'])) {
     switch ($_SESSION['rol']) {
         case 1:

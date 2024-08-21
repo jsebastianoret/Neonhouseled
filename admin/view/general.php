@@ -1,9 +1,10 @@
-<?php 
-require_once '../controller/staterController.php';
-$redirect = new StaterController();
+<?php
+require_once __DIR__ . '/../helper/sessionHelper.php';
+
+$redirect = new SessionHelper();
 if(empty($_SESSION['username'])){
 
-    $redirect->redireccionar();    
+    $redirect->redirect();
     
 }
 require_once "layout/header.php";

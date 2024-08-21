@@ -1,7 +1,7 @@
 <?php
 require_once dirname(dirname(__FILE__)) . '/core/database.php';
 
-class Suscriptor
+class Subscriber
 {
     protected $id;
     protected $nombre;
@@ -15,12 +15,19 @@ class Suscriptor
         $this->correo = $correo;
     }
 
+    private function getDBInstance(){
+        return DBConnection::getInstance()->getDb();
+    }
+
+    private function prepareQuery($sql){
+        return $this->getDBInstance()->prepare($sql);
+    }
+
     public function nuevoSuscriptor()
     {
-        $ic = new Conexion();
 
         $sql = "INSERT INTO suscriptor(nombre, telefono, correo) VALUES(?,?,?)";
-        $insertar = $ic->db->prepare($sql);
+        $insertar = $this->prepareQuery($sql);
         $insertar->bindParam(1, $this->nombre);
         $insertar->bindParam(2, $this->telefono);
         $insertar->bindParam(3, $this->correo);
@@ -28,12 +35,10 @@ class Suscriptor
 
         return $result;
     }
-
     public function buscarSuscriptor()
     {
-        $ic = new Conexion();
         $sql = "select count(*) AS resultado FROM suscriptor WHERE correo='$this->correo';";
-        $consulta = $ic->db->prepare($sql);
+        $consulta = $this->prepareQuery($sql);
         $consulta->execute();
 
         if ($consulta) {
@@ -44,9 +49,9 @@ class Suscriptor
 
     public function listSuscriptor()
     {
-        $ic = new Conexion();
+
         $sql = "SELECT * FROM suscriptor";
-        $consulta = $ic->db->prepare($sql);
+        $consulta = $this->prepareQuery($sql);
         $consulta->execute();
         $objetoConsulta = $consulta->fetchAll(PDO::FETCH_OBJ);
 
@@ -55,9 +60,8 @@ class Suscriptor
 
     protected function listUser()
     {
-        $ic = new Conexion();
         $sql = "SELECT * FROM users WHERE status= 1";
-        $consulta = $ic->db->prepare($sql);
+        $consulta = $this->prepareQuery($sql);
         $consulta->execute();
         $objetoConsulta = $consulta->fetchAll(PDO::FETCH_OBJ);
 

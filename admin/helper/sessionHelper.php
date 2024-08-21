@@ -1,13 +1,13 @@
 <?php
 
-class StaterController{
+class SessionHelper{
     public function __construct()
     {
         session_start();
         
     }
 
-    public function redireccionar()
+    public function redirect()
     {
         header("location: ../index.php");        
     }
