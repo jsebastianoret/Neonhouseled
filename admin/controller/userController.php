@@ -272,8 +272,8 @@ class UserController
 
     public function changeUserStatus($id, $status)
     {
-        $this->id = $id;
-        $this->status = $status;
+        $this->user->setId($id);
+        $this->user->setStatus($status);
         $results = $this->user->changeStatus();
         echo $results;
     }
