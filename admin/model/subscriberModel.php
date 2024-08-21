@@ -1,7 +1,7 @@
 <?php
 require_once dirname(dirname(__FILE__)) . '/core/database.php';
 
-class Suscriptor
+class Subscriber
 {
     protected $id;
     protected $nombre;

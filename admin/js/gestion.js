@@ -9,7 +9,7 @@ $(function () {
 		lengthChange: false,
 		pageLength: 4,
 		ajax: {
-			url: "../controller/userController.php?action=listgallery",
+			url: "../controller/galleryController.php?action=listgallery",
 			dataSrc: "",
 		},
 		columns: [
@@ -50,7 +50,7 @@ $("#formGaleriaGestion").submit(function(e){
         console.log(fdata)
         $.ajax({
             type: "POST",
-            url: "../controller/userController.php",
+            url: "../controller/galleryController.php",
             data: fdata,
             processData: false,
             contentType: false,

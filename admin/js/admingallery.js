@@ -3,6 +3,7 @@ dep.load("../controller/userController.php?action=showuser");
 
 //------------------------------------------------------------
 $(function() {
+
     let tableProd = $("#galeria").DataTable({
         "language": {
             "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
@@ -12,7 +13,7 @@ $(function() {
         lengthChange: false,
         pageLength: 4,
         ajax: {
-            url: "../controller/userController.php?action=listgallery",
+            url: "../controller/galleryController.php?action=listgallery",
             dataSrc: "",
         },
         columns: [
@@ -56,7 +57,7 @@ $(function() {
             if (val) {
                 $.ajax({
                     type: "POST",
-                    url: "../controller/userController.php",
+                    url: "../controller/galleryController.php",
                     data: data,
                     success: function(response) {
                         let result = JSON.parse(response);
@@ -94,7 +95,7 @@ $("#formGaleria").submit(function(e) {
     fdata.append('action', 'isertimg');
     $.ajax({
         type: "POST",
-        url: "../controller/userController.php",
+        url: "../controller/galleryController.php",
         data: fdata,
         processData: false,
         contentType: false,
@@ -126,7 +127,8 @@ $(document).ready(function() {
     loadGalleryPage(currentPage);
 
     function loadGalleryPage(page) {
-        let urlProds = "../controller/userController.php?action=showGalleryForClient&identgallery=" + identgallery + "&page=" + page;
+
+        let urlProds = "../controller/galleryController.php?action=showGalleryForClient&identgallery=" + identgallery + "&page=" + page;
 
         $.get(urlProds, function(response) {
             const data = JSON.parse(response);
