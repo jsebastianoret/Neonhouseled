@@ -3,6 +3,7 @@ footer{
     font-family:'Proxima-Nova-Regular';
     position:relative
 }
+/*
 .ultimo{
     overflow:hidden;
     width:38%;
@@ -15,7 +16,60 @@ footer{
     width:100%;
     margin:auto;
     overflow:hidden
+} */
+/*BOTON VER MIS PROPUESTAS*/
+.cont-pro{
+    height: 100%;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 16px;
 }
+.cont-pro:before{
+    content:'';
+    height:100%;
+    display:inline-block;
+    vertical-align:middle;
+}
+.cont-pro button{
+    width: 30%;
+    background:hsl(216deg, 85%, 34%);
+    color:#fff;
+    border: none;
+    position:relative;
+    height:60px;
+    font-size:1.5vw;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    border-radius: 10px;
+}
+.cont-pro button:hover{
+    background:#fff;
+    color:hsl(216deg, 85%, 34%);
+}
+.cont-pro button:before, .cont-pro button:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: hsl(216deg, 85%, 34%);
+    transition:400ms ease all;
+}
+.cont-pro button:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+.cont-pro button:hover:before,.cont-pro button:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+/**/
 .imagen_final{
     transform:scale(.8);
     width:100%;
