@@ -31,7 +31,7 @@ html{
     margin-bottom: 20px;
 }
 .blog-header h1{
-    font-size: 4rem;
+    font-size: 3vw;
     margin-bottom: 2.5rem;
     text-align: center;
     margin-top: 2rem;
@@ -102,7 +102,7 @@ html{
     color: #ABADBA;
 }
 .blog-main h2{
-    font-size: 5rem;
+    font-size: 3vw;
     margin-bottom: 3rem;
     text-align: center;
     margin-top: 2rem;
@@ -117,8 +117,7 @@ html{
 .blog-body img{
     float: left; 
     margin-right: 10px;
-    width: 350px;
-    height: 450px;
+    width: 45%;
     object-fit: cover;
     border-radius: 3%;
 }
@@ -205,4 +204,56 @@ html{
     font-size: 16px;
     color: #333;
     font-weight: bold;
+}
+/*RESPONSIVE*/
+@media (max-width: 970.41px) {
+    .blog-container{
+        margin-top: 70px;
+    }
+  }
+
+@media (max-width: 820px) {
+    .categoria{
+        font-size: 1.5vw;
+    }
+}
+@media (max-width: 580px) {
+    .blog-banner img.imgprin{
+        height: 200px;
+    }
+    .blog-body p{
+        font-size: 2vw;
+    }
+}
+@media (max-width: 600px) {
+    .text-box p {
+        font-size: 2vw;
+    }
+    .meta{
+        font-size: 1.5vw;
+    }
+}
+@media (max-width: 410px) {
+    .blog-body{
+        flex-direction: column;
+    }
+    .blog-body img{
+        margin-left: 27%;
+        height: 200px;
+    }
+    .blog-body p{
+        font-size: 3vw;
+    }
+    #c2{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .br{
+        display: none;
+    }
+}
+@media (max-width: 530px) {
+    .otros-info span, .otros-info h3{
+        font-size: 2vw;
+    }
 }
