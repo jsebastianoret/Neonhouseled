@@ -67,13 +67,12 @@ class User
         return $stmt->execute();
     }
 
-    public function deleteUserAndGalleriesById()
-    {
+    public function deleteUserGalleries(){
         $return = false;
 
         $gallery = $this->getGalleryForUser($this->id);
         foreach ($gallery as $img) {
-            unlink($_SERVER["DOCUMENT_ROOT"] . "/admin/imgGallery/" . $img['image']);
+            unlink($_SERVER["DOCUMENT_ROOT"] . "/admin/imgGallery/webp/" . $img['image']);
             $this->idgallery = $img['id'];
             $this->deleteGalleryById();
         }
@@ -83,6 +82,9 @@ class User
         } else {
             $return = false;
         }
+    }
+
+    public function deleteUserById(){
         $stmt = $this->preparequery("DELETE FROM users WHERE id = :id");
         $stmt->bindValue(":id", $this->id, PDO::PARAM_INT);
         $stmt->execute();
@@ -92,7 +94,13 @@ class User
             $return = false;
         }
         return $return;
-    }//___________________________________________________________________________________
+    }
+
+    public function deleteUserAndGalleriesById(){
+        $this->deleteUserGalleries();
+        $isUserDeleted = $this->deleteUserById();
+        return $isUserDeleted;
+    }
 
     public function getActiveUsers()
     {

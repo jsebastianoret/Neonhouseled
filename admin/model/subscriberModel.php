@@ -23,7 +23,7 @@ class Subscriber
         return $this->getDBInstance()->prepare($sql);
     }
 
-    public function nuevoSuscriptor()
+    public function addSubscriber()
     {
 
         $sql = "INSERT INTO suscriptor(nombre, telefono, correo) VALUES(?,?,?)";
@@ -35,7 +35,7 @@ class Subscriber
 
         return $result;
     }
-    public function buscarSuscriptor()
+    public function searchSubscriberByEmail()
     {
         $sql = "select count(*) AS resultado FROM suscriptor WHERE correo='$this->correo';";
         $consulta = $this->prepareQuery($sql);
@@ -47,7 +47,7 @@ class Subscriber
         }
     }
 
-    public function listSuscriptor()
+    public function getAllSubscribers()
     {
 
         $sql = "SELECT * FROM suscriptor";
@@ -56,6 +56,12 @@ class Subscriber
         $objetoConsulta = $consulta->fetchAll(PDO::FETCH_OBJ);
 
         return $objetoConsulta;
+    }
+
+    public function removeById(){
+        $sql = "DELETE FROM suscriptor WHERE id='$this->id'";
+        $stmt = $this->prepareQuery($sql);
+        return $stmt->execute();
     }
 
     protected function listUser()
@@ -67,5 +73,39 @@ class Subscriber
 
         return $objetoConsulta;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+    public function setId($id){
+        $this->id = $id;
+    }
+    public function getNombre(){
+         return $this->nombre;
+    }
+    public function getTelefono(){
+         return $this->telefono;
+    }
+    public function getCorreo(){
+         return $this->correo;
+    }
+
+    public function setNombre($nombre){
+         $this->nombre = $nombre;
+    }
+
+    public function setTelefono($telefono){
+         $this->telefono = $telefono;
+    }
+
+    public function setCorreo($correo){
+         $this->correo = $correo;
+    }
 }
+
+
 ?>
