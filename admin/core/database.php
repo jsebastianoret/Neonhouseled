@@ -6,18 +6,12 @@ class DBConnection{
 
  public function __construct()
     {
-    $host = "localhost";
-    $dbname = "ghxumdmy_neonhouselednew";
-    $username = "root";
-    $password = "12345";
-    /*
-    $host = "localhost";
-    $dbname = "ghxumdmy_neonhouselednew";
-    $username = "ghxumdmy_neonhoselednew";
-    $password = "C,nnQLkM7a!p";
-    */
+        $host = "localhost";
+        $dbname = "neonhouseled";
+        $username = "root";
+
         try {
-            $this->db = new PDO("mysql:host=$host;dbname=$dbname",$username,$password);
+            $this->db = new PDO("mysql:host=$host;dbname=$dbname",$username);
         } catch (PDOException $th) {
         echo "Error: ". $th->getMessage();
         }

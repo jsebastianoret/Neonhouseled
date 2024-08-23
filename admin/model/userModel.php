@@ -73,7 +73,7 @@ class User
 
         $gallery = $this->getGalleryForUser($this->id);
         foreach ($gallery as $img) {
-            unlink($_SERVER["DOCUMENT_ROOT"] . "/admin/imgGallery/" . $img['image']);
+            unlink($_SERVER["DOCUMENT_ROOT"] . "/admin/imgGallery/webp/" . $img['image']);
             $this->idgallery = $img['id'];
             $this->deleteGalleryById();
         }
@@ -83,7 +83,7 @@ class User
         } else {
             $return = false;
         }
-        $stmt = $this->preparequery("DELETE FROM users WHERE id = :id");
+        $stmt = $this->preparequery("DELETE FROM users WHERE id = :id AND deleted != 0");
         $stmt->bindValue(":id", $this->id, PDO::PARAM_INT);
         $stmt->execute();
         if ($stmt->rowCount() != 0) {
@@ -115,13 +115,29 @@ class User
     /*
     * Gallery se refiere a una imagen de la galería
     */
-    public function getAllGalleries()
+    public function getAllGalleries($page = 1, $itemsPerPage = 4)
     {
-        $sql = "SELECT * FROM galeria";
+        $offset = ($page - 1) * $itemsPerPage;
+        
+        $sql = "SELECT * FROM galeria
+                LIMIT :limit OFFSET :offset";
         $stmt = $this->prepareQuery($sql);
+        $stmt->bindValue(':limit', $itemsPerPage, PDO::PARAM_INT);
+        $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
         $stmt->execute();
+        
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
+    
+    public function countAllGalleries()
+    {
+        $sql = "SELECT COUNT(*) AS total FROM galeria";
+        $stmt = $this->prepareQuery($sql);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result['total'];
+    }
+
 
     public function deleteGalleryById()
     {
