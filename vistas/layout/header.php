@@ -1,7 +1,7 @@
 <!--Ajax
 <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
 <?php 
-session_start(); // Iniciar la sesión al principio del archivo
+// Iniciar la sesión al principio del archivo
 $consulta = "Consulta General";
 if (isset($_GET["v"]) && $_GET["v"] != null) {
     $consulta = base64_decode($_GET["v"]);

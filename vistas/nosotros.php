@@ -54,26 +54,31 @@ session_start();
                 sus sueños. </p>
         </div>
         <div class="section">
-            <div class="vision">
-                <h2 class="vision__titulo">MISIÓN</h2>
-                <figure class="vision__imagen">
-                    <img class="vision__img" src="../public/imagenes/nosotros/mision.webp" alt="visión de la empresa" width="100%" height="100%">
-                </figure>
-                <p class="vision__texto">
-                    Somos una empresa importadora, fabricante de productos publicitarios buscando hacer realidad las
-                    ideas de nuestros clientes, satisfaciendo sus necesidades al menor tiempo y al menos costo.
-                </p>
-            </div>
-            <div class="mision">
-                <h2 class="mision__titulo">VISIÓN</h2>
-                <figure class="mision__imagen">
-                    <img class="mision__img" src="../public/imagenes/nosotros/vision.webp" alt="visión de la empresa"  width="100%" height="100%">
-                </figure>
-                <p class="mision__texto">
-                    Ser la empresa que exprese innovación y creatividades en el mundo de la publicidad, buscando evolucionar en nuestros procesos implementando la tecnología más eficiente. 
-                </p>
-            </div>
+    <div class="mision">
+        <div class="mision__texto-container">
+            <h2 class="mision__titulo">MISIÓN</h2>
+            <p class="mision__texto">
+                Somos una empresa importadora, fabricante de productos publicitarios buscando hacer realidad las ideas
+                de nuestros clientes, satisfaciendo sus necesidades al menor tiempo y al menos costo.
+            </p>
         </div>
+        <figure class="mision__imagen">
+            <img class="mision__img" src="../public/imagenes/nosotros/mision1.webp" alt="misión de la empresa">
+        </figure>
+    </div>
+    <div class="vision">
+        <div class="vision__texto-container">
+            <h2 class="vision__titulo">VISIÓN</h2>
+            <p class="vision__texto">
+                Ser la empresa que exprese innovación y creatividad en el mundo de la publicidad, buscando evolucionar en
+                nuestros procesos implementando la tecnología más eficiente.
+            </p>
+        </div>
+        <figure class="vision__imagen">
+            <img class="vision__img" src="../public/imagenes/nosotros/vision.webp" alt="visión de la empresa">
+        </figure>
+    </div>
+</div>
     </main>
 <?php require_once "layout/foother.php" ?>
 </body>

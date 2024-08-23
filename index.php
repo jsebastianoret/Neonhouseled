@@ -320,13 +320,20 @@ $categoriesHTML = $pageRenderer->renderCategories();
         </div>-->
     </div>
     <div class="ubicanos">
-        <h2 class="ubicanos__titulo titulo">UBÍCANOS</h2>
-        <div class="mapas">
-            <figure class="mapa">
-                <a class="mapa__link" href="https://www.google.com/maps/place/Neon+House+Led/@-12.057222,-77.025545,19z/data=!4m5!3m4!1s0x0:0xb89ce2c672f2aa0c!8m2!3d-12.0571663!4d-77.0256203?hl=es" rel="noreferrer" target="_blank"><img class="mapa__img lazyload" src="public/imagenes/as.webp"  alt="Mapa"></a>
-            </figure>
-        </div>
+    <h2 class="ubicanos__titulo titulo">UBÍCANOS</h2>
+    <div class="mapas">
+        <figure class="mapa">
+            <iframe class="mapa__iframe" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2545.8894079274646!2d-77.0256203!3d-12.0571663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0xb89ce2c672f2aa0c!2sNeon+House+Led!5e0!3m2!1ses!2spe!4v1691805864560!5m2!1ses!2spe" 
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </figure>
     </div>
+</div>
     <footer>
         <div class="direccion">
             <p class="direccion__item">Jr. Paruro 1401 tda. 130 sótano, CC Shopping Center, Cercado de Lima</p>
@@ -352,6 +359,8 @@ $categoriesHTML = $pageRenderer->renderCategories();
             <a class="sociales__item" rel="noreferrer" aria-label="twitter" target="_blank" href="https://twitter.com/NEONHOUSELEDS"><i class="fab fa-twitter-square"></i></a>
             <a class="sociales__item" rel="noreferrer" aria-label="linkedin" target="_blank" href="https://www.linkedin.com/in/neonhouseled/"><i class="fab fa-invision"></i></a>
         </div>
+        <div class="linea-medio"></div>
+
     </footer>
     <script src="public/js/lazysizes.min.js" async></script>
     <script defer src="https://kit.fontawesome.com/c702fce202.js" crossorigin="anonymous"></script>

@@ -1,7 +1,19 @@
-footer{
-    margin:1.5rem 0;
-    font-family:'Proxima-Nova-Regular';
-    position:relative
+footer {
+    background-color: rgb(60, 62, 63); /* Fondo negro */
+    color: white; /* Color del texto */
+    padding: 2rem 0; /* Espaciado interno */
+    text-align: center; /* Centrar el texto */
+    position: relative;
+}
+.linea-medio {
+    border-top: 3px solid #00c3ff; /* Línea de 3px de grosor y color naranja */
+    width: 80%; /* Ajusta el ancho de la línea según lo que necesites */
+    margin: 2rem auto; /* Centra la línea horizontalmente y agrega margen arriba y abajo */
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 /*
 .ultimo{
@@ -92,13 +104,13 @@ footer{
 }
 .direccion{
     text-align:center;
-    color:#5f5f5f
+    color:#daeaec
 }
 .direccion__item{
     margin:.5rem 0
 }
 .sociales__item{
-    color:hsl(216deg,85%,34%)
+    color:hsl(199, 55%, 63%)
 }
 .direccion{
     margin-bottom:1rem;
