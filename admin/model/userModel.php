@@ -85,6 +85,7 @@ class User
     }
 
     public function deleteUserById(){
+        /*$stmt = $this->preparequery("DELETE FROM users WHERE id = :id AND deleted != 0");*/
         $stmt = $this->preparequery("DELETE FROM users WHERE id = :id");
         $stmt->bindValue(":id", $this->id, PDO::PARAM_INT);
         $stmt->execute();
@@ -95,13 +96,11 @@ class User
         }
         return $return;
     }
-
     public function deleteUserAndGalleriesById(){
         $this->deleteUserGalleries();
         $isUserDeleted = $this->deleteUserById();
         return $isUserDeleted;
     }
-
     public function getActiveUsers()
     {
         $sql = "SELECT id, nombres FROM users WHERE user_level='2' AND status='1' ";
@@ -123,12 +122,34 @@ class User
     /*
     * Gallery se refiere a una imagen de la galería
     */
-    public function getAllGalleries()
+/*    public function getAllGalleries()
     {
         $sql = "SELECT * FROM galeria";
         $stmt = $this->prepareQuery($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }*/
+    public function getAllGalleries($page = 1, $itemsPerPage = 4)
+    {
+        $offset = ($page - 1) * $itemsPerPage;
+
+        $sql = "SELECT * FROM galeria
+                LIMIT :limit OFFSET :offset";
+        $stmt = $this->prepareQuery($sql);
+        $stmt->bindValue(':limit', $itemsPerPage, PDO::PARAM_INT);
+        $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function countAllGalleries()
+    {
+        $sql = "SELECT COUNT(*) AS total FROM galeria";
+        $stmt = $this->prepareQuery($sql);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result['total'];
     }
 
     public function deleteGalleryById()

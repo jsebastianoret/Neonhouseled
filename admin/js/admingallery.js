@@ -3,7 +3,6 @@ dep.load("../controller/userController.php?action=showuser");
 
 //------------------------------------------------------------
 $(function() {
-
     let tableProd = $("#galeria").DataTable({
         "language": {
             "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
@@ -12,30 +11,35 @@ $(function() {
         dom: '<"header__main"<"search"f>>t<"header__main"ip>',
         lengthChange: false,
         pageLength: 4,
-        ajax: {
-            url: "../controller/galleryController.php?action=listgallery",
-            dataSrc: "",
+        "processing": true,
+        "serverSide": true,
+        "ajax": {
+            "url": "../controller/galleryController.php?action=listgallery",
+            "dataSrc": "data",
+            "data": function(d) {
+                d.page = Math.floor(d.start / d.length) + 1;
+                d.length = d.length;
+            }
         },
-        columns: [
-            { data: "id" },
-            { data: "image" },
-            { data: "descripcion" },
-            { data: null },
+        "columns": [
+            { "data": "id" },
+            { "data": "image" },
+            { "data": "descripcion" },
+            { "data": null }
         ],
-        columnDefs: [{
+        "columnDefs": [
+            {
                 "targets": -3,
-                "data": 'image',
-                "render": function(data, type, row, meta) {
+                "render": function(data, type, row) {
                     let originalPath = '../imgGallery/' + data;
                     let webpPath = "../imgGallery/webp/" + data.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-                    return '<img src="' + webpPath + '" alt="' + data + '"height="80" width="80" onerror="this.onerror=null;this.src=\'' + originalPath + '\';" />';
+                    return '<img src="' + webpPath + '" alt="' + data + '" height="80" width="80" onerror="this.onerror=null;this.src=\'' + originalPath + '\';" />';
                 }
             },
-
             {
-                defaultContent: '<button class="eliminar_b1 table-d"><i class="fas fa-trash-alt eliminar"></i></button>',
-                targets: -1,
-            },
+                "targets": -1,
+                "defaultContent": '<button class="eliminar_b1 table-d"><i class="fas fa-trash-alt eliminar"></i></button>'
+            }
         ],
     });
 
@@ -66,7 +70,7 @@ $(function() {
                             text: result.text,
                             icon: result.icon
                         }).then(function() {
-                            $("#galeria").DataTable().ajax.reload(null, false);
+                            $("#galeria").DataTable().ajax.reload();
                         });
                     },
                 });

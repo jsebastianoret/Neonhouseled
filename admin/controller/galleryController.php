@@ -24,9 +24,24 @@ class GalleryController{
 
     public function listGallery()
     {
-        $allImagesFromGalleries = $this->user->getAllGalleries();
-        echo json_encode($allImagesFromGalleries);
+        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+        $itemsPerPage = isset($_GET['length']) ? (int)$_GET['length'] : 4;
+    
+        $totalItems = $this->user->countAllGalleries();
+    
+        $galleries = $this->user->getAllGalleries($page, $itemsPerPage);
+    
+        $response = [
+            "draw" => isset($_GET['draw']) ? intval($_GET['draw']) : 1,
+            "recordsTotal" => $totalItems,
+            "recordsFiltered" => $totalItems, 
+            "data" => $galleries
+        ];
+    
+        echo json_encode($response);
     }
+    
+
 
     public function deleteGallery($id)
     {

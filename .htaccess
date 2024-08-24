@@ -1,8 +1,8 @@
 RewriteEngine On
-RewriteCond %{HTTPS} !=on
-RewriteCond %{HTTP_HOST} ^neonhouseled.com$ [OR]
-RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
-Header always set Content-Security-Policy "upgrade-insecure-requests;"
+#RewriteCond %{HTTPS} !=on
+#RewriteCond %{HTTP_HOST} ^neonhouseled.com$ [OR]
+#RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+#Header always set Content-Security-Policy "upgrade-insecure-requests;"
 
 <filesMatch ".(css|webp|gif|js|ico)$">
 Header unset Cache-Control
