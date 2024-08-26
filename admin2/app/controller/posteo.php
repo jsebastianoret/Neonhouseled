@@ -116,7 +116,6 @@ class ControllerPosteo{
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>$titulo</title>
-
             <link rel="stylesheet" href="../../public/css/all_blog.css">
             <?php require_once "../layout/links.php" ?>
         </head> 
@@ -180,16 +179,16 @@ class ControllerPosteo{
                             <br>
                             <br>
                             <br>
-                            <div class="blog-body">
+                            <div class="blog-body" id="c2">
                                 <div>
                                     <p>$parrafo3</p>
                                     <br>
                                     <br>
                                     <p>$parrafo4</p>
                                 </div>
-                                <br>
-                                <br>
-                                <img src="../../public/imagenes/imagesBlogBd/$imagen_secundaria" alt="Imagen Secundaria">
+                                <br class="br">
+                                <br class="br">
+                                <img src="../../public/imagenes/imagesBlogBd/$imagen_secundaria" alt="Imagen Secundaria" class="img2">
                             </div>
                             <div class="container-video">
                                 <iframe src="$embed_url" frameborder="0" allowfullscreen></iframe>
@@ -216,6 +215,7 @@ class ControllerPosteo{
                     </div>
                 </div>
             </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <?php require_once "../layout/foother.php" ?>
         <!-- <script src="../js/script.js"></script> -->
 </body>

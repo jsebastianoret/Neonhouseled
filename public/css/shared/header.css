@@ -1,7 +1,6 @@
 *{
 	margin:0;
-	padding:0;
-	box-sizing:border-box
+	padding:0
 }
 a{
 	text-decoration:none
@@ -27,15 +26,18 @@ a{
 	font-display:swap
 }
 .header{
-	background-color:white;
-	width:100%;
+	background: linear-gradient(to right, #546a80, #afe2e2);
 	height:70px;
 	padding:4px 20px;
 	display:flex;
 	justify-content:space-between;
 	align-items:center;
 	font-family:'Proxima-Nova-Regular';
-	top:0;
+	position: fixed;
+    top: 0; /* Fija el header en la parte superior de la página */
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho de la página */
+    z-index: 100; /* Asegura que el header esté por encima de otros elementos */
 }
 .header .logo-container{
 	width:220px;
@@ -184,39 +186,80 @@ a{
 	height:inherit;
 	object-fit:cover
 }
-.about-us{
-	width:100%;
-	height:auto;
-	padding:60px 0;
-	display:flex;
-	flex-wrap:wrap;
-	justify-content:center
+#myVideo::-webkit-media-controls {
+    display: none;
+}/* Estilos generales para la sección */
+.about-us {
+    padding: 80px 0;
+    background: #f4f4f4;
 }
-.about-us .about-us-title{
-	width:100%;
-	text-align:center;
-	padding:12px 0;
-	margin-bottom:20px;
-	font-size:40px;
-	text-transform:uppercase;
-	color:#0e4b9c;
-	font-family:'Proxima-Nova-SemiBold'
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
 }
-.about-us .about-us-content{
-	width:80%;
-	display:flex;
-	flex-wrap:wrap
+
+.video-container {
+    flex: 1;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
 }
-.about-us .about-us-content .video-container{
-	width:50%;
-	height:100%;
-	overflow:hidden
+
+.video_index {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-.about-us .about-us-content .video-container a,.about-us .about-us-content .video-container a img{
-	width:100%;
-	height:100%
-	
+
+.text-container {
+    flex: 1;
+    padding: 20px;
+    background: linear-gradient(135deg, #809c95, #7bb4fe); /* Color degradado */
+    border-radius: 15px;
+    color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
+.about-us-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-container p {
+    font-size: 1rem;
+}
+
+/* Estilos responsivos */
+@media (max-width: 576px) {
+    .video_index {
+        content: url("https://www.neonhouseled.com/public/imagenes/inicioM/video_indexM.webp") !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: block !important;
+        margin: auto !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+    .video-container, .text-container {
+        width: 100%;
+        height: auto;
+    }
+    .text-container {
+        padding-top: 20px;
+    }
+}
+
 
 @media (max-width: 576px){
     .video_index{
@@ -278,9 +321,7 @@ a{
 	text-transform:uppercase;
 	font-family:'Proxima-Nova-Light'
 }
-.services{
-	padding-bottom:60px
-}
+
 .services .services-title{
 	width:80%;
 	height:auto;
@@ -296,39 +337,73 @@ a{
 	border-left:0;
 	border-right:0
 }
-.services .services-items-container{
-	width:80%;
-	margin:0 auto;
-	margin-top:40px;
-	padding:0 20px;
-	display:flex;
-	justify-content:space-between;
-	flex-wrap:wrap
+.services {
+    padding-bottom: 60px;
 }
-.services .services-items-container .services-item{
-	width:30%;
-	display:flex;
-	flex-wrap:wrap;
-	justify-content:center;
-	margin-bottom:40px
+
+.services .services-items-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre los elementos */
 }
-.services .services-items-container .services-item .img-item-container{
-	width:120px;
-	height:120px;
-	margin-bottom:20px
+
+.services .services-items-container .services-item {
+    width: calc(30% - 20px); /* Ajusta el ancho de los elementos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: #ffffff; /* Fondo blanco para los elementos */
+    padding: 15px; /* Reducido el espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    position: relative; /* Necesario para posicionar la imagen más arriba */
+    overflow: hidden; /* Asegura que nada se desborde del contenedor */
 }
-.services .services-items-container .services-item .img-item-container img{
-	width:100%;
-	height:100%;
-	border-radius:50%
+
+.services .services-items-container .services-item .img-item-container {
+    width: 150px; /* Tamaño de la imagen */
+    height: 150px;
+    margin-bottom: 5px; /* Reducido el espacio entre la imagen y el texto */
+    position: relative; /* Ajuste para mover la imagen */
+    z-index: 1; /* Asegura que la imagen esté por encima del fondo del contenedor */
 }
-.services .services-items-container .services-item h3{
-	width:100%;
-	text-align:center;
-	font-size:18px;
-	text-transform:uppercase;
-	font-family:'Proxima-Nova-Bold'
+
+.services .services-items-container .services-item .img-item-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; /* Bordes redondeados ajustados */
+    object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
+    display: block; /* Elimina el espacio blanco debajo de la imagen */
+    position: relative; /* Necesario para ajustar la imagen en el contenedor */
+    top: -20px; /* Ajusta la imagen para que sobresalga un poco hacia arriba */
 }
+
+.services .services-items-container .services-item h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: 'Proxima-Nova-Bold';
+    margin-top: 0; /* Elimina el espacio superior entre el título y el contenedor de la imagen */
+}
+
+@media screen and (max-width: 968px) {
+    .services .services-items-container .services-item {
+        width: calc(45% - 20px); /* Ajusta el ancho para dos elementos por fila en pantallas más pequeñas */
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .services .services-items-container .services-item {
+        width: calc(100% - 20px); /* Un elemento por fila en pantallas más pequeñas */
+    }
+}
+
 @media screen and (max-width:968px){
 	.header{
 		position:fixed;
