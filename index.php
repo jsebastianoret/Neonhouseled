@@ -72,7 +72,7 @@ $categoriesHTML = $pageRenderer->renderCategories();
         <div class="services-items-container">
             <div class="services-item">
         
-                <a href="vistas/servicios/arquitectura-comercial-decoracion-remodelacion-iluminacion-diseño.php"><figure class="img-item-container">
+                <a href="vistas/servicios/arquitectura-comercial-decoracion-remodelacion-iluminacion-diseдo.php"><figure class="img-item-container">
                         <img src="public/imagenes/index/arquitectura_comercial.webp" alt="Alquitectura comercial">
                     </figure></a>
                 <h3>Arquitectura comercial</h3>
@@ -85,7 +85,7 @@ $categoriesHTML = $pageRenderer->renderCategories();
             </div>
             <div class="services-item">
                 
-                <a href="vistas/servicios/comercial-decoracion-remodelacion-iluminacion-diseño.php"><figure class="img-item-container">
+                <a href="vistas/servicios/comercial-decoracion-remodelacion-iluminacion-diseдo.php"><figure class="img-item-container">
                         <img src="public/imagenes/index/decoracion_y_remodelacion.webp" alt="Decoración_y_remodelación">
                     </figure></a>
                 <h3>Decoración y remodelación</h3>
