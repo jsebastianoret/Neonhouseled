@@ -37,9 +37,9 @@ session_start();
             <h2>Proyectos destacados</h2>
             <div class="pry-dest-video">
                 <figure class="video-container">
-                        <a href="https://www.youtube.com/watch?v=eklZLdBx9WE&ab_channel=NEONHOUSELED" target="_blank">
-                            <img src="../public/imagenes/proyectos/video_pry.webp" alt="Imagen del selvicio">
-                        </a>
+                <video autoplay muted loop width="100%">
+                    <source src="../public/imagenes/proyectos/video.mp4" type="video/mp4">
+                </video>                
                 </figure>
             </div>
             <p>"Tendencia, vanguardia y novedades"</p>
@@ -50,8 +50,9 @@ session_start();
                 <div class="pry">
                     <figure class="img-container">
                         <a href="https://youtu.be/qU08CNcnQhA" target="_blank">
-                            <img src="../public/imagenes/proyectos/1.webp" alt="Imagen del selvicio">
-                        </a>
+                        <video autoplay muted loop width="100%">
+                    <source src="../public/imagenes/proyectos/video1.mp4" type="video/mp4">
+                </video>                          </a>
                     </figure>
                     <p>Decoración e iluminación <br>
                     de interiores y exteriores</p>
@@ -59,8 +60,9 @@ session_start();
                 <div class="pry">
                     <figure class="img-container">
                         <a href="https://youtu.be/3QMkxPf7H3U" target="_blank">
-                            <img src="../public/imagenes/proyectos/2.webp" alt="Imagen del selvicio">
-                        </a>
+                        <video autoplay muted loop width="100%">
+                    <source src="../public/imagenes/proyectos/video2.mp4" type="video/mp4">
+                </video>                          </a>
                     </figure>
                     <p>Decoración con pantallas <br>
                     LED</p>
