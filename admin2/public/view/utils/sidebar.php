@@ -138,6 +138,7 @@
         src="./../../img/user-admin.png"
         alt=""
         height="50px"
+        onError="this.onerror=null; this.src='./admin2/public/img/user-admin.png';"
       />
       <div class="info-usuario">
         <div class="nombre-email">
