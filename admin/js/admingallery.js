@@ -88,7 +88,7 @@ $("#btnNuevo1").click(function() {
     //$('.dropify-clear').click();
     $(".modal-header").css("background-color", "#28a745");
     $(".modal-header").css("color", "white");
-    $(".modal-title").text("Nueva Imegen");
+    $(".modal-title").text("Nueva Imagen");
     $("#modalCRUD1").modal("show");
     id = null;
     opcion = 1; //alta
