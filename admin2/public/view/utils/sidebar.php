@@ -135,7 +135,7 @@
 
     <div class="usuario">
       <img
-        src="./admin2/public/img/user-admin.png"
+        src="./../../img/user-admin.png"
         alt=""
         height="50px"
       />
