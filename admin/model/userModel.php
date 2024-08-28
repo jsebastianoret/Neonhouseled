@@ -1,90 +1,80 @@
 <?php
 require_once dirname(dirname(__FILE__)) . '/core/database.php';
 
-class Usuario
+class User
 {
     protected $id;
     protected $username;
     protected $password;
     protected $user_level;
-
     //Nuevo campo estado de usuario (deshabilitado/habilitado)
     protected $status;
-
     protected $nombres;
     protected $telefono;
-
     protected $idgallery;
     protected $descripcion;
     protected $idcliente;
     protected $image;
-
     protected $identclientgallery;
 
-    protected function SearchUsuario()
-    {
-        $ic = new Conexion();
-        $sql = "SELECT * FROM users WHERE username='$this->username'";
-        $consulta = $ic->db->prepare($sql);
-        $consulta->execute();
-        if ($consulta) {
+    private function getDBInstance(){
+        return DBConnection::getInstance()->getDb();
+    }
 
-            $objetoConsulta = $consulta->fetchAll(PDO::FETCH_OBJ);
-            return $objetoConsulta;
+    private function prepareQuery($sql){
+        return $this->getDBInstance()->prepare($sql);
+    }
+
+    /*
+    stmt-> Statement (Sentencia SQL)
+    */
+    public function searchUser()
+    {
+        $sql = "SELECT * FROM users WHERE username='$this->username'";
+        $stmt = $this->prepareQuery($sql);
+        $stmt->execute();
+        if ($stmt) {
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
 
         } else {
             echo "<script>alert('Error al consultar')</script>";
         }
-
-
     }
-    protected function listUser()
+    public function listUser()
     {
-        $ic = new Conexion();
         $sql = "SELECT * FROM users";
-        $consulta = $ic->db->prepare($sql);
-        $consulta->execute();
-        $objetoConsulta = $consulta->fetchAll(PDO::FETCH_OBJ);
-        return $objetoConsulta;
-
-
+        $stmt = $this->prepareQuery($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
-    protected function insertUser()
+    public function insertUser()
     {
-        $ic = new Conexion();
-
         $sql = "INSERT INTO users(username,password,user_level,status,nombres,telefono) VALUES(?,?,?,default,?,?)";
-        $insertar = $ic->db->prepare($sql);
-        $insertar->bindParam(1, $this->username);
-        $insertar->bindParam(2, $this->password);
-        $insertar->bindParam(3, $this->user_level);
-        $insertar->bindParam(4, $this->nombres);
-        $insertar->bindParam(5, $this->telefono);
-        return $insertar->execute();
+        $stmt = $this->prepareQuery($sql);
+        $stmt->bindParam(1, $this->username);
+        $stmt->bindParam(2, $this->password);
+        $stmt->bindParam(3, $this->user_level);
+        $stmt->bindParam(4, $this->nombres);
+        $stmt->bindParam(5, $this->telefono);
+        return $stmt->execute();
 
     }
-
-
-    protected function UpdateUser()
+    public function updateUser()
     {
-        $ic = new Conexion();
         $sql = "UPDATE users SET username='$this->username',password='$this->password',user_level='$this->user_level',nombres='$this->nombres',telefono='$this->telefono' WHERE id='$this->id'";
-        $insertar = $ic->db->prepare($sql);
-        return $insertar->execute();
+        $stmt = $this->prepareQuery($sql);
+        return $stmt->execute();
     }
 
-
-
-    protected function userdelete()
-    {
+    public function deleteUserGalleries(){
         $return = false;
 
         $gallery = $this->getGalleryForUser($this->id);
         foreach ($gallery as $img) {
-            unlink($_SERVER["DOCUMENT_ROOT"] . "/admin/imgGallery/" . $img['image']);
+            unlink($_SERVER["DOCUMENT_ROOT"] . "/admin/imgGallery/webp/" . $img['image']);
             $this->idgallery = $img['id'];
-            $this->deleteYouGallery();
+            $this->deleteGalleryById();
         }
         $gallery = $this->getGalleryForUser($this->id);
         if (sizeof($gallery) == 0) {
@@ -92,8 +82,11 @@ class Usuario
         } else {
             $return = false;
         }
-        $cnx = new Conexion();
-        $stmt = $cnx->db->prepare("DELETE FROM users WHERE id = :id");
+    }
+
+    public function deleteUserById(){
+        /*$stmt = $this->preparequery("DELETE FROM users WHERE id = :id AND deleted != 0");*/
+        $stmt = $this->preparequery("DELETE FROM users WHERE id = :id");
         $stmt->bindValue(":id", $this->id, PDO::PARAM_INT);
         $stmt->execute();
         if ($stmt->rowCount() != 0) {
@@ -102,89 +95,121 @@ class Usuario
             $return = false;
         }
         return $return;
-    } //___________________________________________________________________________________
-
-    protected function showuser()
+    }
+    public function deleteUserAndGalleriesById(){
+        $this->deleteUserGalleries();
+        $isUserDeleted = $this->deleteUserById();
+        return $isUserDeleted;
+    }
+    public function getActiveUsers()
     {
-        $ic = new Conexion();
         $sql = "SELECT id, nombres FROM users WHERE user_level='2' AND status='1' ";
-        $consulta = $ic->db->prepare($sql);
-        $consulta->execute();
-        $objetoConsulta = $consulta->fetchAll(PDO::FETCH_OBJ);
-        return $objetoConsulta;
+        $stmt  = $this->prepareQuery($sql);
+        $stmt ->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
-    protected function inserGallerys()
+    public function insertGallery()
     {
-
-        $ic = new Conexion();
         $sql = "INSERT INTO galeria(descripcion,idcliente,image) VALUES(?,?,?)";
-        $insertar = $ic->db->prepare($sql);
-        $insertar->bindParam(1, $this->descripcion);
-        $insertar->bindParam(2, $this->idcliente);
-        $insertar->bindParam(3, $this->image);
-        return $insertar->execute();
-
-
+        $stmt = $this->prepareQuery($sql);
+        $stmt->bindParam(1, $this->descripcion);
+        $stmt->bindParam(2, $this->idcliente);
+        $stmt->bindParam(3, $this->image);
+        return $stmt->execute();
     }
 
-    protected function listviewgallery()
+    /*
+    * Gallery se refiere a una imagen de la galería
+    */
+/*    public function getAllGalleries()
     {
-        $ic = new Conexion();
         $sql = "SELECT * FROM galeria";
-        $consulta = $ic->db->prepare($sql);
-        $consulta->execute();
-        $objetoConsulta = $consulta->fetchAll(PDO::FETCH_OBJ);
-        return $objetoConsulta;
-
-
-    }
-    protected function deleteYouGallery()
+        $stmt = $this->prepareQuery($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }*/
+    public function getAllGalleries($page = 1, $itemsPerPage = 4)
     {
-        $ic = new Conexion();
+        $offset = ($page - 1) * $itemsPerPage;
+
+        $sql = "SELECT * FROM galeria
+                LIMIT :limit OFFSET :offset";
+        $stmt = $this->prepareQuery($sql);
+        $stmt->bindValue(':limit', $itemsPerPage, PDO::PARAM_INT);
+        $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function countAllGalleries()
+    {
+        $sql = "SELECT COUNT(*) AS total FROM galeria";
+        $stmt = $this->prepareQuery($sql);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result['total'];
+    }
+
+    public function deleteGalleryById()
+    {
         $sql = "DELETE FROM galeria WHERE id='$this->idgallery'";
-        $insertar = $ic->db->prepare($sql);
-        return $insertar->execute();
+        $stmt = $this->prepareQuery($sql);
+        return $stmt->execute();
     }
 
-    protected function galleryforclients()
+    public function getClientGalleries($page = 1, $itemsPerPage = 6)  // Cambiado a 6
     {
-        $ic = new Conexion();
-        $sql = "SELECT galeria.descripcion, galeria.image FROM galeria
-        INNER JOIN users
-        ON galeria.idcliente = users.id
-        WHERE users.username = '$this->identclientgallery' AND  users.user_level =2";
-        $consulta = $ic->db->prepare($sql);
-        $consulta->execute();
-        if ($consulta->execute()) {
-            $objetoConsulta = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            return $objetoConsulta;
-        }
+        $offset = ($page - 1) * $itemsPerPage;
 
+        $sql = "SELECT galeria.descripcion, galeria.image 
+            FROM galeria
+            INNER JOIN users ON galeria.idcliente = users.id
+            WHERE users.username = :username 
+            AND users.user_level = 2
+            LIMIT :limit OFFSET :offset";
 
+        $stmt = $this->prepareQuery($sql);
+        $stmt->bindParam(':username', $this->identclientgallery, PDO::PARAM_STR);
+        $stmt->bindParam(':limit', $itemsPerPage, PDO::PARAM_INT);
+        $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    protected function galleryforAll()
+    // Añade un método para contar el total de imágenes para la paginación
+    public function countClientGalleries()
     {
-        $ic = new Conexion();
+        $sql = "SELECT COUNT(*) AS total 
+            FROM galeria
+            INNER JOIN users ON galeria.idcliente = users.id
+            WHERE users.username = :username 
+            AND users.user_level = 2";
+
+        $stmt = $this->prepareQuery($sql);
+        $stmt->bindParam(':username', $this->identclientgallery, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC)['total'];
+    }
+
+    public function galleryforAll()
+    {
         $sql = "SELECT galeria.descripcion, galeria.image FROM galeria
         INNER JOIN users
         ON galeria.idcliente = users.id
         WHERE  users.user_level =3";
-        $consulta = $ic->db->prepare($sql);
-        $consulta->execute();
-        if ($consulta->execute()) {
-            $objetoConsulta = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            return $objetoConsulta;
+        $stmt = $this->prepareQuery($sql);
+        $stmt->execute();
+        if ($stmt->execute()) {
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-
-
     }
-
     protected function getGalleryForUser($id)
     {
-        $cnx = new Conexion();
-        $stmt = $cnx->db->prepare("SELECT id,idcliente,image FROM galeria WHERE idcliente = :idcliente");
+        $stmt = $this->prepareQuery("SELECT id,idcliente,image FROM galeria WHERE idcliente = :idcliente");
         $stmt->bindValue(":idcliente", $id, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll();
@@ -193,12 +218,133 @@ class Usuario
     /***
      * Metodo para cambiar estado de usuario deshabilitado/habilitado
      */
-    protected function changeStatus()
+    public function changeStatus()
     {
-        $ic = new Conexion();
         $sql = "UPDATE users SET status = '$this->status' WHERE id='$this->id'";
-        $insertar = $ic->db->prepare($sql);
-        return $insertar->execute();
+        $stmt = $this->prepareQuery($sql);
+        return $stmt->execute();
     }
+
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    public function setUsername($username)
+    {
+        $this->username = $username;
+    }
+
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
+    public function getUserLevel()
+    {
+        return $this->user_level;
+    }
+
+    public function setUserLevel($user_level)
+    {
+        $this->user_level = $user_level;
+    }
+
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+    public function getNombres()
+    {
+        return $this->nombres;
+    }
+
+    public function setNombres($nombres)
+    {
+        $this->nombres = $nombres;
+    }
+
+    public function getTelefono()
+    {
+        return $this->telefono;
+    }
+
+    public function setTelefono($telefono)
+    {
+        $this->telefono = $telefono;
+    }
+
+    public function getIdgallery()
+    {
+        return $this->idgallery;
+    }
+
+    public function setIdgallery($idgallery)
+    {
+        $this->idgallery = $idgallery;
+    }
+
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $descripcion;
+    }
+
+    public function getIdcliente()
+    {
+        return $this->idcliente;
+    }
+
+    public function setIdcliente($idcliente)
+    {
+        $this->idcliente = $idcliente;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    public function getIdentclientgallery()
+    {
+        return $this->identclientgallery;
+    }
+
+    public function setIdentclientgallery($identclientgallery)
+    {
+        $this->identclientgallery = $identclientgallery;
+    }
+
 }
 ?>

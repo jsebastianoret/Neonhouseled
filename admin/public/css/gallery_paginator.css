@@ -1,0 +1,84 @@
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.page-link {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 4px;
+    border: 1px solid #ddd;
+    color: #496ADD;
+    text-decoration: none;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.page-link.active {
+    background-color: #496ADD;
+    color: white;
+    border-color: #007bff;
+}
+
+.page-link:hover {
+    background-color: #ddd;
+}
+
+span {
+    padding: 8px 12px;
+    margin: 4px;
+}
+
+.prev, .next {
+    font-weight: bold;
+}
+
+/*
+Formulario
+*/
+.goto-page {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.goto-page input {
+    width: 60px;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.goto-page button {
+    padding: 5px 10px;
+    background-color: #496ADD;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.goto-page button:hover {
+    background-color: #496ADD;
+}
+
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 500px) {
+    .pagination {
+        flex-direction: column; /* Cambia la dirección a columna en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .page-link {
+        padding: 6px 10px; /* Reduce aún más el padding para pantallas pequeñas */
+        margin: 2px 0; /* Ajusta el margen para pantallas pequeñas */
+        width: 100%; /* Asegura que cada link ocupe todo el ancho disponible */
+        text-align: center;
+    }
+}
+
+
+
+
