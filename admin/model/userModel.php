@@ -143,6 +143,16 @@ class User
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
+    public function userExists($username){
+        $sql= "SELECT COUNT(*) as count FROM users WHERE username = :username";
+        $stmt = $this->prepareQuery($sql);
+        $stmt->bindParam(':username', $username);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $result['count'] > 0;
+    }
+
     public function countAllGalleries()
     {
         $sql = "SELECT COUNT(*) AS total FROM galeria";

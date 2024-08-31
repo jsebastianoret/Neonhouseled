@@ -83,6 +83,14 @@ class UserController
         $this->user->setUserLevel($user_level);
         $this->user->setNombres($nombres);
         $this->user->setTelefono($telefono);
+
+        // Validación: Verificar si el nombre de usuario ya existe
+        if ($aoption == 0 && $this->user->userExists($username)) {
+            echo json_encode(['title' => 'Error', 'text' => 'El nombre de usuario ya existe.', 'icon' => 'error']);
+            return; // Detener la ejecución si el usuario ya existe
+        }
+
+
         if ($aoption == 0) {
             $enterUser = $this->user->insertUser();
             echo $enterUser ? json_encode(['title' => 'Perfecto!', 'text' => 'Usuario agregado Correctamente', 'icon' => 'success']) :
