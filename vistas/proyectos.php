@@ -34,7 +34,8 @@ session_start();
     
     <main>
         <section class="pry-dest-container">
-            <h2>Proyectos destacados</h2>
+            <div class="titulo"> <h2>Proyectos destacados</h2></div>
+            
             <div class="pry-dest-video">
                 <figure class="video-container">
                 <video autoplay muted loop width="100%">
@@ -44,15 +45,15 @@ session_start();
             </div>
             <p>"Tendencia, vanguardia y novedades"</p>
         </section>
-        <section class="pry-nuevos-container">
+       
+<section class="pry-nuevos-container">
             <h2>Proyectos nuevos</h2>
             <div class="pry-nuevos-desc">
                 <div class="pry">
                     <figure class="img-container">
                         <a href="https://youtu.be/qU08CNcnQhA" target="_blank">
-                        <video autoplay muted loop width="100%">
-                    <source src="../public/imagenes/proyectos/video1.mp4" type="video/mp4">
-                </video>                          </a>
+                            <img src="../public/imagenes/proyectos/1.jpeg" alt="Imagen del selvicio">
+                        </a>
                     </figure>
                     <p>Decoración e iluminación <br>
                     de interiores y exteriores</p>
@@ -60,15 +61,15 @@ session_start();
                 <div class="pry">
                     <figure class="img-container">
                         <a href="https://youtu.be/3QMkxPf7H3U" target="_blank">
-                        <video autoplay muted loop width="100%">
-                    <source src="../public/imagenes/proyectos/video2.mp4" type="video/mp4">
-                </video>                          </a>
+                            <img src="../public/imagenes/proyectos/2.jpeg" alt="Imagen del selvicio">
+                        </a>
                     </figure>
                     <p>Decoración con pantallas <br>
                     LED</p>
                 </div>
             </div>
         </section>
+
     </main>
     <br>
     <br>
