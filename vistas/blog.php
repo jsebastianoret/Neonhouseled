@@ -3,7 +3,7 @@
 require_once '../admin2/config/db.php';
 
 try {
-    $sql = "SELECT titulo, nombre_categoria, imagen_card, id FROM posting_blog";
+    $sql = "SELECT titulo, nombre_categoria, imagen_principal, id FROM posting_blog";
     $stmt = $conn->query($sql);
 
     $articulos = $stmt->fetchAll(PDO::FETCH_ASSOC);

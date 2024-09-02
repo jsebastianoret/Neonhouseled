@@ -7,8 +7,8 @@
     <meta name="description" content="Se parte de NHL y desarrolla tus habilidades y competencias con nosotros, ofrecemos línea de carrera, buen clima laboral, además brindamos una capacitación constante a nuestros colaboradores. Postula y se parte de nuestra familia."/>
     <link rel="shortcut icon" href="../ico.ico" type="image/x-icon">
     <link rel="stylesheet" href="../public/css/shared/header.css">
-    <link rel="stylesheet" href="../public/css/shared/footer.css">
-    <link rel="stylesheet" href="../public/css/work_us.css">    
+    <link rel="stylesheet" href="../public/css/work_us.css"> 
+    <link rel="stylesheet" href="../public/css/shared/footer.css">   
 </head>
 <body>
     <h1 class="title-hero_container">Crea e Innova con nosotros <br> ¡Únete a nuestra gran familia!</h1>

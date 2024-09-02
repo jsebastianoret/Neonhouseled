@@ -426,7 +426,8 @@ strong {
 }
 
 p {
-  color: black;
+  color: white;
+  font-family: 'Proxima-Nova-Regular';
   font-weight: lighter;
 }
 
