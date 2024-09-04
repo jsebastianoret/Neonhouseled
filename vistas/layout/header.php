@@ -78,7 +78,7 @@ if (isset($_SESSION['categoria']) && $_SESSION['categoria']) {
                     <p>Mas </p><i class="fas fa-chevron-down third"></i>
                     <ul class="submenu third">
                         <li class="submenu-element third">
-                            <a href="../../vistas/contacto.php">Contáctenos</a>
+                            <a href="vistas/contacto.php">Contáctenos</a>
                         </li>
                         <li class="submenu-element third">
                             <a href="../../vistas/blog.php">Blog</a>
