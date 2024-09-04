@@ -43,7 +43,7 @@ html, body {
     display:inline-block;
     vertical-align:middle;
 }
-.cont-pro button{
+/*.cont-pro button{
     width: 30%;
     background:hsl(216deg, 85%, 34%);
     color:#fff;
@@ -56,32 +56,71 @@ html, body {
     transition:800ms ease all;
     outline:none;
     border-radius: 10px;
-}
-.cont-pro button:hover{
-    background:#fff;
-    color:hsl(216deg, 85%, 34%);
-}
-.cont-pro button:before, .cont-pro button:after{
-    content:'';
-    position:absolute;
-    top:0;
-    right:0;
-    height:2px;
-    width:0;
+}*/
+.cont-pro button {
+    width: 80%;
+    max-width: 300px;
     background: hsl(216deg, 85%, 34%);
-    transition:400ms ease all;
+    color: #fff;
+    border: none;
+    position: relative;
+    height: 60px;
+    font-size: 4vw;
+    padding: 0 2em;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+    border-radius: 10px;
 }
-.cont-pro button:after{
-    right:inherit;
-    top:inherit;
-    left:0;
-    bottom:0;
+
+.cont-pro button:hover {
+    background: #fff;
+    color: hsl(216deg, 85%, 34%);
 }
-.cont-pro button:hover:before,.cont-pro button:hover:after{
-    width:100%;
-    transition:800ms ease all;
+
+.cont-pro button:before,
+.cont-pro button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: hsl(216deg, 85%, 34%);
+    transition: 400ms ease all;
 }
-/**/
+
+.cont-pro button:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+.cont-pro button:hover:before,
+.cont-pro button:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+}
+
+/* Media queries para tamaños de pantalla mayores */
+@media (min-width: 768px) {
+    .cont-pro button {
+        max-width: 500px;
+        width: 100%; /* Ajuste para pantallas medianas */
+        font-size: 2.5vw; /* Ajuste para pantallas medianas */
+    }
+}
+
+@media (min-width: 1024px) {
+    .cont-pro button {
+        width: 100%; /* Ajuste para pantallas grandes */
+        font-size: 1.5vw; /* Ajuste para pantallas grandes */
+        max-width: 550px;
+    }
+
+}
+
 .imagen_final{
     transform:scale(.8);
     width:100%;
