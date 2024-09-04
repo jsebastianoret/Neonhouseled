@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'PANADERIA Y PASTELERIA.jpg';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="¿Buscas cautivar a más clientes? Cambia el diseño y la decoración de tu panadería/pastelería. ¡Contáctanos para ayudarte a crear experiencias innolvidables!"/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'PANADERIA Y PASTELERIA.jpg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Decora tu panadería y pastelería: Remodelación de impacto</title>
     <link rel="stylesheet" href="style.css" />
 

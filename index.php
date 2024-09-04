@@ -273,13 +273,14 @@ session_start();
         </noscript>
 
         <!--Google tag (gtag.js)-->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
+        <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+
             gtag('config', 'G-QRZPWCXDM8');
-        </script>
+        </script>-->
     </head>
     <body>
         <h1 style="display:none">Diseñando y creando espacios ideales</h1>

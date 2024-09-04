@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'SANGUCHERIA.jpg';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="¿Buscas aumentar las visitas a tu sanguchería? Remodela el diseño y la decoracion interior de tu local para que tu negocio sea un éxito.¡Contáctanos ahora!"/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'SANGUCHERIA.jpg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Remodela tu sanguchería: diseño y decoración creativo</title>
     <link rel="stylesheet" href="style.css" />
 

@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'GIMNASIO.jpg';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Transforma tu gimnasio en un ambiente motivador, nuestros servicios de diseño de gimnasio están aquí para reflejar tu marca y atraer clientes."/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'GIMNASIO.jpg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Renueva tu gimnasio: diseños modernos y en tendencia</title>
     <link rel="stylesheet" href="style.css" />
 

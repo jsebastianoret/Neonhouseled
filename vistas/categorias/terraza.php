@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'TERRAZA.webp';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Nuestro equipo de diseñadores expertos transformará tu terraza en un oasis de relajación y belleza. ¡Contáctanos hoy mismo para crear una terraza que refleje tu personalidad!"/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'TERRAZA.webp';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Renueva tu terraza con diseños en tendencia</title>
     <link rel="stylesheet" href="style.css" />
 

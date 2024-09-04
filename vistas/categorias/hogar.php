@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'HOGAR.jpeg';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="¿Quieres mejorar tu hogar? Transforma tu hogar en un espacio que refleja tu estilo único y personalidad, nuestro equipo experto se encarga de cada detalle. ¡Contacta ya!"/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'HOGAR.jpeg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Remodela tu Hogar: tendencia en decoración y diseño</title>
     <link rel="stylesheet" href="style.css" />
 

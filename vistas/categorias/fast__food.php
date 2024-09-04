@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'FAST FOOD.jpg';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="¡Con diseños personalizados y en tendencia atrae a más clientes! Transforma tu local de comida rápida  para que tu negocio sea un éxito. ¡Contáctanos ahora!"/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'FAST FOOD.jpg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Fast food con estilo: remodelación y diseños en tendencia</title>
     <link rel="stylesheet" href="style.css" />
     
