@@ -1,8 +1,8 @@
 <?php
 define('HOST', 'localhost');
-define('NAME', 'ghxumdmy_NHLUser');
-define('PASS', 'AQR-EvieoU)3');
-define('DB', 'ghxumdmy_NeonHouseLed');
+define('NAME', 'root');
+define('PASS', '');
+define('DB', 'ghxumdmy_neonhouseled');
 //Datos importantes
 
 try {

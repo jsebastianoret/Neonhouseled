@@ -1,43 +1,54 @@
 *{
 	margin:0;
-	padding:0
+	padding:0;
+	box-sizing: border-box;
 }
 a{
 	text-decoration:none
 }
-@font-face{
-	font-family:'Proxima-Nova-Light';
-	src:url('../../fuentes/Proxima_Nova_Light.otf');
-	font-display:swap
+@font-face {
+	font-family: 'Proxima-Nova-Light';
+	src: url('../../fuentes/woff/ProximaNova-Light.woff2') format('woff2'),
+	url('../../fuentes/woff/ProximaNova-Light.woff') format('woff');
+	font-display: swap;
 }
-@font-face{
-	font-family:'Proxima-Nova-Regular';
-	src:url('../../fuentes/Proxima_Nova_Regular.otf');
-	font-display:swap
+@font-face {
+	font-family: 'Proxima-Nova-Regular';
+	src: url('../../fuentes/woff/ProximaNova-Regular.woff2') format('woff2'),
+	url('../../fuentes/woff/ProximaNova-Regular.woff') format('woff');
+	font-display: swap;
 }
-@font-face{
-	font-family:'Proxima-Nova-SemiBold';
-	src:url('../../fuentes/Proxima_Nova_SemiBold.otf');
-	font-display:swap
+@font-face {
+	font-family: 'Proxima-Nova-SemiBold';
+	src: url('../../fuentes/woff/ProximaNova-SemiBold.woff2') format('woff2'),
+	url('../../fuentes/woff/ProximaNova-SemiBold.woff') format('woff');
+	font-display: swap;
 }
-@font-face{
-	font-family:'Proxima-Nova-Bold';
-	src:url('../../fuentes/Proxima_Nova_Bold.otf');
-	font-display:swap
+
+@font-face {
+	font-family: 'Proxima-Nova-Bold';
+	src: url('../../fuentes/woff/ProximaNova-Bold.woff2') format('woff2'),
+	url('../../fuentes/woff/ProximaNova-Bold.woff') format('woff');
+	font-display: swap;
 }
-.header{
-	background: linear-gradient(to right, #546a80, #afe2e2);
-	height:70px;
-	padding:4px 20px;
-	display:flex;
-	justify-content:space-between;
-	align-items:center;
-	font-family:'Proxima-Nova-Regular';
-	position: fixed;
-    top: 0; /* Fija el header en la parte superior de la página */
+
+.header {
+    background: linear-gradient(to right, #546a80, #afe2e2);
+    height: 70px;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Proxima-Nova-Regular';
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 100%; /* Ocupa todo el ancho de la página */
-    z-index: 100; /* Asegura que el header esté por encima de otros elementos */
+    width: 100%;
+    z-index: 100;
+
+}
+header a {
+    text-decoration: none !important;
 }
 .header .logo-container{
 	width:220px;
@@ -126,168 +137,7 @@ a{
 	align-items:center;
 	display:none
 }
-.hero-container{
-	width:100%;
-	height:600px;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	position:relative
-}
-.hero-container .title-hero-container{
-	position:absolute;
-	z-index:50;
-	left:40px;
-	bottom:80px
-}
-.hero-container .title-hero-container p{
-	padding:5px 10px;
-	color:white;
-	font-size:52px;
-	text-transform:uppercase;
-	font-family:'Proxima-Nova-SemiBold';
-	background-color:rgba(0,0,0,.5);
-	background-blend-mode:soft-light
-}
-.hero-container #slider{
-	overflow:hidden;
-	height:600px;
-	width:100%
-}
-.carousel_slide{
-	width:100%;
-	height:600px;
-	background-image:url('../../imagenes/index/sliders/slider1.webp');
-	background-repeat:no-repeat;
-	background-size:cover;
-	position:relative;
-	animation:slide_animation 44s infinite ease-in
-}
-@keyframes slide_animation{
-	25%{
-		background-image:url('../../imagenes/index/sliders/slider2.webp')
-	}
-	50%{
-		background-image:url('../../imagenes/index/sliders/slider3.webp')
-	}
-	75%{
-		background-image:url('../../imagenes/index/sliders/slider4.webp')
-	}
-}
-.hero-container .img-container{
-	width:calc(100% / 4);
-	height:inherit;
-	object-fit:cover;
-	position:relative;
-	float:left
-}
-.hero-container .img-container img{
-	width:100%;
-	height:inherit;
-	object-fit:cover
-}
-#myVideo::-webkit-media-controls {
-    display: none;
-}/* Estilos generales para la sección */
-.about-us {
-    padding: 80px 0;
-    background: #f4f4f4;
-}
 
-.content-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 0 20px;
-}
-
-.video-container {
-    flex: 1;
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.video_index {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.text-container {
-    flex: 1;
-    padding: 20px;
-    background: linear-gradient(135deg, #809c95, #7bb4fe); /* Color degradado */
-    border-radius: 15px;
-    color: #fff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.about-us-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.text-container p {
-    font-size: 1rem;
-}
-
-/* Estilos responsivos */
-@media (max-width: 576px) {
-    .video_index {
-        content: url("https://www.neonhouseled.com/public/imagenes/inicioM/video_indexM.webp") !important;
-        width: 100% !important;
-        height: 100% !important;
-        display: block !important;
-        margin: auto !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .content-wrapper {
-        flex-direction: column;
-    }
-    .video-container, .text-container {
-        width: 100%;
-        height: auto;
-    }
-    .text-container {
-        padding-top: 20px;
-    }
-}
-
-
-@media (max-width: 576px){
-    .video_index{
-        content: url("https://www.neonhouseled.com/public/imagenes/inicioM/video_indexM.webp") !important;
-        width: 100% !important;
-        height: 100% !important;
-        display: block !important;
-        margin:auto !important;
-    }
-    
-}
-.about-us .about-us-content .video-container a img{
-	transform:scale(1);
-	transition:.8s
-}
-.about-us .about-us-content .video-container a img:hover{
-	transform:scale(1.3)
-}
-.about-us .about-us-content .description-container{
-	width:50%;
-	height:100%;
-	padding:0 20px;
-	font-family:'Proxima-Nova-Regular';
-	font-size:16px;
-	color:#494949;
-	line-height:30px;
-	text-align:justify
-}
 .quote{
 	width:100%;
 	height:280px;
@@ -456,28 +306,6 @@ a{
 	.header .menu.is-active{
 		transform:translateX(0)
 	}
-	.hero-container{
-		height:400px;
-		padding-top:80px
-	}
-	.hero-container .title-hero-container{
-		left:20px;
-		bottom:20px
-	}
-	.hero-container .title-hero-container p{
-		padding:5px 10px;
-		font-size:42px
-	}
-	.about-us .about-us-content .video-container{
-		width:100%;
-		height:initial
-	}
-	.about-us .about-us-content .description-container{
-		width:100%;
-		height:auto;
-		padding:0;
-		padding-top:20px
-	}
 	.quote{
 		padding-left:20px;
 		padding-right:20px
@@ -487,24 +315,6 @@ a{
 @media screen and (max-width:425px){
 	.header{
 		padding:4px 10px
-	}
-	.hero-container{
-		height:350px
-	}
-	.carousel_slide{
-		height:450px
-	}
-	.hero-container .title-hero-container{
-		width:calc(100% - 25px);
-		left:10px;
-		bottom:10px
-	}
-	.hero-container .title-hero-container p{
-		padding:5px;
-		font-size:26px
-	}
-	.about-us .about-us-title{
-		font-size:36px
 	}
 	.services .services-items-container{
 		padding:0
@@ -520,12 +330,6 @@ a{
 	}
 	.services .services-items-container .services-item h3{
 		width:50%
-	}
-
-}
-@media screen and (max-width:320px){
-	.hero-container .title-hero-container{
-	width:calc(100% - 20px)
 	}
 
 }

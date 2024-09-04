@@ -8,7 +8,7 @@ $(function () {
     lengthChange: false,
     pageLength: 9,
     ajax: {
-      url: "../controller/userController.php?action=listsuscriptor",
+      url: "../controller/subscriberController.php?action=listsuscriptor",
       dataSrc: "",
     },
     columns: [
@@ -31,13 +31,12 @@ $(function () {
     let id = tableProd.row($(this).parents("tr")).data()["id"];
     let nameimage = tableProd.row($(this).parents("tr")).data()["image"];
     let data = {
-      action: "deletegallery",
-      id: id,
-      nameimage: nameimage,
+      action: "deletesubscriberbyid",
+      id: id
     };
     swal({
       title: "Eliminar",
-      text: "è¢ƒDesea eliminar el registro actual?",
+      text: "¬øDesea eliminar el registro actual?",
       icon: "warning",
       buttons: true,
       dangerMode: true,
@@ -45,7 +44,7 @@ $(function () {
       if (val) {
         $.ajax({
           type: "POST",
-          url: "../controller/userController.php",
+          url: "../controller/subscriberController.php",
           data: data,
           success: function (response) {
             let result = JSON.parse(response);

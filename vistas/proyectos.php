@@ -35,23 +35,25 @@ session_start();
     
     <main>
         <section class="pry-dest-container">
-            <h2>Proyectos destacados</h2>
+            <div class="titulo"> <h2>Proyectos destacados</h2></div>
+            
             <div class="pry-dest-video">
                 <figure class="video-container">
-                        <a href="https://www.youtube.com/watch?v=eklZLdBx9WE&ab_channel=NEONHOUSELED" target="_blank">
-                            <img src="../public/imagenes/proyectos/video_pry.webp" alt="Imagen del selvicio">
-                        </a>
+                <video autoplay muted loop width="100%">
+                    <source src="../public/imagenes/proyectos/video.mp4" type="video/mp4">
+                </video>                
                 </figure>
             </div>
             <p>"Tendencia, vanguardia y novedades"</p>
         </section>
-        <section class="pry-nuevos-container">
+       
+<section class="pry-nuevos-container">
             <h2>Proyectos nuevos</h2>
             <div class="pry-nuevos-desc">
                 <div class="pry">
                     <figure class="img-container">
                         <a href="https://youtu.be/qU08CNcnQhA" target="_blank">
-                            <img src="../public/imagenes/proyectos/1.webp" alt="Imagen del selvicio">
+                            <img src="../public/imagenes/proyectos/1.jpeg" alt="Imagen del selvicio">
                         </a>
                     </figure>
                     <p>Decoración e iluminación <br>
@@ -60,7 +62,7 @@ session_start();
                 <div class="pry">
                     <figure class="img-container">
                         <a href="https://youtu.be/3QMkxPf7H3U" target="_blank">
-                            <img src="../public/imagenes/proyectos/2.webp" alt="Imagen del selvicio">
+                            <img src="../public/imagenes/proyectos/2.jpeg" alt="Imagen del selvicio">
                         </a>
                     </figure>
                     <p>Decoración con pantallas <br>
@@ -68,6 +70,7 @@ session_start();
                 </div>
             </div>
         </section>
+
     </main>
     <br>
     <br>
