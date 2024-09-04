@@ -15,19 +15,20 @@ $(function() {
             { data: "username" },
             { data: "nombres" },
             { data: "user_level" },
-            { data: null },
+/*            { data: null },*/
             { data: null },
             { data: null }
         ],
-        columnDefs: [{
+        columnDefs: [/*{
                 defaultContent: '<button class="eliminar_b table-d"><i class="fas fa-trash-alt eliminar"></i></button>',
                 targets: -2,
-            },
+            },*/
             {
                 data: null,
-                targets: -3,
+                targets: -2,
                 defaultContent: '<button class="editar_b table-e"><i class="fas fa-edit editar"></i></button>',
-            }, {
+            },
+            {
                 data: null,
                 targets: -1,
                 render: function(data, type, row) {
@@ -71,7 +72,7 @@ $(function() {
 
     });
 
-    $("#productosTabla tbody").on("click", ".eliminar_b", function() {
+/*    $("#productosTabla tbody").on("click", ".eliminar_b", function() {
         let id = tableProd.row($(this).parents("tr")).data()["id"];
         let data = {
             action: "delete",
@@ -102,7 +103,7 @@ $(function() {
                 });
             }
         });
-    });
+    });*/
     $("#productosTabla tbody").on("change", ".checkstatus", function() {
         let id = tableProd.row($(this).parents("tr")).data()["id"];
         let status = 0;
@@ -133,6 +134,11 @@ $(function() {
 
 });
 
+function validatePhone(phone){
+    //Expresión regular para validar un número de teléfono
+    const regexPeruvianPhone=/^9[0-9]{8}$/;
+    return regexPeruvianPhone.test(phone);
+}
 
 $("#formPersonas").submit(function(e) {
     e.preventDefault();
@@ -142,6 +148,16 @@ $("#formPersonas").submit(function(e) {
     let level = $('#leveluser').val();
     let name = $('#name').val();
     let phone = $('#phone').val();
+
+    if(!validatePhone(phone)){
+        swal({
+            title: "Error",
+            text: "El número de teléfono no es válido. Debe tener 9 dígitos y comenzar con 9.",
+            icon: "error"
+        });
+        return false; // Detener el envío del formulario
+    }
+
     let data = {
         aoption: aoption,
         action: "newuser",
@@ -161,14 +177,26 @@ $("#formPersonas").submit(function(e) {
             swal({
                 title: result.title,
                 text: result.text,
-                icon: result.icon
+                icon: result.icon,
+                button: "OK",
             }).then(function() {
-                $("#modalCRUD").modal("hide");
-                $("#productosTabla").DataTable().ajax.reload(null, false);
+                if (result.icon === "success") {
+                    $("#modalCRUD").modal("hide");
+                    $("#productosTabla").DataTable().ajax.reload(null, false);
+                }
             });
-
         },
+        error: function(xhr, status, error) {
+            console.error("Error en la solicitud AJAX:", error);
+            swal({
+                title: "Error",
+                text: "Hubo un problema con la solicitud. Por favor, inténtalo de nuevo.",
+                icon: "error",
+                button: "OK",
+            });
+        }
     });
+
     return false;
 
 
