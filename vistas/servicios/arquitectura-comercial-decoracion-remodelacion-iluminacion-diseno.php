@@ -15,14 +15,14 @@ $_SESSION['imagen'] = 'ARQUITECTURA.webp';
         content="Transforma tu espacio comercial con diseños funcionales y creativos, nuestra experiencia en arquitectura comercial asegura que cada detalle contribuye al éxito de tu negocio" />
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
+    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Diseños para aquitectura comercial </title>
     <link rel="stylesheet" href="style.css" />
 

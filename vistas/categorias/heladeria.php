@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'HELADERIA.jpeg';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Nuestro equipo de diseñadores se dedica a transformar espacios en auténticos paraísos del helado. ¡Contáctanos hoy y comienza la transformación de tu heladería!"/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'HELADERIA.jpeg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Diseño de heladería: remodela y decora con estilo</title>
     <link rel="stylesheet" href="style.css" />
 

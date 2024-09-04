@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'HOTELES.jpg';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Creamos diseños únicos que reflejan tu marca y atraen huéspedes. Adáptate a las tendencias sin partir desde cero."/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'HOTELES.jpg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Transforma tu hotel: Diseños y decoraciones</title>
     <link rel="stylesheet" href="style.css" />
 

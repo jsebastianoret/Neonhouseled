@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'POLLERIA.jpg';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="¡No solo destaques por el sabor! Remodela la decoración y el diseño interior de tu pollería. ¡Contáctanos para personalizar tu pollería!"/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'POLLERIA.jpg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Remodela tu Pollería: diseño y decoración atractivo</title>
     <link rel="stylesheet" href="style.css" />
 

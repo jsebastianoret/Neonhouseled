@@ -30,13 +30,14 @@ $articulosActuales = array_slice($articulos, $indiceInicio, $articulosPorPagina)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Neon House Led - Blog</title>    
     <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css">
     <link rel="shortcut icon" href="../ico.ico" type="image/x-icon">    
@@ -74,6 +75,42 @@ $articulosActuales = array_slice($articulos, $indiceInicio, $articulosPorPagina)
     <div class="categorias">
         <div class="contenedor-principal">
             <h1 id="tituloPrincipal">Todos los artículos</h1>
+            <!--Lista solo para responsive-->
+            <div class="dropdown d-lg-none" id="bos">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    CATEGORÍAS
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="./blog-restaurante.php">• RESTAURANTE</a></li>
+                    <li><a class="dropdown-item" href="./blog-cevicheria.php">• CEVICHERIA</a></li>
+                    <li><a class="dropdown-item" href="./blog-fast-food.php">• FAST FOOD</a></li>
+                    <li><a class="dropdown-item" href="./blog-sangucheria.php">• SANGUCHERIA.</a></li>
+                    <li><a class="dropdown-item" href="./blog-polleria.php">• POLLERIA.</a></li>
+                    <li><a class="dropdown-item" href="./blog-discoteca.php">• DISCOTECA.</a></li>
+                    <li><a class="dropdown-item" href="./blog-pizzeria.php">• PIZZERIA.</a></li>
+                    <li><a class="dropdown-item" href="./blog-cafe-jugo.php">• CAFETERIA Y JUGUERIA.</a></li>
+                    <li><a class="dropdown-item" href="./blog-pan-pastel.php">• PANADERIA Y PASTELERIA.</a></li>
+                    <li><a class="dropdown-item" href="./blog-spa-barberia.php">• SALON SPA Y BARBERIA.</a></li>
+                    <li><a class="dropdown-item" href="./blog-bar.php">• BAR.</a></li>
+                    <li><a class="dropdown-item" href="./blog-hogar.php">• HOGAR.</a></li>
+                    <li><a class="dropdown-item" href="./blog-minimarket.php">• MINIMARKET.</a></li>
+                    <li><a class="dropdown-item" href="./blog-clinica-dental.php">• CLINICA DENTAL.</a></li>
+                    <li><a class="dropdown-item" href="./blog-departamento.php">• DEPARTAMENTO.</a></li>
+                    <li><a class="dropdown-item" href="./blog-dormitorio.php">• DORMITORIO PARA NIÑOS.</a></li>
+                    <li><a class="dropdown-item" href="./blog-estilo-industrial.php">• ESTILO INDUSTRIAL.</a></li>
+                    <li><a class="dropdown-item" href="./blog-fuente-soda.php">• FUENTE DE SODA.</a></li>
+                    <li><a class="dropdown-item" href="./blog-gimnasio.php">• GIMNASIO.</a></li>
+                    <li><a class="dropdown-item" href="./blog-hoteles.php">• HOTELES.</a></li>
+                    <li><a class="dropdown-item" href="./blog-recepciones.php">• RECEPCIONES.</a></li>
+                    <li><a class="dropdown-item" href="./blog-restobar.php">• RESTOBAR.</a></li>
+                    <li><a class="dropdown-item" href="./blog-belleza-barberia.php">• SALON BELLEZA Y BARBERIA.</a></li>
+                    <li><a class="dropdown-item" href="./blog-terraza.php">• TERRAZA.</a></li>
+                    <li><a class="dropdown-item" href="./blog-ropa.php">• ROPA.</a></li>
+                    <li><a class="dropdown-item" href="./blog-veterinaria.php">• VETERINARIA.</a></li>
+                    <li><a class="dropdown-item" href="./blog-heladeria.php">• HELADERIA.</a></li>
+                </ul>
+            </div>
+            <!---->
             <section class="articulos" id="articulos">
                 <?php foreach ($articulosActuales as $articulo) { ?>
                     <div class="articulo">
