@@ -80,8 +80,8 @@ $_SESSION['imagen'] = 'CAFETERIA Y JUGUERIA.jpg';
           <div class="logos-slide">
             <img src="../../public/imagenes/Slider/CAFETERIA Y JUGUERIA/decoracion.webp" />
             <img src="../../public/imagenes/Slider/CAFETERIA Y JUGUERIA/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/CAFETERIA Y JUGUERIA/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/CAFETERIA Y JUGUERIA/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/CAFETERIA Y JUGUERIA/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/CAFETERIA Y JUGUERIA/diseno-exterior.webp" />
           </div>
         </div>
         

@@ -80,8 +80,8 @@ $_SESSION['imagen'] = 'HOGAR.jpeg';
           <div class="logos-slide">
             <img src="../../public/imagenes/Slider/HOGAR/decoracion.webp" />
             <img src="../../public/imagenes/Slider/HOGAR/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/HOGAR/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/HOGAR/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/HOGAR/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/HOGAR/diseno-exterior.webp" />
           </div>
         </div>
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">

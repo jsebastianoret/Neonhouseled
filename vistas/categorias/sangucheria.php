@@ -79,8 +79,8 @@ $_SESSION['imagen'] = 'SANGUCHERIA.jpg';
           <div class="logos-slide">
             <img src="../../public/imagenes/Slider/SANGUCHERIA/decoracion.webp" />
             <img src="../../public/imagenes/Slider/SANGUCHERIA/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/SANGUCHERIA/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/SANGUCHERIA/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/SANGUCHERIA/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/SANGUCHERIA/diseno-exterior.webp" />
           </div>
         </div>
         

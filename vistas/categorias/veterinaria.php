@@ -78,8 +78,8 @@ $_SESSION['imagen'] = 'VETERINARIA.jpg';
           <div class="logos-slide">
             <img src="../../public/imagenes/Slider/VETERINARIA/decoracion.webp" />
             <img src="../../public/imagenes/Slider/VETERINARIA/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/VETERINARIA/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/VETERINARIA/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/VETERINARIA/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/VETERINARIA/diseno-exterior.webp" />
           </div>
         </div>
         

@@ -76,8 +76,8 @@ $_SESSION['imagen'] = 'SALON SPA Y BARBERIA.jpg';
           <div class="logos-slide">
             <img src="../../public/imagenes/Slider/SALON SPA Y BARBERIA/decoracion.webp" />
             <img src="../../public/imagenes/Slider/SALON SPA Y BARBERIA/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/SALON SPA Y BARBERIA/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/SALON SPA Y BARBERIA/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/SALON SPA Y BARBERIA/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/SALON SPA Y BARBERIA/diseno-exterior.webp" />
           </div>
         </div>
         

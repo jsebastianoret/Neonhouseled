@@ -78,8 +78,8 @@ $_SESSION['imagen'] = 'FUENTE DE SODA.jpg';
           <div class="logos-slide">
             <img src="../../public/imagenes/Slider/FUENTE DE SODA/decoracion.webp" />
             <img src="../../public/imagenes/Slider/FUENTE DE SODA/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/FUENTE DE SODA/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/FUENTE DE SODA/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/FUENTE DE SODA/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/FUENTE DE SODA/diseno-exterior.webp" />
           </div>
         </div>
         

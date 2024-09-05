@@ -29,13 +29,13 @@ session_start();
         <h2 class="categoria1__titulo ">SERVICIOS</h2>
         <div class="categoria1__section">
             <figure class="categoria1__imagen">
-                <a href="servicios/arquitectura-comercial-decoracion-remodelacion-iluminacion-diseño.php">
+                <a href="servicios\arquitectura-comercial-decoracion-remodelacion-iluminacion-diseno.php">
                 <img class="categoria1__img" id="imagen_5" src="../public/imagenes/servicios/Arquitectura_comercial.webp" alt="Imagen del selvicio" width="507" height="300">
             </a>
                 <figcaption class="categoria1__desc">ARQUITECTURA COMERCIAL</figcaption>
             </figure>
             <figure class="categoria1__imagen">
-                <a href="servicios/comercial-decoracion-remodelacion-iluminacion-diseño.php">
+                <a href="servicios\comercial-decoracion-remodelacion-iluminacion-diseno.php">
                 <img class="categoria1__img" id="imagen_1" src="../public/imagenes/servicios/Decoracion_y_remodelacion.webp" alt="Imagen del selvicio" width="507" height="300"></a>
                 <figcaption class="categoria1__desc">DECORACIÓN Y REMODELACIÓN</figcaption>
             </figure>

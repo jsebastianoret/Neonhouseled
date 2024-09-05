@@ -78,8 +78,8 @@ $_SESSION['imagen'] = 'TERRAZA.webp';
           <div class="logos-slide">
             <img src="../../public/imagenes/Slider/TERRAZA/decoracion.webp" />
             <img src="../../public/imagenes/Slider/TERRAZA/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/TERRAZA/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/TERRAZA/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/TERRAZA/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/TERRAZA/diseno-exterior.webp" />
           </div>
         </div>
         

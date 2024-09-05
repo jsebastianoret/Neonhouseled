@@ -72,8 +72,8 @@ $_SESSION['imagen'] = 'CLINICA DENTAL.jpg';
           <div class="logos-slide">
             <img src="../../public/imagenes/Slider/DENTAL/decoracion.webp" />
             <img src="../../public/imagenes/Slider/DENTAL/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/DENTAL/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/DENTAL/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/DENTAL/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/DENTAL/diseno-exterior.webp" />
           </div>
         </div>
         
