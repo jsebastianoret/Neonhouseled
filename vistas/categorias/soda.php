@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'FUENTE DE SODA.jpg';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="¿Quieres atraer más clientes a tu fuente de soda? Transformamos tu fuente de soda donde reflejen en espacios auténticos y atractivos  ¡Contacta ya!"/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'FUENTE DE SODA.jpg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Remodelación de fuente de soda: mejora tu imagen</title>
     <link rel="stylesheet" href="style.css" />
 

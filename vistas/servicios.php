@@ -8,6 +8,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neon House Led-Servicios</title>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -15,7 +16,7 @@ session_start();
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <link rel="shortcut icon" href="../ico.ico" type="image/x-icon">
     <link rel="stylesheet" href="../public/css/shared/header.css">
     <link rel="stylesheet" href="../public/css/shared/footer.css">

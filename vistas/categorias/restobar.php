@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'RESTOBAR.jpg';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Creamos diseños que atraen y retienen clientes a tu restobar. Transforma tu espacio en un destino de sabor y estilo."/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'RESTOBAR.jpg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Renueva tu restobar: diseño moderno y elegante</title>
     <link rel="stylesheet" href="style.css" />
 

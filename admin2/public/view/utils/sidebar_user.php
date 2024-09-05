@@ -23,7 +23,7 @@
           <span>Section Principal</span>
         </a>
       </li>
-      <li>
+      <!-- <li>
         <a
           href="/admin2/public/view/secciones-user/conocer-personas.php"
         >
@@ -62,7 +62,7 @@
           <ion-icon name="duplicate-outline"></ion-icon>
           <span>Diseño</span>
         </a>
-      </li>
+      </li> -->
       <li>
         <a
           href="/admin2/public/view/secciones-user/libro_reclamaciones.php"
@@ -71,7 +71,7 @@
           <span>Libro de Raclamaciones</span>
         </a>
       </li>
-      <li>
+      <!-- <li>
         <a
           href="/admin2/public/view/secciones-user/modal-branding.php"
         >
@@ -102,7 +102,7 @@
           <ion-icon name="duplicate-outline"></ion-icon>
           <span>Modal de Marketing</span>
         </a>
-      </li>
+      </li> -->
       <li>
         <a id="enlace" href="/admin2/public/view/secciones-user/content-post.php">
           <ion-icon name="duplicate-outline"></ion-icon>

@@ -15,14 +15,14 @@ $_SESSION['imagen'] = 'LUMINOSO.webp';
         content="Ilumina tu negocio con estilo, nuestro equipo de diseñadores crearán letreros luminosos que destaquen tu marca y atraigan a los clientes." />
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
+    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Diseño y fabricación de letreros luminosos</title>
     <link rel="stylesheet" href="style.css" />
 

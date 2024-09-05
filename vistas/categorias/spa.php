@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'SALON SPA Y BARBERIA.jpg';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="¿Quieres que tu SPA tenga éxito? Transforma tu SPA en un oasis de relajación y rejuvenecimiento, con diseños innovadores. ¡Contacta ya!"/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'SALON SPA Y BARBERIA.jpg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Diseño de Interior de SPA: Remodelación en tendencia</title>
     <link rel="stylesheet" href="style.css" />
 

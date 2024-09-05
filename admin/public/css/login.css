@@ -1,0 +1,178 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    display: flex;
+    height: 100vh;
+}
+
+.left, .right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left {
+    background-color: #0056b3;
+    color: white;
+    padding: 40px;
+}
+
+.logo-container {
+    text-align: center;
+}
+
+.logo {
+    max-width: 70%;
+    margin-bottom: 30px;
+}
+
+.tagline {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.subtagline {
+    font-size: 16px;
+    color: #e0e0e0;
+}
+
+.right {
+    background-color: white;
+}
+
+.login-form {
+    width: 80%;
+    max-width: 400px;
+}
+
+.login-form h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.login-form p {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.forgot-password {
+    display: inline-block;
+    font-size: 14px;
+    color: #0056b3;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.register {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.register a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left, .right {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .left {
+        min-height: 40vh;
+    }
+
+    .logo {
+        max-width: 150px;
+    }
+
+    .tagline {
+        font-size: 20px;
+    }
+
+    .subtagline {
+        font-size: 14px;
+    }
+
+    .login-form {
+        width: 100%;
+    }
+
+    .login-form h2 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .left {
+        min-height: 30vh;
+    }
+
+    .logo {
+        max-width: 120px;
+    }
+
+    .tagline {
+        font-size: 18px;
+    }
+
+    .subtagline {
+        font-size: 12px;
+    }
+
+    .login-form h2 {
+        font-size: 20px;
+    }
+
+    .form-group input {
+        padding: 8px;
+    }
+
+    .btn-login {
+        padding: 8px;
+    }
+}

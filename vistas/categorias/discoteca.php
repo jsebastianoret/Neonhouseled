@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'DISCOTECA.jpeg';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="¿Quieres que tu discoteca sea popular? Transforma el diseño y decoración para que tus clientes vivan una experiencia inolvidable en un ambiente con estilo. ¡Contáctanos ahora!"/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'DISCOTECA.jpeg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Transforma tu discoteca: ideas creativas de remodelación</title>
     <link rel="stylesheet" href="style.css" />
 
