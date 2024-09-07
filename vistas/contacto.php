@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google tag (gtag.js) -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -24,103 +24,91 @@ session_start();
 </head>
 
 <body>
-    <!-- Texto oculto para SEO -->
+
     <h1 class="none">Apartado de contacto</h1>
 
-    <!-- Cabecera -->
+
     <?php require_once "layout/header.php" ?>
 
-    <!-- Contenedor principal del slider y título -->
-    <div class="slider-and-title-container">
-        <!-- Slider con Bootstrap Carousel -->
-        <div id="imageCarousel" class="carousel slide hero_container mb-5" data-bs-ride="carousel">
+    <!-- Slider TITULO -->
+    <section class="hero-section position-relative">
+        <div id="imageCarousel" class="carousel slide hero_container" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <!-- Crear slides con las imágenes -->
                 <?php for ($i = 1; $i <= 12; $i++) { ?>
                     <div class="carousel-item <?php if ($i === 1)
                         echo 'active'; ?>">
-                        <img src="../public/imagenes/contacto/collage/<?= $i ?>.webp" class="d-block w-100"
+                        <img src="../public/imagenes/contacto/collage/<?= $i ?>-small.webp" srcset="../public/imagenes/contacto/collage/<?= $i ?>-small.webp 768w,
+                                 ../public/imagenes/contacto/collage/<?= $i ?>-medium.webp 1200w,
+                                 ../public/imagenes/contacto/collage/<?= $i ?>.webp 1920w"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 1200px, 1920px" class="d-block w-100"
                             alt="Collage <?= $i ?>">
                     </div>
                 <?php } ?>
             </div>
-            <!-- Controles de anterior/siguiente -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
 
-        <!-- Título y Frase -->
-        <div class="title">
-            <h2 class="contact-title">CONSTRUYAMOS TU SUEÑO JUNTOS, SOMOS TUS ALIADOS EN EL DISEÑO DE INTERIORES</h2>
-            <br>
-            <div class="frase">
-                <p class="parrafo">
-                    ¡CONTÁCTANOS HOY MISMO PARA EMPEZAR!
-                </p>
-            </div>
+        <div class="titles-section text-center position-absolute top-50 start-50 translate-middle w-100">
+            <h2 class="contact-title" id="contactTitle">Contáctanos</h2>
+            <p class="contact-subtitle">¿Alguna petición? No dudes en escribirnos</p>
         </div>
-    </div>
+    </section>
 
-    <!-- Sección de Contacto -->
-    <section class="contact">
-        <div class="contact-container">
-            <div class="contact-left">
-                <div class="img_container">
-                    <img src="../public/imagenes/contacto/Contacto<?= mt_rand(1, 2); ?>.webp" alt="Contacto Imagen">
+    <!-- Contacto -->
+    <section class="contact" id="contactForm">
+        <!-- Formulario -->
+        <div class="container contact-container">
+            <div class="row">
+                <!-- Columna Izquierda -->
+                <div class="col-md-5 contact-left text-white p-4">
+                    <h3 class="mb-4">CONSTRUYAMOS TU SUEÑO JUNTOS, SOMOS TUS ALIADOS EN EL DISEÑO DE INTERIORES</h3>
+                    <img src="../public/imagenes/contacto/Contacto<?= mt_rand(1, 2); ?>.webp" alt="Contacto Imagen"
+                        class="img-fluid rounded">
                 </div>
-            </div>
 
-            <div class="contact-right">
-                <form id="formContact" class="contact-form" action="../controladores/enviarcorreo.php" method="POST">
-                    <h2 class="form-title">Contáctanos</h2>
-                    <div class="form-group">
-                        <label for="full_name">Nombre</label>
-                        <input type="text" name="full_name" id="full_name" pattern="[a-zA-Z ]{2,254}"
-                            title="Solo debe contener letras. e.g. john" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="telephone">Teléfono</label>
-                        <input type="number" name="telephone" id="telephone" title="debe contener números" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email"
-                            pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" title="e.g. aso@gmail.com"
-                            required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="interesed_service">Interesado en:</label>
-                        <input type="text" name="interesed_service" id="interesed_service"
-                            value="<?php echo $consulta ?>" readonly>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="career">Mensaje</label>
-                        <textarea name="career" id="career" rows="4" required></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <button type="submit" id="enviar" name="enviar">Enviar</button>
-                    </div>
-                </form>
+                <!-- Columna Derecha -->
+                <div class="col-md-7 contact-right p-4">
+                    <form id="formContact" class="contact-form" action="../controladores/enviarcorreo.php"
+                        method="POST">
+                        <div class="row">
+                            <div class="col-md-6 form-group mb-3">
+                                <label for="full_name">Nombre</label>
+                                <input type="text" class="form-control" name="full_name" id="full_name"
+                                    pattern="[a-zA-Z ]{2,254}" title="Solo debe contener letras. e.g. john" required>
+                            </div>
+                            <div class="col-md-6 form-group mb-3">
+                                <label for="telephone">Teléfono</label>
+                                <input type="number" class="form-control" name="telephone" id="telephone"
+                                    title="debe contener números" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group mb-3">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" name="email" id="email"
+                                    pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
+                                    title="e.g. aso@gmail.com" required>
+                            </div>
+                            <div class="col-md-6 form-group mb-3">
+                                <label for="interesed_service">Interesado en:</label>
+                                <input type="text" class="form-control" name="interesed_service" id="interesed_service"
+                                    value="<?php echo $consulta ?>" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="career">Mensaje</label>
+                            <textarea name="career" class="form-control" id="career" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success btn-small custom-btn" id="enviar"
+                                name="enviar">Enviar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
 
-
-
-
-    <!-- Pie de página -->
     <?php require_once "layout/foother.php" ?>
 
     <!-- Scripts -->
