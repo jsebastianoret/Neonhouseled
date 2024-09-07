@@ -83,7 +83,7 @@ $_SESSION['imagen'] = 'ESTILO INDUSTRIAL.jpeg';
             <img src="../../public/imagenes/Slider/INDUSTRIAL/1.webp" />
             <img src="../../public/imagenes/Slider/INDUSTRIAL/2.webp" />
             <img src="../../public/imagenes/Slider/INDUSTRIAL/3.webp" />
-            <img src="../../public/imagenes/Slider/INDUSTRIAL/4.webp" />
+            <img src="../../public/imagenes/Slider/INDUSTRIAL/5.webp" />
           </div>
         </div>
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">

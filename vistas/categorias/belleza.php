@@ -72,8 +72,8 @@ $_SESSION['imagen'] = 'SALON BELLEZA Y BARBERIA.webp';
           <div class="logos-slide">
             <img src="/public/imagenes/Slider/SALON BELLEZA Y BARBERIA/decoracion.webp" />
             <img src="../../public/imagenes/Slider/SALON BELLEZA Y BARBERIA/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/SALON BELLEZA Y BARBERIA/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/SALON BELLEZA Y BARBERIA/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/SALON BELLEZA Y BARBERIA/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/SALON BELLEZA Y BARBERIA/diseno-exterior.webp" />
           </div>
         </div>
         

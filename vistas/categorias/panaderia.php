@@ -81,8 +81,8 @@ $_SESSION['imagen'] = 'PANADERIA Y PASTELERIA.jpg';
           <div class="logos-slide">
             <img src="../../public/imagenes/Slider/PANADERIA Y PASTELERIA/decoracion.webp" />
             <img src="../../public/imagenes/Slider/PANADERIA Y PASTELERIA/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/PANADERIA Y PASTELERIA/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/PANADERIA Y PASTELERIA/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/PANADERIA Y PASTELERIA/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/PANADERIA Y PASTELERIA/diseno-exterior.webp" />
           </div>
         </div>
         

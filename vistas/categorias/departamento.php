@@ -78,8 +78,8 @@ $_SESSION['imagen'] = 'DEPARTAMENTO.jpg';
           <div class="logos-slide">
             <img src="../../public/imagenes/Slider/DEPARTAMENTO/decoracion.webp" />
             <img src="../../public/imagenes/Slider/DEPARTAMENTO/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/DEPARTAMENTO/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/DEPARTAMENTO/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/DEPARTAMENTO/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/DEPARTAMENTO/diseno-exterior.webp" />
           </div>
         </div>
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">

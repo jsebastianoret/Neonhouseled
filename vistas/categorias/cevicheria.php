@@ -89,8 +89,8 @@ $_SESSION['imagen'] = 'CEVICHERIA.jpeg';
           <div class="logos-slide">
             <img src="../../public/imagenes/Slider/CEVICHERIA/decoracion.webp" />
             <img src="../../public/imagenes/Slider/CEVICHERIA/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/CEVICHERIA/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/CEVICHERIA/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/CEVICHERIA/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/CEVICHERIA/diseno-exterior.webp" />
           </div>
         </div>
         
