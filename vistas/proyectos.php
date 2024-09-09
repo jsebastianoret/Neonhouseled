@@ -40,7 +40,9 @@ session_start();
             <div class="pry-dest-video">
                 <figure class="video-container">
                 <video autoplay muted loop width="100%">
-                    <source src="../public/imagenes/proyectos/video.mp4" type="video/mp4">
+                        <source src="../public/imagenes/proyectos/video.webm" type="video/webm">
+                        <source src="../public/imagenes/proyectos/video.h264" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
                 </video>                
                 </figure>
             </div>
