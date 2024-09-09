@@ -252,6 +252,9 @@ header{
     display: block;
     text-align: center;
   }
+  html{
+    font-size: 67.5%;
+  }
 }
 @media (max-width: 720px) {
   .articulos__items{
@@ -287,6 +290,9 @@ header{
   }
   .swipe-slider__texto p {
     font-size: 1.5rem;
+  }
+  html{
+    font-size: 67.5%;
   }
 }
 

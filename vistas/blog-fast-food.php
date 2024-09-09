@@ -114,7 +114,7 @@ try {
                     <div class="articulos__item">
                     <a href="<?php echo htmlspecialchars('../vistas/blogs/mediaBlogs' . $articulo['id']). '.php'; ?>">
                             <div class="articulos__item__imagen">
-                                <img src="<?php echo htmlspecialchars('../public/imagenes/imagenesBlogBd/' . $articulo['imagen_principal']); ?>" width="100%">
+                                <img src="<?php echo htmlspecialchars('../public/imagenes/imagenesBlogBd/' . $articulo['imagen_card']); ?>" width="100%">
                             </div>
                             <div class="articulos__item__texto">
                                 <p><?php echo htmlspecialchars('FAST FOOD'); ?></p>
