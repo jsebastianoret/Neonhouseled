@@ -40,36 +40,39 @@ session_start();
             <div class="pry-dest-video">
                 <figure class="video-container">
                 <video autoplay muted loop width="100%">
-                    <source src="../public/imagenes/proyectos/video.mp4" type="video/mp4">
+                        <source src="../public/imagenes/proyectos/video.webm" type="video/webm">
+                        <source src="../public/imagenes/proyectos/video.h264" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
                 </video>                
                 </figure>
             </div>
             <p>"Tendencia, vanguardia y novedades"</p>
         </section>
        
-<section class="pry-nuevos-container">
-            <h2>Proyectos nuevos</h2>
-            <div class="pry-nuevos-desc">
-                <div class="pry">
-                    <figure class="img-container">
-                        <a href="https://youtu.be/qU08CNcnQhA" target="_blank">
-                            <img src="../public/imagenes/proyectos/1.jpeg" alt="Imagen del selvicio">
-                        </a>
-                    </figure>
-                    <p>Decoración e iluminación <br>
-                    de interiores y exteriores</p>
-                </div>
-                <div class="pry">
-                    <figure class="img-container">
-                        <a href="https://youtu.be/3QMkxPf7H3U" target="_blank">
-                            <img src="../public/imagenes/proyectos/2.jpeg" alt="Imagen del selvicio">
-                        </a>
-                    </figure>
-                    <p>Decoración con pantallas <br>
-                    LED</p>
-                </div>
-            </div>
-        </section>
+        <section class="pry-nuevos-container">
+    <h2>Proyectos nuevos</h2>
+    <div class="pry-nuevos-desc">
+        <div class="pry">
+            <figure class="img-container">
+                <a href="https://youtu.be/qU08CNcnQhA" target="_blank">
+                    <img src="../public/imagenes/proyectos/1.WEBP" alt="Imagen del servicio">
+                </a>
+            </figure>
+            <p>Decoración e iluminación <br>
+            de interiores y exteriores</p>
+        </div>
+        <div class="pry">
+            <figure class="img-container">
+                <a href="https://youtu.be/3QMkxPf7H3U" target="_blank">
+                    <img src="../public/imagenes/proyectos/2.WEBP" alt="Imagen del servicio">
+                </a>
+            </figure>
+            <p>Decoración con pantallas <br>
+            LED</p>
+        </div>
+    </div>
+</section>
+
 
     </main>
     <br>

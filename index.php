@@ -129,6 +129,7 @@ session_start();
                 position: relative;
                 border-radius: 15px;
                 overflow: hidden;
+               display: flex;
             }
 
             .video_index {

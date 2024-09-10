@@ -9,182 +9,204 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 60px;
-    background: linear-gradient(to right, #717375, #afe2e2);
+    background: #1B4092;
 }
 .pry-dest-container .titulo {
-    margin-top: 8%;
-    background: linear-gradient(to right, #717375, #9ac4c4);
-    width: 600px; /* Ancho del cuadro */
-    margin-left: 2%;
-    border-radius: 20%;
+    margin-top: 10%;
+
+    width: 550px; /* Ancho del cuadro */
+    border-top-right-radius:100%;
+    border-bottom-right-radius:100%;
+    
     height: 300px; /* Altura del cuadro */
-    border: 5px solid transparent; /* Borde inicial */
-    animation: dynamic-border 3s infinite; /* Animación infinita */
+    margin-bottom: 50px;
 }
 
 /* Definición de la animación */
 @keyframes dynamic-border {
     0% {
-        border-color: #d2dcfd; /* Color inicial */
+        border-color: #8ee682; /* Color inicial */
     }
     50% {
-        border-color: #c5cde4; /* Color intermedio */
+        border-color: #7eeb99; /* Color intermedio */
     }
     100% {
-        border-color: #989ba0; /* Color final (mismo que el inicial) */
+        border-color: #27db0f; /* Color final (mismo que el inicial) */
     }
 }
 
 .pry-dest-container .titulo h2 {
     text-transform: uppercase;
-    font-size: 66px;
-    color: rgb(255, 255, 255);
-    font-family: 'Proxima-Nova-Light';
+    font-size: 60px;
+    color: #ffffff;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
     margin-top: 13%;
     margin-bottom: 40px;
     text-align: center;
     width: 30%;
-    margin-left: 15%;
+    margin-left: 40px;
     margin-right: auto;
     font-weight: 200%;
     z-index: 1;
 }
 
 
-.pry-dest-container .pry-dest-video{
-    width: 40%;
+.pry-dest-container .pry-dest-video {
+    width: 50%;
     display: flex;
-    margin-left: auto;
-    margin-right: 10%;
+    margin-right: 5%;
     margin-bottom: 40px;
     margin-top: 100px;
+    margin-left: auto;
+    border-radius:80px 20px;
+    overflow: hidden; /* Asegura que el contenido respete el border-radius */
 }
 
-.pry-dest-container .pry-dest-video .video-container{
-    width: 40%;
+.pry-dest-container .pry-dest-video .video-container {
+    width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: hidden; /* Mantén el contenido dentro del borde redondeado */
 }
 
 .pry-dest-container .pry-dest-video .video-container a,
-.pry-dest-container .pry-dest-video .video-container a img{
+.pry-dest-container .pry-dest-video .video-container a img {
     width: 100%;
     height: 100%;
+    object-fit: cover; /* Asegura que la imagen o video se ajuste al contenedor */
+    border-radius: inherit; /* Hereda el border-radius del contenedor padre */
 }
 
-.pry-dest-container .pry-dest-video .video-container a img{
+.pry-dest-container .pry-dest-video .video-container a img {
     transform: scale(1);
-    transition: .8s;
+    transition: transform 0.8s ease; /* Suaviza la animación */
 }
 
-.pry-dest-container .pry-dest-video .video-container a img:hover{
-    transform: scale(1.3);
-}
+
 
 .pry-dest-container p{
     font-family: 'Proxima-Nova-Light';
     text-transform: uppercase;
     margin-bottom: 40px;
     color: rgb(255, 255, 255);
-    font-size: 45px;
+    font-size: 40px;
+    text-align: center; /* Centra el texto dentro del párrafo */
+}.pry-nuevos-container {
+    padding: 20px;
+    background-color: #f8f8f8;
 }
 
-.pry-nuevos-container h2{
-    text-transform: uppercase;
-    font-size: 36px;
-    color: #0e4b9c;
-    font-family: 'Proxima-Nova-Light';
-    margin-bottom: 80px;
+.pry-nuevos-container h2 {
     text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: rgb(57, 57, 150);
+    margin-bottom: 50px;
+
 }
 
-.pry-nuevos-container .pry-nuevos-desc{
-    width: 100%;
+.pry-nuevos-desc {
     display: flex;
-    justify-content: space-evenly;
-}
-
-.pry-nuevos-container .pry-nuevos-desc .pry{
-    width: 40%;
-    display: flex;
+    justify-content: space-between;
+    gap: 10px;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
-.pry-nuevos-container .pry-nuevos-desc .pry .img-container{
-    width: 100%;
-    height: 400px;
-    margin-bottom: 20px;
+.pry {
+    flex: 1 1 calc(40% - 10px);
+    margin-bottom: 15px;
+    background-color:#8fcad4;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    padding: 0; /* Quita el padding interno para que la imagen ocupe todo el espacio disponible */
+    height: 20%;
+        border-radius:80px 20px ;
+        margin-right: 50px; 
+        margin-left: 50px;
 }
 
-.pry-nuevos-container .pry-nuevos-desc .pry .img-container a,
-.pry-nuevos-container .pry-nuevos-desc .pry .img-container a img{
-    width: 100%;
-    height: 80%;
-}
-.pry-nuevos-container .pry-nuevos-desc .pry .img-container a img{
-    transform: scale(1);
-    transition: .8s;
-}
-.pry-nuevos-container .pry-nuevos-desc .pry .img-container a img:hover{
-    transform: scale(1.3);
-}
-.pry-nuevos-container .pry-nuevos-desc .pry .img-container{
-    width:100%;
-    height: 500px;
-    margin-bottom: 20px;
-}
-
-.pry-nuevos-container .pry-nuevos-desc .pry .img-container a,
-.pry-nuevos-container .pry-nuevos-desc .pry .img-container a img{
-    width: 100%;
-    height: 80%;
-}
-
-.pry-nuevos-container .pry-nuevos-desc .pry p {
-    width: 60%;
+.pry p {
+    padding: 15px; /* Aumenta un poco el padding del texto */
+    font-size: 1.6rem;
     text-align: center;
-    color: grey;
-    background-color: white;
-    text-transform: uppercase;
-    border: 1px solid black;
-    padding: 10px 15px; /* Ajuste de padding para mejor proporción */
-    margin: 10px auto; /* Centra el cuadro horizontalmente y ajusta el espacio */
-    position: relative; /* Permite un mejor control del posicionamiento */
-    top: -20%; /* Ajusta la posición vertical del texto */
-    z-index: 1;
+    color: #444;
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: 700;
+
 }
 
-
-@media screen and (max-width:768px){
-
-    .pry-dest-container .pry-dest-video .video-container{
-        width: 80%;
-    }
-
-    .pry-dest-container p{
-        text-align: center;
-    }
-
-    .pry-nuevos-container .pry-nuevos-desc{
-        flex-wrap: wrap;
-    }
-
-    .pry-nuevos-container .pry-nuevos-desc .pry{
-        width: 80%;
-        margin-bottom: 40px;
-    }
-
-    .pry-nuevos-container .pry-nuevos-desc .pry .img-container{
-        width: 100%;
-        height: 300px; /* Ajustar la altura para pantallas pequeñas */
-    }
-
-    .pry-nuevos-container .pry-nuevos-desc .pry p{
-        width: 70%; /* Ajustar el ancho del cartelito en pantallas pequeñas */
-    }
+.pry:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
+.img-container {
+    width: 100%; /* Asegúrate de que el contenedor de la imagen ocupe todo el ancho del card */
+    height: 300px; /* Ajusta esta altura según sea necesario */
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+    border-radius:100% 0% 100% 0% / 0% 50% 50% 
+}
+
+.img-container img {
+    width: 100%;
+    height: 150%;
+    object-fit: cover; /* Mantiene la proporción de la imagen y la recorta para que quepa en el contenedor */
+}
+
+@media (max-width: 768px) {
+        .pry-dest-container {
+            flex-direction: column; /* Los elementos se apilan uno encima de otro */
+            align-items: center;
+        }
+    
+        .pry-dest-container .titulo { 
+            margin-top: 15%;
+            width: 90%; /* Ajusta el ancho para pantallas pequeñas */
+            margin-left: 0;
+            border-radius: 50%; /* Opción para que el borde luzca bien en pantallas pequeñas */
+            height: auto; /* Permite que el contenido ajuste su altura */
+            text-align: center; /* Centra el texto */
+            margin-bottom: 0;
+        }
+    
+        .pry-dest-container .titulo h2 {
+            margin-top: 50px;
+            font-size: 40px; /* Disminuye el tamaño del texto en pantallas pequeñas */
+            margin-left: 0;
+            width: 100%;
+        }
+    
+        .pry-dest-container .pry-dest-video {
+            width: 90%; /* Haz el video más pequeño */
+            margin: 20px auto; /* Alinea al centro */
+            border-radius: 20px; /* Ajusta el border-radius para pantallas pequeñas */
+        }
+    
+        .pry-dest-container .pry-dest-video .video-container {
+            width: 100%; /* Asegura que el video ocupe el 100% del contenedor */
+        }
+    
+    .pry-nuevos-desc {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pry {
+        width: 90%;
+        margin-bottom: 20px;
+        margin-top: 0px;
+    }
+
+    .img-container {
+        height: 180px; /* Ajusta la altura para pantallas pequeñas */
+    }
+
+    .pry p {
+        font-size: 1.1rem; /* Un tamaño de fuente ligeramente más pequeño en pantallas pequeñas */
+    }}
+
+
 
 @media screen and (max-width: 425px){
     .pry-dest-container h2{
