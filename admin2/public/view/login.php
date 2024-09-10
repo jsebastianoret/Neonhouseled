@@ -6,6 +6,7 @@
   <title>Login | NeonHouseLed</title>
   <link rel="stylesheet" href="./admin2/public/css/login.css">
   <link rel="shortcut icon" href="./admin2/public/img/logo.png" type="image/x-icon">
+
   <link rel="stylesheet" href="/public/bootstrap/bootstrap.min.css">
 </head>
 
@@ -22,7 +23,7 @@
         <div class="col-md-6 p-4 d-flex flex-column justify-content-center position-relative">
 
             <a href="./index.php" class="position-absolute side-img">
-              <i class="bi bi-house-door-fill config-icon"></i>
+              <img src="/public/imagenes/icons/house-door-fill.svg" alt="icono de inicio">
             </a>
 
             <h4 class="title-text text-center mb-2 mt-2">Iniciar Sesión</h4>
