@@ -6,8 +6,10 @@
     <p class="direccion__item">ventasneonhouse@gmail.com</p>
     
 </div>
-<div class="ultimo">
-    
+<div class="cont-pro">
+    <a href="./../admin/index.php">
+        <button>VISUALIZAR MIS PROPUESTAS</button>
+    </a>
 </div>
 <div class="sociales">
             <a class="sociales__item" aria-label="visitar cuenta de Instagram" target="_blank" rel="noopener" href="https://www.instagram.com/nhldecoracioncomercial/"><i class="fab fa-instagram-square"></i></a>
