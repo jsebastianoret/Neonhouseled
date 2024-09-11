@@ -43,29 +43,15 @@ html, body {
     display:inline-block;
     vertical-align:middle;
 }
-/*.cont-pro button{
-    width: 30%;
-    background:hsl(216deg, 85%, 34%);
-    color:#fff;
-    border: none;
-    position:relative;
-    height:60px;
-    font-size:1.5vw;
-    padding:0 2em;
-    cursor:pointer;
-    transition:800ms ease all;
-    outline:none;
-    border-radius: 10px;
-}*/
 .cont-pro button {
-    width: 80%;
-    max-width: 300px;
+    width: 20%;
+    /*max-width: 300px;*/
     background: hsl(216deg, 85%, 34%);
     color: #fff;
     border: none;
     position: relative;
     height: 60px;
-    font-size: 4vw;
+    font-size: 1.2vw;
     padding: 0 2em;
     cursor: pointer;
     transition: 800ms ease all;
@@ -106,19 +92,31 @@ html, body {
 /* Media queries para tamaños de pantalla mayores */
 @media (min-width: 768px) {
     .cont-pro button {
-        max-width: 500px;
-        width: 100%; /* Ajuste para pantallas medianas */
-        font-size: 2.5vw; /* Ajuste para pantallas medianas */
+        width: 20%; /* Ajuste para pantallas medianas */
+        font-size: 1.5vw; /* Ajuste para pantallas medianas */
     }
 }
 
 @media (min-width: 1024px) {
     .cont-pro button {
-        width: 100%; /* Ajuste para pantallas grandes */
-        font-size: 1.5vw; /* Ajuste para pantallas grandes */
-        max-width: 550px;
+        width: 20%; /* Ajuste para pantallas grandes */
+        font-size: 1.2vw; /* Ajuste para pantallas grandes */
     }
 
+}
+
+@media (max-width: 750px) {
+    .cont-pro button {
+        width: 20%; /* Ajuste para pantallas medianas */
+        font-size: 2vw; /* Ajuste para pantallas medianas */
+    }
+}
+
+@media (max-width: 430px) {
+    .cont-pro button {
+        width: 30%; /* Ajuste para pantallas medianas */
+        font-size: 3vw; /* Ajuste para pantallas medianas */
+    }
 }
 
 .imagen_final{
