@@ -4,6 +4,8 @@ footer {
     padding: 2rem 0; /* Espaciado interno */
     text-align: center; /* Centrar el texto */
     position: relative;
+    padding-top: 112px;
+    padding-bottom: 70px;
 }
 .linea-medio {
     border-top: 3px solid #00c3ff; /* Línea de 3px de grosor y color naranja */
@@ -15,110 +17,55 @@ html, body {
     padding: 0;
     height: 100%;
 }
-/*
-.ultimo{
-    overflow:hidden;
-    width:38%;
-    margin:auto;
-    transition:background-color .5s;
-    border-radius:50%
-}
-.boton_final{
-    display:block;
-    width:100%;
-    margin:auto;
-    overflow:hidden
-} */
-/*BOTON VER MIS PROPUESTAS*/
-.cont-pro{
-    height: 100%;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    font-size: 16px;
-}
-.cont-pro:before{
-    content:'';
-    height:100%;
-    display:inline-block;
-    vertical-align:middle;
-}
-.cont-pro button {
-    width: 20%;
-    /*max-width: 300px;*/
-    background: hsl(216deg, 85%, 34%);
-    color: #fff;
-    border: none;
-    position: relative;
-    height: 60px;
-    font-size: 1.2vw;
-    padding: 0 2em;
-    cursor: pointer;
-    transition: 800ms ease all;
-    outline: none;
-    border-radius: 10px;
-}
-
-.cont-pro button:hover {
-    background: #fff;
-    color: hsl(216deg, 85%, 34%);
-}
-
-.cont-pro button:before,
-.cont-pro button:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 2px;
-    width: 0;
-    background: hsl(216deg, 85%, 34%);
-    transition: 400ms ease all;
-}
-
-.cont-pro button:after {
-    right: inherit;
-    top: inherit;
-    left: 0;
-    bottom: 0;
-}
-
-.cont-pro button:hover:before,
-.cont-pro button:hover:after {
+/*Boton de visualizar mis propuestas*/
+.btn-visualizer{
+    display: flex;
     width: 100%;
-    transition: 800ms ease all;
+    justify-content: center;
+    align-items: center;
+    height: 218px;
+    background-color: #008eba;
 }
 
-/* Media queries para tamaños de pantalla mayores */
-@media (min-width: 768px) {
-    .cont-pro button {
-        width: 20%; /* Ajuste para pantallas medianas */
-        font-size: 1.5vw; /* Ajuste para pantallas medianas */
+.btn-visualizerh{
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    width: 230px;
+    box-shadow: 0 2px 4px #000;
+}
+.btn-visualizerh:hover{
+    background-color: #D1D2D4;
+}
+.btn-visualizerimg{
+    width: 77px;
+    border-radius: 50%;
+}
+.btn-visualizerh p{
+    color: hsl(216deg, 85%, 34%);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    height: 40px;
+    font-family: 'Proxima-Nova-Regular';
+}
+
+@media (max-width: 1536px) {
+    .btn-visualizerh p{
+        font-size: 14px;
+    }
+    .btn-visualizerimg {
+        width: 59px;
+    }
+    .btn-visualizerh{
+        width: 183px;
+        padding-top: 10px;
     }
 }
 
-@media (min-width: 1024px) {
-    .cont-pro button {
-        width: 20%; /* Ajuste para pantallas grandes */
-        font-size: 1.2vw; /* Ajuste para pantallas grandes */
-    }
-
-}
-
-@media (max-width: 750px) {
-    .cont-pro button {
-        width: 20%; /* Ajuste para pantallas medianas */
-        font-size: 2vw; /* Ajuste para pantallas medianas */
-    }
-}
-
-@media (max-width: 430px) {
-    .cont-pro button {
-        width: 30%; /* Ajuste para pantallas medianas */
-        font-size: 3vw; /* Ajuste para pantallas medianas */
-    }
-}
-
+/*----*/
 .imagen_final{
     transform:scale(.8);
     width:100%;
@@ -130,9 +77,6 @@ html, body {
     transform:scale(1.1)
 }
 @media screen and (min-width:945px){
-    footer{
-        margin:1rem 0
-    }
     .ultimo{
         width:15%;
         right:10px;
