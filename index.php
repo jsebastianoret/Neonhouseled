@@ -466,17 +466,20 @@ session_start();
                 </figure>
             </div>
         </div>
+        <!---->
+        <div class="btn-visualizer">
+            <a href="admin/index.php" class="btn-visualizerh">
+                <div><img src="./vistas/lupa-neonhouse.png" class="btn-visualizerimg"></div>
+                <p>VISUALIZAR MIS PROPUESTAS</p>
+            </a>
+        </div>
+        <!---->
         <footer>
             <div class="direccion">
                 <p class="direccion__item">Jr. Paruro 1401 tda. 130 sótano, CC Shopping Center, Cercado de Lima</p>
                 <p class="direccion__item">936910425</p>
                 <p class="direccion__item">ventasneonhouse@gmail.com</p>
 
-            </div>
-            <div class="cont-pro">
-                <a href="admin/index.php">
-                    <button>VISUALIZAR MIS PROPUESTAS</button>
-                </a>
             </div>
             <div class="sociales">
                 <a class="sociales__item" rel="noreferrer" aria-label="instagram" target="_blank" href="https://www.instagram.com/nhldecoracioncomercial/"><i class="fab fa-instagram-square"></i></a>
