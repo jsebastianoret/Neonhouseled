@@ -24,7 +24,7 @@ html, body {
     justify-content: center;
     align-items: center;
     height: 218px;
-    background-color: #008eba;
+    background: linear-gradient(135deg, #809c95, #7bb4fe);
 }
 
 .btn-visualizerh{
