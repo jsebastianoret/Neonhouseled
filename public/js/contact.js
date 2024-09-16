@@ -39,39 +39,56 @@ $('#formContact').submit(function(e) {
    
 });
 
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const contactTitle = document.getElementById('contactTitle');
+    const scrollDownIndicator = document.querySelector('.scroll-down-indicator'); // Seleccionamos la flecha
     const contactForm = document.getElementById('contactForm');
 
+    // Función de desplazamiento suave
+    function scrollToForm() {
+        const formPosition = contactForm.getBoundingClientRect().top;
+        const startPosition = window.pageYOffset;
+        const distance = formPosition + startPosition;
+        const duration = 600;
+        let start = null;
+
+        function animation(currentTime) {
+            if (start === null) start = currentTime;
+            const timeElapsed = currentTime - start;
+            const run = ease(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+
+        // Función de easing
+        function ease(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+
+        requestAnimationFrame(animation);
+    }
+
+    // Evento para el título "Contactanos"
     if (contactTitle && contactForm) {
         contactTitle.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            const formPosition = contactForm.getBoundingClientRect().top;
-            const startPosition = window.pageYOffset;
-            const offset = 50;
-            const distance = formPosition + startPosition - offset;
-            
-            const duration = 1000;
-            let start = null;
+            scrollToForm();
+        });
+    }
 
-            function animation(currentTime) {
-                if (start === null) start = currentTime;
-                const timeElapsed = currentTime - start;
-                const run = ease(timeElapsed, startPosition, distance, duration);
-                window.scrollTo(0, run);
-                if (timeElapsed < duration) requestAnimationFrame(animation);
-            }
-
-            // Función de easing para un movimiento más natural
-            function ease(t, b, c, d) {
-                t /= d / 2;
-                if (t < 1) return c / 2 * t * t + b;
-                t--;
-                return -c / 2 * (t * (t - 2) - 1) + b;
-            }
-
-            requestAnimationFrame(animation);
+    // Evento para la flecha
+    if (scrollDownIndicator && contactForm) {
+        scrollDownIndicator.addEventListener('click', function(e) {
+            e.preventDefault();
+            scrollToForm();
         });
     }
 });
