@@ -25,6 +25,12 @@
 
     }
 
+
+
+
+
+
+
     /* Superposición de desvanecimiento */
     .hero-section::after {
         content: "";
@@ -33,11 +39,15 @@
         left: 0;
         right: 0;
         height: 100px;
-        background: linear-gradient(to bottom, rgba(71, 7, 7, 0) 50%, #88b8c2 100%);
+        background: linear-gradient(to bottom, rgba(71, 7, 7, 0) 80%, #83b4c2 100%);
         z-index: 2;
 
         pointer-events: none;
     }
+
+
+
+
 
 
 
@@ -62,7 +72,7 @@
     }
 
     .carousel-item.active img {
-        transform: scale(1.05);
+        transform: scale(1.00);
 
     }
 
@@ -85,25 +95,25 @@
         position: absolute;
         bottom: 90px;
         left: 50%;
-        transform: translateX(-50%); /* Mantiene el centrado horizontal */
+        transform: translateX(-50%);
         font-size: 3.5rem;
         color: white;
         cursor: pointer;
-        animation: bounce 2s ease-in-out 3; /* Se repetirá 3 veces */
-        animation-fill-mode: forwards; /* Mantiene la posición final después de la animación */
+        animation: bounce 2s ease-in-out 3;
+        animation-fill-mode: forwards; 
     }
     
     @keyframes bounce {
         0%, 20%, 50%, 80%, 100% {
-            transform: translateX(-50%) translateY(0); /* Mantiene la posición centrada y rebote en Y */
+            transform: translateX(-50%) translateY(0);
         }
     
         40% {
-            transform: translateX(-50%) translateY(-4px); /* Rebote hacia arriba */
+            transform: translateX(-50%) translateY(-4px);
         }
     
         60% {
-            transform: translateX(-50%) translateY(-2px); /* Rebote más ligero hacia arriba */
+            transform: translateX(-50%) translateY(-2px);
         }
     }
 
@@ -125,6 +135,18 @@
         box-shadow: 0px 4px 8px #88b8c2(39, 208, 214, 0.692);
     }
 
+
+    .contact-highlight {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        letter-spacing: 1px;
+        opacity: 0;
+        animation: fadeIn 1s ease-out 0.5s forwards;
+    }
+
+
     @keyframes fadeIn {
         from {
             opacity: 0;
@@ -136,18 +158,6 @@
             transform: translateY(0);
         }
     }
-
-    .contact-highlight {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: white;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        letter-spacing: 1px;
-        opacity: 0;
-        animation: fadeIn 2s ease-out 1s forwards;
-    }
-
-
 
 
 
@@ -171,7 +181,7 @@
     .contact {
         padding-top: 100px;
         padding-bottom: 50px;
-        box-shadow: 0 0px 200px #6889b6;
+        box-shadow: 0 0px 200px #5986c5;
 
     }
 
@@ -184,7 +194,7 @@
     }
 
 
-    /* Ajustar la columna izquierda para que tenga una imagen de fondo */
+    /* IMAGEN COLUMA IZQUIERDA */
     .contact-left {
         background-size: cover;
         background-position: center;
