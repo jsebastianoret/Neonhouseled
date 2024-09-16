@@ -15,14 +15,14 @@ $_SESSION['imagen'] = 'MOBILIARIA.webp';
         content="Alquiler y venta de mobiliarios para eventos. Fabricamos mobiliarios con diseños personalizados a medida  y de calidad. ¡Contáctanos para conocer nuestro catálogo!" />
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
+    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Diseño y fabricacion de muebles modernos</title>
     <link rel="stylesheet" href="style.css" />
     <?php require_once "../layout/links.php" ?>

@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'ESTILO INDUSTRIAL.jpeg';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="¿Buscas un estilo industrial? Creamos ambientes modernos y atractivos que cautivan a los clientes y los invitan a regresar. ¡Contacta ya!"/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'ESTILO INDUSTRIAL.jpeg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Remodelación estilo industrial: diseños de impacto</title>
     <link rel="stylesheet" href="style.css" />
 
@@ -82,7 +83,7 @@ $_SESSION['imagen'] = 'ESTILO INDUSTRIAL.jpeg';
             <img src="../../public/imagenes/Slider/INDUSTRIAL/1.webp" />
             <img src="../../public/imagenes/Slider/INDUSTRIAL/2.webp" />
             <img src="../../public/imagenes/Slider/INDUSTRIAL/3.webp" />
-            <img src="../../public/imagenes/Slider/INDUSTRIAL/4.webp" />
+            <img src="../../public/imagenes/Slider/INDUSTRIAL/5.webp" />
           </div>
         </div>
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">

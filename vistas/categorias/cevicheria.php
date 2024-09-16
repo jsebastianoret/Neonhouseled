@@ -15,6 +15,7 @@ $_SESSION['imagen'] = 'CEVICHERIA.jpeg';
     <meta name="description" content="¿Quieres que tus clientes regresen a tu cevichería? Renueva la decoración y el diseño interior de tu negocio. ¡Contáctanos ahora para asesorarte!"/>
     <meta name="robots" content="index, all, follow">
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -22,7 +23,7 @@ $_SESSION['imagen'] = 'CEVICHERIA.jpeg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     
     <link rel="stylesheet" href="style.css" />
 
@@ -88,8 +89,8 @@ $_SESSION['imagen'] = 'CEVICHERIA.jpeg';
           <div class="logos-slide">
             <img src="../../public/imagenes/Slider/CEVICHERIA/decoracion.webp" />
             <img src="../../public/imagenes/Slider/CEVICHERIA/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/CEVICHERIA/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/CEVICHERIA/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/CEVICHERIA/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/CEVICHERIA/diseno-exterior.webp" />
           </div>
         </div>
         

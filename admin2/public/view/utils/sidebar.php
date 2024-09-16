@@ -23,7 +23,7 @@
           <span>Section Main</span>
         </a>
       </li>
-      <li>
+      <!-- <li>
         <a
           href="/admin2/public/view/secciones-admin/conocer-personas.php"
         >
@@ -62,7 +62,7 @@
           <ion-icon name="duplicate-outline"></ion-icon>
           <span>Diseño</span>
         </a>
-      </li>
+      </li> -->
       <li>
         <a
           href="/admin2/public/view/secciones-admin/libro_reclamaciones.php"
@@ -71,7 +71,7 @@
           <span>Libro de Raclamaciones</span>
         </a>
       </li>
-      <li>
+      <!-- <li>
         <a
           href="/admin2/public/view/secciones-admin/modal-branding.php"
         >
@@ -102,7 +102,7 @@
           <ion-icon name="duplicate-outline"></ion-icon>
           <span>Modal de Marketing</span>
         </a>
-      </li>
+      </li> -->
       <li>
         <a id="enlace" href="/admin2/public/view/secciones-admin/modal-usuario.php">
           <ion-icon name="duplicate-outline"></ion-icon>
@@ -135,9 +135,10 @@
 
     <div class="usuario">
       <img
-        src="./admin2/public/img/user-admin.png"
+        src="./../../img/user-admin.png"
         alt=""
         height="50px"
+        onError="this.onerror=null; this.src='./admin2/public/img/user-admin.png';"
       />
       <div class="info-usuario">
         <div class="nombre-email">

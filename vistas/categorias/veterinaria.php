@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'VETERINARIA.jpg';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Con un diseño pensado en el confort de tus pacientes peludos, creamos un ambiente acogedor que reduce su estrés y promueve su bienestar."/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'VETERINARIA.jpg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Remodela con creatividad tu veterinaria</title>
     <link rel="stylesheet" href="style.css" />
 
@@ -78,8 +79,8 @@ $_SESSION['imagen'] = 'VETERINARIA.jpg';
           <div class="logos-slide">
             <img src="../../public/imagenes/Slider/VETERINARIA/decoracion.webp" />
             <img src="../../public/imagenes/Slider/VETERINARIA/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/VETERINARIA/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/VETERINARIA/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/VETERINARIA/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/VETERINARIA/diseno-exterior.webp" />
           </div>
         </div>
         

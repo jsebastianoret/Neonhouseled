@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'SALON BELLEZA Y BARBERIA.webp';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cuidamos cada detalle para que tus clientes se sientan como en un spa exclusivo.¡Da el primer paso hacia el salón de belleza y barbería de tus sueños hoy mismo!"/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'SALON BELLEZA Y BARBERIA.webp';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Remodela tu salón de belleza y barbería: últimas tendencias</title>
     <link rel="stylesheet" href="style.css" />
 
@@ -71,8 +72,8 @@ $_SESSION['imagen'] = 'SALON BELLEZA Y BARBERIA.webp';
           <div class="logos-slide">
             <img src="/public/imagenes/Slider/SALON BELLEZA Y BARBERIA/decoracion.webp" />
             <img src="../../public/imagenes/Slider/SALON BELLEZA Y BARBERIA/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/SALON BELLEZA Y BARBERIA/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/SALON BELLEZA Y BARBERIA/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/SALON BELLEZA Y BARBERIA/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/SALON BELLEZA Y BARBERIA/diseno-exterior.webp" />
           </div>
         </div>
         

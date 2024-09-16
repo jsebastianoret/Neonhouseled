@@ -14,7 +14,7 @@ $title = $_SESSION['categoria'];
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ver más</title>
   <meta name="robots" content="index, all, follow">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
+  <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>-->
   <link rel="stylesheet" href="style.css" />
   <?php require_once "../layout/links.php" ?>
 </head>

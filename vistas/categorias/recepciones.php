@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'RECEPCIONES.jpg';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Remodela tu recepción y dale una bienvenida inolvidable con nuestro servicio de diseño. No esperes más. ¡Da el primer paso hacia la recepción de tus sueños hoy mismo!"/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'RECEPCIONES.jpg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Remodela tu recepción: Diseño interior con estilo</title>
     <link rel="stylesheet" href="style.css" />
 
@@ -79,8 +80,8 @@ $_SESSION['imagen'] = 'RECEPCIONES.jpg';
           <div class="logos-slide">
             <img src="../../public/imagenes/Slider/RECEPCIONES/decoracion.webp" />
             <img src="../../public/imagenes/Slider/RECEPCIONES/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/RECEPCIONES/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/RECEPCIONES/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/RECEPCIONES/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/RECEPCIONES/diseno-exterior.webp" />
           </div>
         </div>
         

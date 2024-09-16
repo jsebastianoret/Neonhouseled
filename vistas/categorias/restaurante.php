@@ -15,6 +15,7 @@ $_SESSION['imagen'] = 'RESTAURANTE.jpg';
   <meta name="description"
     content="¿Quieres que tu restaurante tenga éxito? Transforma el diseño y la decoración interior de tu negocio. ¡Contáctanos ahora para asesorarte con diseños novedosos y personalizados!" />
   <!-- Google tag (gtag.js) -->
+  <!--
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -22,7 +23,7 @@ $_SESSION['imagen'] = 'RESTAURANTE.jpg';
     gtag('js', new Date());
 
     gtag('config', 'G-QRZPWCXDM8');
-  </script>
+  </script>-->
   <title>Estilos de decoración: diseño innovador para tu restaurante</title>
   <link rel="stylesheet" href="style.css" />
 
@@ -78,8 +79,8 @@ $_SESSION['imagen'] = 'RESTAURANTE.jpg';
       <div class="logos-slide">
         <img src="../../public/imagenes/Slider/RESTAURANTE/decoracion.webp" />
         <img src="../../public/imagenes/Slider/RESTAURANTE/remodelacion.webp" />
-        <img src="../../public/imagenes/Slider/RESTAURANTE/diseño-interior.webp" />
-        <img src="../../public/imagenes/Slider/RESTAURANTE/diseño-exterior.webp" />
+        <img src="../../public/imagenes/Slider/RESTAURANTE/diseno-interior.webp" />
+        <img src="../../public/imagenes/Slider/RESTAURANTE/diseno-exterior.webp" />
       </div>
     </div>
 

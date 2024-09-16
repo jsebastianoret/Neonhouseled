@@ -11,28 +11,35 @@ $(function() {
         dom: '<"header__main"<"search"f>>t<"header__main"ip>',
         lengthChange: false,
         pageLength: 4,
-        ajax: {
-            url: "../controller/userController.php?action=listgallery",
-            dataSrc: "",
+        "processing": true,
+        "serverSide": true,
+        "ajax": {
+            "url": "../controller/galleryController.php?action=listgallery",
+            "dataSrc": "data",
+            "data": function(d) {
+                d.page = Math.floor(d.start / d.length) + 1;
+                d.length = d.length;
+            }
         },
-        columns: [
-            { data: "id" },
-            { data: "image" },
-            { data: "descripcion" },
-            { data: null },
+        "columns": [
+            { "data": "id" },
+            { "data": "image" },
+            { "data": "descripcion" },
+            { "data": null }
         ],
-        columnDefs: [{
+        "columnDefs": [
+            {
                 "targets": -3,
-                "data": 'image',
-                "render": function(data, type, row, meta) {
-                    return '<img src="../imgGallery/' + data + '" alt="' + data + '"height="80" width="80"/>';
+                "render": function(data, type, row) {
+                    let originalPath = '../imgGallery/' + data;
+                    let webpPath = "../imgGallery/webp/" + data.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+                    return '<img src="' + webpPath + '" alt="' + data + '" height="80" width="80" onerror="this.onerror=null;this.src=\'' + originalPath + '\';" />';
                 }
             },
-
             {
-                defaultContent: '<button class="eliminar_b1 table-d"><i class="fas fa-trash-alt eliminar"></i></button>',
-                targets: -1,
-            },
+                "targets": -1,
+                "defaultContent": '<button class="eliminar_b1 table-d"><i class="fas fa-trash-alt eliminar"></i></button>'
+            }
         ],
     });
 
@@ -54,7 +61,7 @@ $(function() {
             if (val) {
                 $.ajax({
                     type: "POST",
-                    url: "../controller/userController.php",
+                    url: "../controller/galleryController.php",
                     data: data,
                     success: function(response) {
                         let result = JSON.parse(response);
@@ -63,7 +70,7 @@ $(function() {
                             text: result.text,
                             icon: result.icon
                         }).then(function() {
-                            $("#galeria").DataTable().ajax.reload(null, false);
+                            $("#galeria").DataTable().ajax.reload();
                         });
                     },
                 });
@@ -81,7 +88,7 @@ $("#btnNuevo1").click(function() {
     //$('.dropify-clear').click();
     $(".modal-header").css("background-color", "#28a745");
     $(".modal-header").css("color", "white");
-    $(".modal-title").text("Nueva Imegen");
+    $(".modal-title").text("Nueva Imagen");
     $("#modalCRUD1").modal("show");
     id = null;
     opcion = 1; //alta
@@ -92,17 +99,17 @@ $("#formGaleria").submit(function(e) {
     fdata.append('action', 'isertimg');
     $.ajax({
         type: "POST",
-        url: "../controller/userController.php",
+        url: "../controller/galleryController.php",
         data: fdata,
         processData: false,
         contentType: false,
         cache: false,
-        success: function(response) {
-            //let result = JSON.parse(response);
+      success: function (response) {
+            let result = JSON.parse(response);
             swal({
-                title: "Perfecto!",
-                text: "Galeria Agregado Correctamente",
-                icon: "success"
+                title: result.status ? "Perfecto!" : "Opps..!",
+                text: result.msg,
+                icon: result.type
             }).then(function() {
                 $("#modalCRUD1").modal("hide");
                 $("#galeria").DataTable().ajax.reload(null, false);
@@ -115,14 +122,83 @@ $("#formGaleria").submit(function(e) {
 });
 
 //:::::::::::::::Client ::::::::::::::::
-let identgallery = $("#identgallery").val();
+// admingallery.js
+$(document).ready(function() {
+    let identgallery = $("#identgallery").val();
+    let currentPage = 1;
 
-let urlProds =
-    "../controller/userController.php?action=showGalleryForClient&identgallery=" + identgallery;
-$("#products-container").load(urlProds, { type: "article" }, function() {
+    // Inicializa la carga de la primera página
+    loadGalleryPage(currentPage);
 
+    function loadGalleryPage(page) {
 
+        let urlProds = "../controller/galleryController.php?action=showGalleryForClient&identgallery=" + identgallery + "&page=" + page;
+
+        $.get(urlProds, function(response) {
+            const data = JSON.parse(response);
+            renderGallery(data.articles);
+            renderPagination(data.pagination);
+            bindPaginationEvents();
+            handleImageLoading();
+        });
+    }
+
+    // Función para renderizar la galería
+    function renderGallery(articlesHtml) {
+        $("#products-container").html(articlesHtml);
+    }
+
+    // Función para renderizar la paginación
+    function renderPagination(paginationHtml) {
+        $("#pagination-container").html(paginationHtml);
+    }
+
+    // Función para asociar eventos a la paginación
+    function bindPaginationEvents() {
+        $(".page-link").click(function(e) {
+            e.preventDefault();
+            let page = $(this).data("page");
+            loadGalleryPage(page);
+        });
+
+        // Manejo del formulario para ir a una página específica
+        // Dentro de bindPaginationEvents
+        $("#goto-page-form").off("submit").on("submit", function(e) {
+            e.preventDefault();
+            let page = parseInt($("#goto-page-input").val());
+            let totalPages = parseInt($("#total-pages").val());  // Asegúrate de que este valor sea un número
+            if (page >= 1 && page <= totalPages) {
+                loadGalleryPage(page);
+            } else {
+                alert("Número de página no válido");
+            }
+        });
+
+    }
+
+    // Función para manejar la carga de imágenes
+    function handleImageLoading() {
+        $(".gallery-image").each(function() {
+            let img = $(this);
+            let spinner = img.siblings(".loading-container");
+
+            img.on("load", function() {
+                setTimeout(function() {
+                    spinner.hide();
+                    img.addClass("loaded");
+                    //img.css("opacity", "1");
+                    img.show();
+                }, 0);
+            }).on("error", function() {
+                spinner.hide();
+            });
+
+            spinner.show();
+            img.hide();
+        });
+    }
 });
+
 
 //:::::::::::::::::Gestion::::::::::::::::::::
 //let urlProds1 =

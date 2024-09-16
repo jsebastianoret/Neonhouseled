@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'CLINICA DENTAL.jpg';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="¿Quieres que tu clínica dental tenga éxito? Transforma tu clínica dental con NHL, combinamos ultimas tendecias de diseños innovadores con funcionalidad.  ¡Contacta ya!"/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'CLINICA DENTAL.jpg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Moderniza tu clínica dental: remodelación y diseño</title>
     <link rel="stylesheet" href="style.css" />
 
@@ -72,8 +73,8 @@ $_SESSION['imagen'] = 'CLINICA DENTAL.jpg';
           <div class="logos-slide">
             <img src="../../public/imagenes/Slider/DENTAL/decoracion.webp" />
             <img src="../../public/imagenes/Slider/DENTAL/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/DENTAL/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/DENTAL/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/DENTAL/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/DENTAL/diseno-exterior.webp" />
           </div>
         </div>
         

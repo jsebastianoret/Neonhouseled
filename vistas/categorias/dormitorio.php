@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'DORMITORIO.jpeg';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Convierte el dormitorio de tus hijos en un mundo de ensueño, cada elemento se selecciona cuidadosamente para crear un espacio acogedor y estimulante."/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'DORMITORIO.jpeg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Remodela el dormitorio de tu niño: Diseños en tendencia</title>
     <link rel="stylesheet" href="style.css" />
 
@@ -78,8 +79,8 @@ $_SESSION['imagen'] = 'DORMITORIO.jpeg';
           <div class="logos-slide">
             <img src="../../public/imagenes/Slider/DORMITORIO/decoracion.webp" />
             <img src="../../public/imagenes/Slider/DORMITORIO/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/DORMITORIO/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/DORMITORIO/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/DORMITORIO/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/DORMITORIO/diseno-exterior.webp" />
           </div>
         </div>
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">

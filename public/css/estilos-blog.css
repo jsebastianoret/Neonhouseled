@@ -209,7 +209,7 @@ h1 {
 }
 
 h2 {
-    font-size: 30px; /* Tamaño de fuente más grande para el título */
+    font-size: 2vw; /* Tamaño de fuente más grande para el título */
     margin: 0;
 }
 
@@ -325,9 +325,7 @@ header{
   font-size: 1.5rem;
   padding: 20px 0px;
 }
-footer{
-    font-weight: 400;
- }
+
 
 .blog-header{
   font-size: 1.5rem;
@@ -345,4 +343,87 @@ footer{
 
 .blog-navigation{
   font-size: 2rem;
+}
+
+.dropdown{
+    margin-right: 69%;
+}
+
+.dropdown-menu{
+    max-height: 315px; /* Ajusta la altura según tus necesidades */
+    overflow-y: auto;  /* Permite el desplazamiento vertical */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: #fff;
+    z-index: 1000; /
+}
+
+.dropdown-item{
+    font-size: 15px;
+}
+
+@media (max-width: 991px) {
+    .articulos{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .articulo{
+        width: 40%;
+        display: inline-block;
+        margin-top: 30px;
+    }
+    .categorias{
+        display: block;
+    }
+    .contenedor-principal{
+        width: 100%;
+    }
+    h2{
+        font-size: 3vw;
+    }
+    .paginacion{
+        display: block;
+        text-align: center;
+    }
+    .paginacion button{
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 740px) {
+    .articulo{
+        display: block;
+        width: 50%;
+    }
+}
+@media (max-width: 630px) {
+    .articulo{
+        width: 70%;
+    }
+    h2{
+        font-size: 4vw;
+    }
+    .dropdown{
+        margin-right: 60%;
+    }
+}
+
+@media (max-width: 506px) {
+    .dropdown{
+        margin-left: 25%;
+    }
+}
+
+@media (max-width: 425px) {
+    #tituloPrincipal{
+        font-size: 10vw !important;
+    }
+    .articulo{
+        height: 488px;
+    }
+    h2{
+        display: 6vw;
+    }
 }

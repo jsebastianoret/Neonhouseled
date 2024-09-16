@@ -42,13 +42,13 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
+    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Blog - BAR</title>    
     <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css">
         <link rel="shortcut icon" href="../ico.ico" type="image/x-icon">

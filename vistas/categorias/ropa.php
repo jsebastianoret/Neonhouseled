@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'ROPA.jpg';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Creamos diseños de tiendas personalizados que capturan la esencia de tu marca. ¡Contáctanos hoy mismo y comienza a transformar tu tienda en un escaparate de estilo!"/>
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'ROPA.jpg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Diseña tu tienda de ropa: Estilo único y en tendencia</title>
     <link rel="stylesheet" href="style.css" />
 
@@ -77,8 +78,8 @@ $_SESSION['imagen'] = 'ROPA.jpg';
           <div class="logos-slide">
             <img src="../../public/imagenes/Slider/ROPA/decoracion.webp" />
             <img src="../../public/imagenes/Slider/ROPA/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/ROPA/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/ROPA/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/ROPA/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/ROPA/diseno-exterior.webp" />
           </div>
         </div>
         

@@ -1,5 +1,6 @@
 /*CODIGO CSS PARA CATEGORIAS BLOG*/
-    .contenedor{
+    
+.contenedor{
       width: 100%;
       display: flex;
       padding: 40px 140px;
@@ -89,6 +90,7 @@
     }
     .articulos__item__texto{
       padding: 15px;
+      background-color: #fff;
     }
     .articulos__item__texto p{
       padding: 5px;
@@ -97,7 +99,7 @@
       border-radius: 5px;
     }
     .articulos__item__texto h4{
-      font-size: 3rem;
+      font-size: 2rem;
       margin-top: 10px;
       font-weight: normal;
       display: -webkit-box;
@@ -235,4 +237,67 @@ header{
   flex-grow: 1;
   display: flex;
   justify-content: center; /* Centra horizontalmente el contenido del span */
+}
+
+/*DISEÑO RESPONSIVE*/
+@media (max-width: 990px) {
+  .contenedor{
+    justify-content: center;
+    align-items: center;
+  }
+  .contenedor__articulos {
+    width: 80%;
+  }
+  .paginacion{
+    display: block;
+    text-align: center;
+  }
+  html{
+    font-size: 67.5%;
+  }
+}
+@media (max-width: 720px) {
+  .articulos__items{
+    display: flex;
+    flex-direction: column;  /* Apila los contenedores en una columna */
+    justify-content: center; /* Centra los contenedores verticalmente */
+    align-items: center;     /* Centra los contenedores horizontalmente */
+  }
+  .articulos__item{
+    width: 60%;
+    display: flex;
+    flex-direction: column;  /* Apila los elementos dentro de cada contenedor en una columna */
+    align-items: center;
+  }
+}
+
+@media (max-width: 645px) {
+  .contenedor{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .contenedor__articulos {
+    width: 100%;
+  }
+  .articulos__item{
+    width: 50%;
+  }
+  .contenedor__articulos__swiper{
+    padding: 10px;
+  }
+  .swipe-slider__texto h3 {
+    font-size: 2rem;
+  }
+  .swipe-slider__texto p {
+    font-size: 1.5rem;
+  }
+  html{
+    font-size: 67.5%;
+  }
+}
+
+@media (max-width: 550px) {
+  .articulos__item{
+    width: 65%;
+  }
 }

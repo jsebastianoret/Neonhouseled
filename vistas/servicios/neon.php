@@ -15,14 +15,14 @@ $_SESSION['imagen'] = 'NEON.webp';
         content="Diseños de letreros y rótulos en Led y neón. Nuestro servicio personalizado y de calidad ayudará a que tu negocio destaque  ¡Contáctanos para conocer nuestro catálogo!" />
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
+    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Letreros y Rótulos en LED Neon</title>
     <link rel="stylesheet" href="style.css" />
     <?php require_once "../layout/links.php" ?>

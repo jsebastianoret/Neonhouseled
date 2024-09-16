@@ -1,12 +1,14 @@
 <?php
 
-require_once '../controller/staterController.php';
-$redirect = new StaterController();
+require_once __DIR__ . '/../helper/sessionHelper.php';
+
+$redirect = new SessionHelper();
 if (empty($_SESSION['username'])) {
 
-    $redirect->redireccionar();
+    $redirect->redirect();
 
 }
+
 if (isset($_SESSION['rol'])) {
     switch ($_SESSION['rol']) {
         case 1:
@@ -36,12 +38,9 @@ require_once "layout/header.php";
             </div>    
         </div>    
 
-
-
-    
         <div class="row">
                 <div class="col-lg-12">
-                    <div class="table-responsive">        
+                    <div class="table-responsive">
                         <table id="productosTabla" class="table table-striped table-bordered table-condensed" style="width:100%">
                             <thead>
                                 <tr id="tabla__head" class="table-h">
@@ -49,7 +48,7 @@ require_once "layout/header.php";
                                     <th class="tabla__celda">Nombres</th>
                                     <th class="tabla__celda">Nivel de usuario</th>
                                     <th class="tabla__celda">Editar</th>
-                                    <th class="tabla__celda">Eliminar</th>
+<!--                                    <th class="tabla__celda">Eliminar</th>-->
                                     <th class="tabla__celda">Estado</th>
                                 </tr>
                             </thead>                      

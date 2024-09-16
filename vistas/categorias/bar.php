@@ -13,6 +13,7 @@ $_SESSION['imagen'] = 'BAR.jpeg';
     <meta name="description" content="¿Quieres atraer más clientes a tu bar? Convierte tu bar en un lugar vibrante y atractivo donde la diversión y el estilo se fusionan. ¡Contacta ya!"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google tag (gtag.js) -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -20,7 +21,7 @@ $_SESSION['imagen'] = 'BAR.jpeg';
       gtag('js', new Date());
     
       gtag('config', 'G-QRZPWCXDM8');
-    </script>
+    </script>-->
     <title>Renueva tu bar: remodelación y diseño moderno</title>
     <link rel="stylesheet" href="style.css" />
 
@@ -69,8 +70,8 @@ $_SESSION['imagen'] = 'BAR.jpeg';
           <div class="logos-slide">
             <img src="../../public/imagenes/Slider/BAR/decoracion.webp" />
             <img src="../../public/imagenes/Slider/BAR/remodelacion.webp" />
-            <img src="../../public/imagenes/Slider/BAR/diseño-interior.webp" />
-            <img src="../../public/imagenes/Slider/BAR/diseño-exterior.webp" />
+            <img src="../../public/imagenes/Slider/BAR/diseno-interior.webp" />
+            <img src="../../public/imagenes/Slider/BAR/diseno-exterior.webp" />
           </div>
         </div>
         

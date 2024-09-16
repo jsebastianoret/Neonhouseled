@@ -15,6 +15,7 @@ $_SESSION['imagen'] = 'LED.webp';
     content="Ilumina tu espacio con nuestro servicio de diseño y fabricación de panel led. ¡Contáctanos hoy y comienza la transformación de tu espacio con nuestros paneles LED!" />
 
   <!-- Google tag (gtag.js) -->
+   <!--
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRZPWCXDM8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -22,7 +23,7 @@ $_SESSION['imagen'] = 'LED.webp';
     gtag('js', new Date());
 
     gtag('config', 'G-QRZPWCXDM8');
-  </script>
+  </script>-->
   <title>Diseño y fabricación de panel led</title>
   <link rel="stylesheet" href="style.css" />
 
