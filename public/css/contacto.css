@@ -262,7 +262,7 @@
 
 
 
-    /* Estilos para los inputs */
+    /* Inputs */
     .form-control {
         border: none;
         border-bottom: 1px solid #ccc;
@@ -277,7 +277,7 @@
         border-color: #0e4b9c;
     }
 
-    /* Estilo para el textarea */
+    /* Textarea */
     textarea.form-control {
         border: 1px solid #ccc;
         padding: 20px;
@@ -323,7 +323,7 @@
 
 
 
-    /* Estilos actualizados para el botón y su contenedor */
+    /* BOTON */
 
     .button-container {
         display: flex;
