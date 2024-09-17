@@ -1,7 +1,7 @@
 <!---->
 <div class="btn-visualizer">
-    <a href="./../admin/index.php" class="btn-visualizerh">
-        <div><img src="../vistas/lupa-neonhouse.png" class="btn-visualizerimg"></div>
+    <a href="./../admin/index.php" class="btn-visualizerh" id="myLink">
+        <div><img src="../vistas/lupa-neonhouse.png" onerror="this.onerror=null; this.src='../../vistas/lupa-neonhouse.png';" class="btn-visualizerimg"></div>
         <p>VISUALIZAR MIS PROPUESTAS</p>
     </a>
 </div>
@@ -35,3 +35,20 @@
 
 <script src="https://cdn.rawgit.com/mistic100/Photo-Sphere-Viewer/3.1.0/dist/photo-sphere-viewer.min.js"> </script>
 
+<!--SCRIPT USADO CUANDO LA RUTA SE LLAMA DE DIFERNETES VISTAS-->
+<script>
+document.getElementById('myLink').addEventListener('click', function(event) {
+    event.preventDefault();
+    fetch('./../admin/index.php')
+        .then(response => {
+            if (response.ok) {
+                window.location.href = './../admin/index.php';
+            } else {
+                window.location.href = './../../admin/index.php'; // Ruta alternativa
+            }
+        })
+        .catch(() => {
+            window.location.href = './../../admin/index.php'; // Ruta alternativa en caso de error
+        });
+});
+</script>
