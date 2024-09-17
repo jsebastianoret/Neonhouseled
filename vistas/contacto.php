@@ -35,6 +35,8 @@ session_start();
 
     <!-- Slider TITULO -->
     <section class="hero-section position-relative">
+
+
         <div id="imageCarousel" class="carousel slide hero_container" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <?php for ($i = 1; $i <= 12; $i++) { ?>
@@ -50,16 +52,15 @@ session_start();
             </div>
         </div>
 
+
         <div class="titles-section text-center position-absolute top-50 start-50 translate-middle w-100">
             <h2 class="contact-title" id="contactTitle">Contáctanos</h2>
         </div>
-
 
         <!-- Flecha hacia abajo -->
         <div class="scroll-down-indicator">
             <span>&#x2193</span>
         </div>
-
 
     </section>
 
