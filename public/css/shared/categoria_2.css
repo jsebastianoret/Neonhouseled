@@ -1,0 +1,149 @@
+
+* {
+    box-sizing: border-box;
+    font-family: 'Proxima Nova', sans-serif;
+    margin: 0;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.main__category{
+    margin-top: 70px; /* Ajusta esto según la altura del header */
+    margin-bottom: 70px;
+}
+
+.category__text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Proxima-Nova', sans-serif;
+    text-align: center;
+    padding-top: 2rem;
+    margin-bottom: 2.5rem;
+
+}
+
+.category__text h2{
+    color: #1b4092;
+    margin-bottom: 0.75rem;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.category__text p{
+    color: #828282;
+    font-size: 16px;
+    width: 80%;
+    text-align: center;
+    font-style: normal;
+    line-height: 1.4;
+}
+
+.category__content{
+    width: 70%;
+    max-width: 1200px;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.category__cards{
+    display: flex;
+    flex-direction: column;
+}
+
+.category__card{
+    color: #828282;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.30);
+    border-radius: 5px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+
+.category__card h3{
+    color: #1b4092;
+    font-size: 16px;
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.category__card p{
+    font-size: 14px;
+}
+
+.category__card p{
+    margin-top: 0.25rem;
+    line-height: 1.4;
+}
+
+.category__card__content__paragraph{
+    margin-bottom: 14px;
+}
+
+.category__card img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.category__link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.category__card__image img{
+    width: 100%;
+    object-fit: fill;
+    height: 221px;
+}
+
+/* Estilos para vista de escritorio */
+@media screen and (min-width: 928px) {
+
+    .category__card__content__subtitle{
+        text-align: center;
+        padding-inline: 24px;
+    }
+
+    .category__card__content__paragraph{
+        text-align: center;
+        padding-inline: 24px;
+        margin-bottom: 14px;
+    }
+
+    .category__text p{
+        font-size: 16px;
+        width: 600px;
+    }
+
+    .category__text {
+        margin-bottom: 3rem;
+    }
+
+    .category__content{
+        gap: 2rem;
+    }
+
+    .category__cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.5rem;
+        margin-bottom: 0;
+    }
+
+    .category__card {
+        margin-bottom: 0;
+    }
+
+}
