@@ -48,23 +48,35 @@ session_start();
                 display:flex;
                 justify-content:center;
                 align-items:center;
-                position:relative
+                position:relative;
             }
             .hero-container .title-hero-container{
                 position:absolute;
+                padding: 30px;
                 z-index:50;
-                left:40px;
-                bottom:80px
+                left:0px;
+                top:0px;
+                height: 100%;
+                width: 50%;
+                background-color: rgba(88,82,82,0.75);
             }
             .hero-container .title-hero-container p{
-                padding:5px 10px;
                 color:white;
-                font-size:52px;
+                font-size:55px;
                 text-transform:uppercase;
                 font-family:'Proxima-Nova-SemiBold';
-                background-color:rgba(0,0,0,.5);
                 background-blend-mode:soft-light
             }
+            .hero-container .title-hero-container .center{
+                display: grid;
+                place-items: center;
+                margin-top: 30px;
+            }
+            .hero-container .title-hero-container span{
+                color: #CF8282;                
+                font-family:'Proxima-Nova-SemiBold';
+            }
+
             .hero-container #slider{
                 overflow:hidden;
                 height:600px;
@@ -178,6 +190,22 @@ session_start();
 
             /* Estilos responsivos */
 
+            @media (min-width: 576px) {
+                .hero-container .title-hero-container{
+                    padding: 50px 30px 30px 30px ;
+                }
+            }
+            @media (min-width: 769px) {
+                .hero-container .title-hero-container{
+                    padding:150px 50px;
+                }
+            }
+            @media (min-width: 1182px) {
+                .hero-container .title-hero-container{
+                    padding:190px 50px 0 50px;
+                    font-size: 100px;
+                }
+            }
             @media (max-width: 768px) {
                 .content-wrapper {
                     flex-direction: column;
@@ -199,9 +227,12 @@ session_start();
                 }
                 .hero-container .title-hero-container p{
                     padding:5px 10px;
-                    font-size:42px
+                    font-size:35px;
+                    padding: 80px 20px 0 20px;
                 }
-
+                .about-us{
+                    margin-top: 100px;
+                }
                 .about-us .about-us-content .video-container{
                     width:100%;
                     height:initial
@@ -218,6 +249,9 @@ session_start();
                 .hero-container{
                     height:350px
                 }
+                .about-us{
+                    margin-top: 0px;
+                }
                 .hero-container .title-hero-container{
                     width:calc(100% - 25px);
                     left:10px;
@@ -225,7 +259,7 @@ session_start();
                 }
                 .hero-container .title-hero-container p{
                     padding:5px;
-                    font-size:24px;
+                   padding: 50px 50px;
                 }
                 .carousel_slide{
                     height:450px
@@ -241,11 +275,10 @@ session_start();
                     margin: auto !important;
                 }
             }
-
+            /* 
             @media screen and (max-width:320px){
                 width:calc(100% - 20px)
-            }
-
+            } */
 
         </style>
 
@@ -286,15 +319,18 @@ session_start();
     <body>
         <h1 style="display:none">Diseñando y creando espacios ideales</h1>
         <?php require_once "vistas/layout/header.php" ?>
+
         <div class="hero-container">
             <div id="slider">
                 <div id="carouselExampleControls" class="carousel_slide" data-ride="carousel">
                 </div>
             </div>
             <div class="title-hero-container">
-                <p>Diseñando y <br> creando espacios ideales</p>
+                <p>Diseñando y <br> <span>creando</span> <br> espacios ideales</p>
+                
             </div>
         </div>
+        
         <section class="about-us">
             <div class="content-wrapper">
                 <div class="video-container">
