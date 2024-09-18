@@ -52,7 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function scrollToForm() {
         const formPosition = contactForm.getBoundingClientRect().top;
         const startPosition = window.pageYOffset;
-        const distance = formPosition + startPosition;
+        const offset = 50;
+        const distance = formPosition + startPosition - offset;
+        
         const duration = 600;
         let start = null;
 
